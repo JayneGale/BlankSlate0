@@ -1,0 +1,372 @@
+fileFormatVersion: 2
+guid: 79b4d6abca3451e469c4033848e5b624
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Blue
+    21300002: Orange
+    21300004: Yellow
+    21300006: Green
+    21300008: Blue
+    21300010: Indigo
+    21300012: Violet
+    21300014: Key
+    21300016: Spritesheet_8
+    21300018: Spritesheet_9
+    21300020: Spritesheet_10
+    21300022: Spritesheet_11
+    21300024: Spritesheet_12
+    21300026: Spritesheet_13
+    21300028: Spritesheet_14
+    21300030: Spritesheet_15
+    21300032: Spritesheet_16
+    21300034: Spritesheet_17
+    21300036: Spritesheet_18
+    21300038: Spritesheet_19
+    21300040: Spritesheet_20
+    21300042: Spritesheet_21
+    21300044: Spritesheet_22
+    21300046: Spritesheet_23
+    21300048: Spritesheet_24
+    21300050: Spritesheet_25
+    21300052: Spritesheet_26
+    21300054: Spritesheet_27
+    21300056: Spritesheet_28
+    21300058: Spritesheet_29
+    21300060: Spritesheet_30
+    21300062: Spritesheet_31
+    21300064: Spritesheet_32
+    21300066: Spritesheet_33
+    21300068: Spritesheet_34
+    21300070: Spritesheet_35
+    21300072: Spritesheet_36
+    21300074: Spritesheet_37
+    21300076: Spritesheet_38
+    21300078: Spritesheet_39
+    21300080: Spritesheet_40
+    21300082: Spritesheet_41
+    21300084: Spritesheet_42
+    21300086: Spritesheet_43
+    21300088: Spritesheet_44
+    21300090: Spritesheet_45
+    21300092: Spritesheet_46
+    21300094: Spritesheet_47
+    21300096: Spritesheet_48
+    21300098: Spritesheet_49
+    21300100: Spritesheet_50
+    21300102: Spritesheet_51
+    21300104: Spritesheet_52
+    21300106: Spritesheet_53
+    21300108: Spritesheet_54
+    21300110: Spritesheet_55
+    21300112: Spritesheet_56
+    21300114: Spritesheet_57
+    21300116: Spritesheet_58
+    21300118: Spritesheet_59
+    21300120: Spritesheet_60
+    21300122: Spritesheet_61
+    21300124: Spritesheet_62
+    21300126: Spritesheet_63
+    21300128: Spritesheet_64
+    21300130: Spritesheet_65
+    21300132: Spritesheet_66
+    21300134: Spritesheet_67
+    21300136: Spritesheet_68
+    21300138: Spritesheet_69
+    21300140: Spritesheet_70
+    21300142: Spritesheet_71
+    21300144: Spritesheet_72
+    21300146: Spritesheet_73
+    21300148: Orange
+    21300150: Key
+    21300152: RedCrystak
+    21300154: OrangeCrystal
+    21300156: Red
+    21300158: REd
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Red
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc108b4ff21886649984f4bf56918a9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 514
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70866007835e87042b23cead16039815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 514
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e54a978e0e6d8d43b97280f5e563052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 514
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc70378f7b0e3b4287e68d1d8b3b7e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6108018b706d6ad4f8c11b8d58f50493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indigo
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4597f74b417ad64cb996a3a4b2f11d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Violet
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d557e398ab86d6646b236d9d3dca84a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2
+        width: 510
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24ae881b2b4c8543a26e196b893b752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5d6ebbad63dc8cd4c9151f111e910baa
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

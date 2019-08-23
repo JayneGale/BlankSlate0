@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: f35088400b48c0a4696467932293b62f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: DoubleDoors
+    100002: DoubleDoors7
+    100004: Moon1
+    100006: Moon1 1
+    100008: Moon11
+    100010: Moon11 1
+    100012: Moon2
+    100014: Moon2 1
+    100016: Moon3
+    100018: Moon3 1
+    100020: Moon4
+    100022: Moon4 1
+    100024: //RootNode
+    100026: StationDoor6
+    100028: StationDoor6 1
+    100030: Treetrunk2
+    100032: Treetrunk2 1
+    400000: DoubleDoors
+    400002: DoubleDoors7
+    400004: Moon1
+    400006: Moon1 1
+    400008: Moon11
+    400010: Moon11 1
+    400012: Moon2
+    400014: Moon2 1
+    400016: Moon3
+    400018: Moon3 1
+    400020: Moon4
+    400022: Moon4 1
+    400024: //RootNode
+    400026: StationDoor6
+    400028: StationDoor6 1
+    400030: Treetrunk2
+    400032: Treetrunk2 1
+    2100000: defaultPolygonShader2
+    2100002: lambert1
+    2300000: DoubleDoors
+    2300002: DoubleDoors7
+    2300004: Moon1
+    2300006: Moon1 1
+    2300008: Moon11
+    2300010: Moon11 1
+    2300012: Moon2
+    2300014: Moon2 1
+    2300016: Moon3
+    2300018: Moon3 1
+    2300020: Moon4
+    2300022: Moon4 1
+    2300024: StationDoor6
+    2300026: StationDoor6 1
+    2300028: Treetrunk2
+    2300030: Treetrunk2 1
+    3300000: DoubleDoors
+    3300002: DoubleDoors7
+    3300004: Moon1
+    3300006: Moon1 1
+    3300008: Moon11
+    3300010: Moon11 1
+    3300012: Moon2
+    3300014: Moon2 1
+    3300016: Moon3
+    3300018: Moon3 1
+    3300020: Moon4
+    3300022: Moon4 1
+    3300024: StationDoor6
+    3300026: StationDoor6 1
+    3300028: Treetrunk2
+    3300030: Treetrunk2 1
+    4300000: DoubleDoors
+    4300002: StationDoor6
+    4300004: Treetrunk2
+    4300006: Moon11
+    4300008: Moon4
+    4300010: Moon3
+    4300012: Moon2
+    4300014: Moon1
+    4300016: DoubleDoors7
+    4300018: StationDoor6
+    4300020: Treetrunk2
+    4300022: Moon11
+    4300024: Moon4
+    4300026: Moon3
+    4300028: Moon2
+    4300030: Moon1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
