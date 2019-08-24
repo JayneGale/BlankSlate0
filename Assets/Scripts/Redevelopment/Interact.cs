@@ -12,6 +12,8 @@ public class Interact : MonoBehaviour
     [SerializeField]
     private Interactable FocusObject;
 
+    public bool mouseOverInteractable = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -23,10 +25,12 @@ public class Interact : MonoBehaviour
             if (interactable != null)
             {
                 FocusObject = interactable;
+                mouseOverInteractable = true;
             }
         } else
         {
             FocusObject = null;
+            mouseOverInteractable = false;
         }
 
         if (Input.GetMouseButtonDown(0) && FocusObject != null)
