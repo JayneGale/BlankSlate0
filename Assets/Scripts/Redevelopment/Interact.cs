@@ -12,9 +12,16 @@ public class Interact : MonoBehaviour
     [SerializeField]
     private Interactable FocusObject;
 
+    [HideInInspector]
     public bool mouseOverInteractable = false;
+    [HideInInspector]
+    public int cursorIndex = 0;
 
-    // Update is called once per frame
+    void Start()
+    {
+        int cursorIndex = GetComponent<CursorChange>().cursorIndex;
+    }
+
     void Update()
     {
         var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
@@ -26,16 +33,35 @@ public class Interact : MonoBehaviour
             {
                 FocusObject = interactable;
                 mouseOverInteractable = true;
+                var readable = interactable.gameObject.GetComponent<Readable>();
+                if (readable != null)
+                {
+                    cursorIndex = 3; // use the readable cursor
+                }
+                if(readable == null)
+                {
+                    var takeable = interactable.gameObject.GetComponent<Takeable>();
+                    if (takeable != null)
+                    {
+                        cursorIndex = 2; //use the takeable cursor
+                    }
+                    if(takeable == null)
+                    {
+                        cursorIndex = 1; //its just a clickable, use the interact cursor
+                    }
+                }
             }
-        } else
-        {
-            FocusObject = null;
-            mouseOverInteractable = false;
-        }
+            if (interactable == null)
+            {
+                FocusObject = null;
+                mouseOverInteractable = false;
+                cursorIndex = 0; //default cursor
+            }
 
-        if (Input.GetMouseButtonDown(0) && FocusObject != null)
-        {
-            FocusObject.Interact();
+            if (Input.GetMouseButtonDown(0) && FocusObject != null)
+            {
+                FocusObject.Interact();
+            }
         }
     }
 }

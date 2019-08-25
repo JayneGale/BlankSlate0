@@ -28,21 +28,21 @@ public class CursorLockBehaviour : MonoBehaviour
         }
     }
 
-    void LockCursor()
+    public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         cursorIsLocked = true;
     }
 
-    private void UnlockCursor()
+    public void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         cursorIsLocked = false;
     }
 
-    private void ToggleCursor()
+    public void ToggleCursor()
     {
         //if the cursor is locked, unlock it. If it is unlocked, lock it
         if (cursorIsLocked) UnlockCursor();
