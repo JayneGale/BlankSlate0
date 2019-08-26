@@ -26,11 +26,11 @@ public class CursorLockBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UnlockCursor();
-            Application.Quit();
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    UnlockCursor();
+        //    Application.Quit();
+        //}
 
         if (Input.GetKeyDown(cursorToggleKey))
         {
@@ -45,7 +45,6 @@ public class CursorLockBehaviour : MonoBehaviour
         pointer.SetActive(true);
         Cursor.visible = false; // Windows cursor turned off
         cursorIsLocked = true;
- //       GetComponent<FirstPersonController>().GetComponent<MouseLook>().isEnabled = true; //let the player look around again
     }
 
     public void UnlockCursor() //so the cursor can interact with the UI
@@ -54,8 +53,6 @@ public class CursorLockBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; //Windows cursor turns on
         pointer.SetActive(false);
- //       tool.SetActive(false);
- //       GetComponent<FirstPersonController>().GetComponent<MouseLook>().isEnabled = false; //stop the player looking around
         cursorIsLocked = false;
     }
 

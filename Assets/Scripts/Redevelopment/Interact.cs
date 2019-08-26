@@ -12,6 +12,10 @@ public class Interact : MonoBehaviour
     [SerializeField]
     private Interactable FocusObject;
 
+    [SerializeField]
+    private bool playerInteractEnabled = true;
+
+
     [HideInInspector]
     public bool mouseOverInteractable = false;
     [HideInInspector]
@@ -38,21 +42,21 @@ public class Interact : MonoBehaviour
                 {
                     cursorIndex = 3; // use the readable cursor
                 }
-                if(readable == null)
+                if (readable == null)
                 {
                     var takeable = interactable.gameObject.GetComponent<Takeable>();
                     if (takeable != null)
                     {
                         cursorIndex = 2; //use the takeable cursor
                     }
-                    if(takeable == null)
+                    if (takeable == null)
                     {
                         cursorIndex = 1; //its just a clickable, use the interact cursor
                     }
                 }
             }
 
-            if (Input.GetMouseButtonDown(0) && FocusObject != null)
+            if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled)
             {
                 FocusObject.Interact();
             }
@@ -63,5 +67,11 @@ public class Interact : MonoBehaviour
             mouseOverInteractable = false;
             cursorIndex = 0; //default cursor
         }
+        
     }
+    public void PlayerInteractEnabled(bool enabled)
+    {
+        this.playerInteractEnabled = enabled;
+    }
+
 }

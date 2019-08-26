@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Readable : MonoBehaviour, IActivatable
 {
-    public GameObject reader;
+    public GameObject reader; //this is the gameobject that can be set inactive 
     public GameObject readableStationery;
     public string readableText;
     public GameObject readableImage;
@@ -20,12 +20,16 @@ public class Readable : MonoBehaviour, IActivatable
     bool isInteracting = false;
     string inputText;
     string outputText;
+    TextMeshProUGUI m_TextMeshProText;
 
-
-    private TextMeshProUGUI m_TextMeshProText;
-
-    private void Start()
+    public void Activate()
     {
+
+        if (verbose) print("Activate Method in Readable Class starts " + gameObject.name);
+        AudioManager.instance.Play(PickUpNoteSound);
+        reader.SetActive(true);
+        readableStationery.SetActive(true);
+        if (readableImage != null) readableImage.SetActive(true);
         m_TextMeshProText = readableStationery.GetComponentInChildren<TextMeshProUGUI>();
         if (m_TextMeshProText == null && verbose)
         {
@@ -37,22 +41,14 @@ public class Readable : MonoBehaviour, IActivatable
             string output = input.Replace("\\n", "\n");
             m_TextMeshProText.text = output;
         }
-    }
-
-    public void Activate()
-    {
-
-        if (verbose) print("PickUpReadable Method starts " + gameObject.name);
-        AudioManager.instance.Play(PickUpNoteSound);
-        reader.SetActive(true);
-        readableStationery.SetActive(true);
-        if (readableImage != null) readableImage.SetActive(true);
         isInteracting = true;
         if (!putNoteBack)
         {
             gameObject.SetActive(false);
         }
         GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponent<CursorLockBehaviour>().UnlockCursor();       
+        player.GetComponent<CursorLockBehaviour>().UnlockCursor();
+        player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
+        player.GetComponent<Interact>().PlayerInteractEnabled(false);
     }
 }

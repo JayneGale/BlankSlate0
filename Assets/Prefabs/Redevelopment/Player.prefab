@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4447236285675596925}
   - component: {fileID: 6775830228698050742}
   - component: {fileID: 1179995635100617583}
+  - component: {fileID: 1014173121}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -303,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8578aa6a667a54943bedd525b0b719f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDistance: 100
+  MaxDistance: 4
   Layers:
     serializedVersion: 2
     m_Bits: 512
@@ -332,9 +333,24 @@ MonoBehaviour:
     type: 3}
   readableCursor: {fileID: -4573466232237197790, guid: a481423b58f49574184e0c7b43ba08a2,
     type: 3}
-  verbose: 1
-  cursorSpriteArr: []
+  verbose: 0
   cursorIndex: 0
+--- !u!114 &1014173121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447236285670061469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a222a2acbb87fa42a44ecde7fc98e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointer: {fileID: 0}
+  cursorToggleKey: 9
+  verbose: 1
+  cursorIsLocked: 0
 --- !u!1 &4447236285670061471
 GameObject:
   m_ObjectHideFlags: 0

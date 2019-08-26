@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PutDownReadable : MonoBehaviour
 {
-    public GameObject reader;
-    public GameObject background;
-    public string PutDownNoteSound;
-    public bool verbose;
-
+    public GameObject reader; //the panel that can be deactivated without turning off the script
+    public GameObject background; //the UI panel that can't be deactivated 
+    public string PutDownNoteSound; //note or book depending on how heavy the readable is
+    public bool verbose; //enable all the debug messages
+    
     private TextMeshProUGUI m_TextMeshProText;
     
     public void TurnOffUIReadable()
@@ -23,10 +23,15 @@ public class PutDownReadable : MonoBehaviour
 
         for (int a = 0; a < background.transform.childCount; a++)
         {
-            transform.GetChild(a).gameObject.SetActive(false);
-            if (transform.GetChild(a).gameObject.GetComponent<TextMeshProUGUI>() != null) transform.GetChild(a).gameObject.GetComponent<TextMeshProUGUI>().text = null;
+            var child = background.transform.GetChild(a).gameObject;
+            child.SetActive(false);
+            if (child.GetComponent<TextMeshProUGUI>() != null) child.GetComponent<TextMeshProUGUI>().text = null;
         }
+
+        if (verbose) print("Deactivated all the children on " + background);
         reader.SetActive(false);
+        player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<Interact>().PlayerInteractEnabled(true);
         //isInteracting = false;
     }
 }
