@@ -20,7 +20,7 @@ public class CursorChange : MonoBehaviour
     [Header("Print all debug messages")]
     public bool verbose;
 
-    public Sprite[] cursorSpriteArr;
+    Sprite[] cursorSpriteArr;
 
     //0 defaultCursor is priority 4   To do: make a white hex instead of red 
     //1 interactable is priority 3 (interactables that are not takeables are clickables (buttons, doorknobs, crystal dockers))To do: make a white pointing finger instead of red filled hex 

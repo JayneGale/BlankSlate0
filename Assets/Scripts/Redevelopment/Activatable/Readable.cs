@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityStandardAssets.Characters.FirstPerson;
 
 
 public class Readable : MonoBehaviour, IActivatable
@@ -14,13 +13,11 @@ public class Readable : MonoBehaviour, IActivatable
     public GameObject readableImage;
     public bool putNoteBack;
 
-    public GameObject cursorLockBehaviourGameObject;
+    public string PickUpNoteSound;
 
     public bool verbose;
 
     bool isInteracting = false;
-    CursorLockBehaviour cursorLock;
-    public string PickUpNoteSound;
     string inputText;
     string outputText;
 
@@ -44,6 +41,7 @@ public class Readable : MonoBehaviour, IActivatable
 
     public void Activate()
     {
+
         if (verbose) print("PickUpReadable Method starts " + gameObject.name);
         AudioManager.instance.Play(PickUpNoteSound);
         reader.SetActive(true);
@@ -54,14 +52,7 @@ public class Readable : MonoBehaviour, IActivatable
         {
             gameObject.SetActive(false);
         }
-        cursorLock = cursorLockBehaviourGameObject.GetComponent<CursorLockBehaviour>();
-        cursorLock.UnlockCursor();
-        Freeze();
-    }
-    public void Freeze()
-    {
         GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponentInChildren<FirstPersonController>().GetComponent<MouseLook>().isEnabled = false;
+        player.GetComponent<CursorLockBehaviour>().UnlockCursor();       
     }
-
 }

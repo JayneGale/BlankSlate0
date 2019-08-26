@@ -29,7 +29,7 @@ public class Interact : MonoBehaviour
         if (Physics.Raycast(ray, out var hit, MaxDistance, Layers))
         {
             var interactable = hit.collider.gameObject.GetComponent<Interactable>();
-            if (interactable != null)
+            if (interactable != null && GetComponent<CursorLockBehaviour>().cursorIsLocked)
             {
                 FocusObject = interactable;
                 mouseOverInteractable = true;
@@ -56,7 +56,8 @@ public class Interact : MonoBehaviour
             {
                 FocusObject.Interact();
             }
-        } else
+        }
+        else
         {
             FocusObject = null;
             mouseOverInteractable = false;

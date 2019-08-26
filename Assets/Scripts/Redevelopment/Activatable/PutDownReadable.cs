@@ -7,35 +7,26 @@ using TMPro;
 
 public class PutDownReadable : MonoBehaviour
 {
-    public GameObject cursorLockBehaviourGameObject;
-    CursorLockBehaviour cursorLock;
-    public string PutDownNoteSound;
-
-    public bool verbose;
-
     public GameObject reader;
     public GameObject background;
-    //public GameObject stationery;
-    //string readableText;
-    //public GameObject readableImage;
+    public string PutDownNoteSound;
+    public bool verbose;
+
     private TextMeshProUGUI m_TextMeshProText;
     
     public void TurnOffUIReadable()
     {
-        if (verbose) print("TurnOFFUIReadable Method starts " + gameObject.name);
+        if (verbose) print("TurnOFFUIReadable Method in PutDownReadable Class starts " + gameObject.name);
         AudioManager.instance.Play(PutDownNoteSound);
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<CursorLockBehaviour>().LockCursor();
 
         for (int a = 0; a < background.transform.childCount; a++)
         {
             transform.GetChild(a).gameObject.SetActive(false);
-        }       
-        //stationery.SetActive(false);
-        //if (readableImage != null) readableImage.SetActive(false);
-        m_TextMeshProText.text = null;
-  //      isInteracting = false;
-        cursorLock = cursorLockBehaviourGameObject.GetComponent<CursorLockBehaviour>();
-        cursorLock.LockCursor();
+            if (transform.GetChild(a).gameObject.GetComponent<TextMeshProUGUI>() != null) transform.GetChild(a).gameObject.GetComponent<TextMeshProUGUI>().text = null;
+        }
         reader.SetActive(false);
-
+        //isInteracting = false;
     }
 }
