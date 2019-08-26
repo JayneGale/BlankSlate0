@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityStandardAssets.Characters.FirstPerson;
 
 
 public class Readable : MonoBehaviour, IActivatable
@@ -55,5 +56,12 @@ public class Readable : MonoBehaviour, IActivatable
         }
         cursorLock = cursorLockBehaviourGameObject.GetComponent<CursorLockBehaviour>();
         cursorLock.UnlockCursor();
+        Freeze();
     }
+    public void Freeze()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponentInChildren<FirstPersonController>().GetComponent<MouseLook>().isEnabled = false;
+    }
+
 }

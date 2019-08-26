@@ -50,8 +50,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.8
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 60
+  m_StepOffset: 0.25
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     MaximumX: 90
     smooth: 0
     smoothTime: 5
-    lockCursor: 1
+    lockCursor: 0
   m_UseFovKick: 1
   m_FovKick:
     Camera: {fileID: 0}
@@ -324,10 +324,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorPanel: {fileID: 0}
   toolPanel: {fileID: 0}
-  defaultCursor: {fileID: 21300000, guid: eebac01140d77bc40b553873518640a8, type: 3}
-  interactableCursor: {fileID: 21300000, guid: c7115cb1e162ceb45a211bd83106e85a, type: 3}
-  takeableCursor: {fileID: 21300000, guid: 61c9f3b10d0cca547a29ae942daf6ad3, type: 3}
-  readableCursor: {fileID: 21300000, guid: b0e623f9443fe4f4bb76a35b28574409, type: 3}
+  defaultCursor: {fileID: 952867798611544341, guid: a481423b58f49574184e0c7b43ba08a2,
+    type: 3}
+  interactableCursor: {fileID: -5901016149876345584, guid: a481423b58f49574184e0c7b43ba08a2,
+    type: 3}
+  takeableCursor: {fileID: 8365528592263655012, guid: a481423b58f49574184e0c7b43ba08a2,
+    type: 3}
+  readableCursor: {fileID: -4573466232237197790, guid: a481423b58f49574184e0c7b43ba08a2,
+    type: 3}
   verbose: 1
   cursorSpriteArr: []
   cursorIndex: 0

@@ -16384,12 +16384,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641402918}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.012950623
   m_Height: 0.05439526
   m_Direction: 1
-  m_Center: {x: -1.1102228e-16, y: 0.0000000018626458, z: -2.9748336e-17}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &641402922
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29220,25 +29220,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: FinishReading
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: ArmClicker
+        - m_Target: {fileID: 5274227343586893699}
+          m_MethodName: TurnOffUIReadable
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -38578,25 +38561,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: FinishReading
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: ArmClicker
+        - m_Target: {fileID: 5274227343586893699}
+          m_MethodName: TurnOffUIReadable
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -46275,7 +46241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 2040920042}
-  - {fileID: 0}
 --- !u!65 &2040920045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46350,7 +46315,7 @@ MonoBehaviour:
   readableStationery: {fileID: 1498546301}
   readableText: Some text here
   readableImage: {fileID: 0}
-  putNoteBack: 1
+  putNoteBack: 0
   cursorLockBehaviourGameObject: {fileID: 8210409269239300843}
   verbose: 1
   PickUpNoteSound: Pick Up Note
@@ -46743,7 +46708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e3c94f45221754d8cf4bfd26532726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets: []
+  Targets:
+  - {fileID: 2058921540}
 --- !u!1 &2063111423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c66b4bec2245d544db05e090d606cc24,
@@ -51152,7 +51118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e3c94f45221754d8cf4bfd26532726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets: []
+  Targets:
+  - {fileID: 3780580288824824356}
 --- !u!114 &3780580288824824360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52463,6 +52430,35 @@ PrefabInstance:
       propertyPath: toolPanel
       value: 
       objectReference: {fileID: 8210409269122834808}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: 952867798611544341, guid: a481423b58f49574184e0c7b43ba08a2,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: interactableCursor
+      value: 
+      objectReference: {fileID: -5901016149876345584, guid: a481423b58f49574184e0c7b43ba08a2,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: takeableCursor
+      value: 
+      objectReference: {fileID: 8365528592263655012, guid: a481423b58f49574184e0c7b43ba08a2,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: readableCursor
+      value: 
+      objectReference: {fileID: -4573466232237197790, guid: a481423b58f49574184e0c7b43ba08a2,
+        type: 3}
+    - target: {fileID: 4447236285664002173, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: m_MouseLook.lockCursor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8971299870d1b74469064caaa8797050, type: 3}
 --- !u!1 &4557121122003756000
@@ -53989,6 +53985,7 @@ GameObject:
   - component: {fileID: 5274227343586893700}
   - component: {fileID: 5274227343586893701}
   - component: {fileID: 5274227343586893699}
+  - component: {fileID: 5274227343586893704}
   m_Layer: 5
   m_Name: Canvas_Readables
   m_TagString: Untagged
@@ -54095,6 +54092,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &5274227343586893704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274227343586893698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cfff9e287949e4cbfbd28ae95d38ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5274227343616639518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57464,14 +57473,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: ArmClicker
+        - m_Target: {fileID: 5274227343586893704}
+          m_MethodName: UnFreeze
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -57913,7 +57916,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 54d68ec6578f1634fb8f530abb7db560, type: 3}
+  m_Sprite: {fileID: 952867798611544341, guid: a481423b58f49574184e0c7b43ba08a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -58215,7 +58218,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300006, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
