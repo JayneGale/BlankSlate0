@@ -44,4 +44,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
-  sounds: []
+  sounds:
+  - name: Button Click
+    clip: {fileID: 8300000, guid: 301511542daff98449c5a04fdbb8082a, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: ' Portal Door Open'
+    clip: {fileID: 8300000, guid: 0465000cf63e4410c8816304479e9fff, type: 3}
+    volume: 0.8
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.2
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Portal Door Close
+    clip: {fileID: 8300000, guid: 0d5e1b474fbc34b93a605fb0ae777c23, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Pick Up Crystal
+    clip: {fileID: 8300000, guid: 47527886a1434a54589ebc746f76c5f8, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Drop Crystal
+    clip: {fileID: 8300000, guid: 2f87f183567d2044094e26cfd9e33d12, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Pick Up Note
+    clip: {fileID: 8300000, guid: 2f87f183567d2044094e26cfd9e33d12, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Drop Note
+    clip: {fileID: 8300000, guid: 2f87f183567d2044094e26cfd9e33d12, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Pick Up Book
+    clip: {fileID: 8300000, guid: 83654b7d982be784ab606831207ac101, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Drop Book
+    clip: {fileID: 8300000, guid: fc9c1ef3f3709094fb1725397330933d, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

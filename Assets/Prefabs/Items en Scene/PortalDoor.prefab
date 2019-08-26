@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundName: 
+  SoundName: ' Portal Door Open'
 --- !u!1 &8872106709116900607
 GameObject:
   m_ObjectHideFlags: 0

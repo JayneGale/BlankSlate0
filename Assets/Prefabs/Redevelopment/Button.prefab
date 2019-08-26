@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6379692396655171599}
   - component: {fileID: 7611734374779010550}
   - component: {fileID: 7098284702365468005}
+  - component: {fileID: 5193660375961107353}
   m_Layer: 9
   m_Name: Button
   m_TagString: Button
@@ -157,4 +158,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundName: 
+  SoundName: Button Click
+--- !u!114 &5193660375961107353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474464338343819009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145cefa6480d1bd45afacd1009666c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerName: ButtonPress

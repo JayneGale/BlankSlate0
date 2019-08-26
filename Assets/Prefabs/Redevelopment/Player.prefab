@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4447236285673019133}
   - component: {fileID: 4447236285675596925}
   - component: {fileID: 6775830228698050742}
+  - component: {fileID: 1179995635100617583}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -307,6 +308,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   FocusObject: {fileID: 0}
+  mouseOverInteractable: 0
+  cursorIndex: 0
+--- !u!114 &1179995635100617583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447236285670061469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5759f005222cabf4ea6ecaa15c9e04d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorPanel: {fileID: 0}
+  toolPanel: {fileID: 0}
+  defaultCursor: {fileID: 21300000, guid: eebac01140d77bc40b553873518640a8, type: 3}
+  interactableCursor: {fileID: 21300000, guid: c7115cb1e162ceb45a211bd83106e85a, type: 3}
+  takeableCursor: {fileID: 21300000, guid: 61c9f3b10d0cca547a29ae942daf6ad3, type: 3}
+  readableCursor: {fileID: 21300000, guid: b0e623f9443fe4f4bb76a35b28574409, type: 3}
+  verbose: 1
+  cursorSpriteArr: []
+  cursorIndex: 0
 --- !u!1 &4447236285670061471
 GameObject:
   m_ObjectHideFlags: 0

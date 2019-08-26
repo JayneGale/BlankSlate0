@@ -51,17 +51,16 @@ public class Interact : MonoBehaviour
                     }
                 }
             }
-            if (interactable == null)
-            {
-                FocusObject = null;
-                mouseOverInteractable = false;
-                cursorIndex = 0; //default cursor
-            }
 
             if (Input.GetMouseButtonDown(0) && FocusObject != null)
             {
                 FocusObject.Interact();
             }
+        } else
+        {
+            FocusObject = null;
+            mouseOverInteractable = false;
+            cursorIndex = 0; //default cursor
         }
     }
 }
