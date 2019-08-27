@@ -64,22 +64,16 @@ public class Interact : MonoBehaviour
 
     public void ChooseInteractableCursor(Interactable interactThing)
     {
-        var readable = interactThing.gameObject.GetComponent<Readable>();
-        if (readable != null)
+        switch (interactThing.GetCursorType())
         {
-            cursorIndex = 3; // use the readable cursor
-        }
-        else
-        {
-            var takeable = interactThing.gameObject.GetComponent<Takeable>();
-            if (takeable != null)
-            {
-                cursorIndex = 2; //use the takeable cursor
-            }
-            else
-            {
-                cursorIndex = 1; //its just a clickable, use the interact cursor
-            }
+            case Interactable.CursorType.clickable: cursorIndex = 1;
+                break;
+            case Interactable.CursorType.takeable: cursorIndex = 2;
+                break;
+            case Interactable.CursorType.readable: cursorIndex = 3;
+                break;
+            case Interactable.CursorType.receptacle: cursorIndex = 4;
+                break;
         }
     }
 }

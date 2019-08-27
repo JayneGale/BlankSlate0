@@ -16,6 +16,7 @@ public class CursorChange : MonoBehaviour
     public Sprite interactableCursor;
     public Sprite takeableCursor;
     public Sprite readableCursor;
+    public Sprite receptacleCursor;
 
     [Header("Print all debug messages")]
     public bool verbose;
@@ -33,7 +34,7 @@ public class CursorChange : MonoBehaviour
     Interact interact;
     void Start()
     {
-        cursorSpriteArr = new Sprite[4] { defaultCursor, interactableCursor, takeableCursor, readableCursor };
+        cursorSpriteArr = new Sprite[5] { defaultCursor, interactableCursor, takeableCursor, readableCursor, receptacleCursor };
 
         if (cursorPanel == null)
         {
@@ -68,7 +69,6 @@ public class CursorChange : MonoBehaviour
         {
             if (verbose) print("Changing Cursor to " + cursorSpriteArr[interact.cursorIndex] + interact.mouseOverInteractable);
             cursorPanel.sprite = cursorSpriteArr[interact.cursorIndex];
-            //ChangeToAlternativeCursor();
         }
 
         if(!interact.mouseOverInteractable)

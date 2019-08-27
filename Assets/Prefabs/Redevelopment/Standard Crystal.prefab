@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Targets: []
+  cursor: 3
 --- !u!114 &7383736329729529495
 MonoBehaviour:
   m_ObjectHideFlags: 0

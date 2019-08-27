@@ -7,6 +7,11 @@ public class Interactable : MonoBehaviour
     [SerializeField]
     private GameObject[] Targets;
 
+    [SerializeField]
+    private CursorType cursor;
+
+    public enum CursorType { clickable, draggable, readable, takeable, receptacle }
+
     public void Interact()
     {
         foreach (var target in Targets)
@@ -17,4 +22,10 @@ public class Interactable : MonoBehaviour
             }
         }
     }
+
+    public CursorType GetCursorType()
+    {
+        return cursor;
+    }
+    
 }

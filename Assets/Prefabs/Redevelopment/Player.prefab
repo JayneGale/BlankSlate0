@@ -311,6 +311,7 @@ MonoBehaviour:
     m_Bits: 512
   FocusObject: {fileID: 0}
   playerInteractEnabled: 1
+  verbose: 0
   mouseOverInteractable: 0
   cursorIndex: 0
 --- !u!114 &1179995635100617583
@@ -334,6 +335,8 @@ MonoBehaviour:
   takeableCursor: {fileID: 8365528592263655012, guid: a481423b58f49574184e0c7b43ba08a2,
     type: 3}
   readableCursor: {fileID: -4573466232237197790, guid: a481423b58f49574184e0c7b43ba08a2,
+    type: 3}
+  receptacleCursor: {fileID: -5727327777885925181, guid: a481423b58f49574184e0c7b43ba08a2,
     type: 3}
   verbose: 0
   cursorIndex: 0
