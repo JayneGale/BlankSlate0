@@ -151,3 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57197a73cbae3ae4590b6b4655619f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolPanel: {fileID: 0}
+  toolSprite: {fileID: 21300006, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  PickUpTakeableSound: Pick Up Crystal
+  verbose: 1
