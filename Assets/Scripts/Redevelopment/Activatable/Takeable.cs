@@ -20,7 +20,6 @@ public class Takeable : MonoBehaviour, IActivatable
         toolImage.enabled = true;
         toolImage.sprite = toolSprite;
         gameObject.SetActive(false); 
-
     }
 
 }
