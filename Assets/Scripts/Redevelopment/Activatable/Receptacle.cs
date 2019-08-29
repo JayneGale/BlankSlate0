@@ -8,22 +8,27 @@ public class Receptacle : MonoBehaviour, IActivatable
 {
     public GameObject objectToGoInReceptacle; //the (inactive )object that will appear and animate into the receptacle
     public Sprite spriteToolIAccept; //what sprite(s) represents the object(s) I need to activate (that the player has picked up previously and hence has in their hand) eg crystal_green or key_red
-    public GameObject toolPanel; //the panel that that sprite is being shown on 
+    
     Image toolImage;
     Sprite toolImageSprite;
     public bool verbose;
 
     void Start()
     {
-        objectToGoInReceptacle.SetActive(false);
+        var toolPanel = GameObject.Find("PlayerToolPanel"); //the panel that that sprite is being shown on 
+        if (toolPanel == null) print("There is no Tool Panel Active in the scene ");
         toolImage = toolPanel.GetComponent<Image>();
         toolImageSprite = toolImage.sprite;
+        if (objectToGoInReceptacle != null)
+        {
+            objectToGoInReceptacle.SetActive(false);
+        }
     }
 
     public void Activate()
     {
         if (verbose) print("Activate Method in Receptacle Class starts " + gameObject.name);
-        if (!toolImage.enabled)
+        if (!toolImage.enabled || toolImageSprite == null)
         {
             toolImageSprite = null;
         }
@@ -35,6 +40,7 @@ public class Receptacle : MonoBehaviour, IActivatable
         {
             objectToGoInReceptacle.SetActive(true);
             toolImage.enabled = false;
+            GameObject.Find("Player").GetComponent<CarryItems>().DropItem();
         }
     }
 }

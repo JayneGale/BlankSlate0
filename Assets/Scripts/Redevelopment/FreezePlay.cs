@@ -7,7 +7,6 @@ public class FreezePlay : MonoBehaviour
 {
     public void Freeze()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponentInChildren<FirstPersonController>().GetComponent<MouseLook>().isEnabled = false;
+        GameObject.Find("Player").GetComponentInChildren<FirstPersonController>().GetComponent<MouseLook>().isEnabled = false;
     }
 }

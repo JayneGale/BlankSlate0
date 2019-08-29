@@ -18,7 +18,7 @@ public class PutDownReadable : MonoBehaviour
     {
         if (verbose) print("TurnOFFUIReadable Method in PutDownReadable Class starts " + gameObject.name);
         AudioManager.instance.Play(PutDownNoteSound);
-        GameObject player = GameObject.FindWithTag("Player");
+        GameObject player = GameObject.Find("Player");
         player.GetComponent<CursorLockBehaviour>().LockCursor();
 
         for (int a = 0; a < background.transform.childCount; a++)

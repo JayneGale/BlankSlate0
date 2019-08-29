@@ -6,25 +6,53 @@ using UnityEngine.UI;
 
 public class Takeable : MonoBehaviour, IActivatable
 {
-    public GameObject toolPanel;
     public Sprite toolSprite;
-    //public string PickUpTakeableSound;
+    public Colour colour;
+    public Item item;
+    
     public bool verbose = true;
-    Image toolImage;
-    [HideInInspector]
-    public bool isCarrying;
-    public GameObject itemCarried;
+    //public bool itemsAreUnder;
+
+    private void Start()
+    {
+        var toolPanel = GameObject.Find("PlayerToolPanel");
+        var toolImage = toolPanel.GetComponent<Image>();
+        if (toolPanel == null)
+        {
+            Debug.Log("Takeable script requires a PlayerToolPanel to show a sprite of what player is carrying; no panel set on " + gameObject.name);
+        }
+        else toolImage.enabled = false; //assumes game starts player has no item in hand
+    }
+
+    public enum Colour
+    {
+        red,
+        orange,
+        yellow,
+        violet,
+    }
+
+    public enum Item
+    {
+        crystal,
+        key
+    }
 
     public void Activate()
     {
         if (verbose) print("Activate started in Takeable Class on " + gameObject.name);
         //AudioManager.instance.Play(PickUpTakeableSound);
-        toolImage = toolPanel.GetComponent<Image>();
+        var toolPanel = GameObject.Find("PlayerToolPanel");
+        var toolImage = toolPanel.GetComponent<Image>();
         toolImage.enabled = true;
         toolImage.sprite = toolSprite;
         gameObject.SetActive(false);
-        itemCarried = this.gameObject;
-        isCarrying = true;
-    }
+        GameObject.Find("Player").GetComponent<CarryItems>().SetItem(item, colour);
 
+        //if (itemsAreUnder)
+        //{
+        //    GetComponent<TurnOnHiddenItems>().TurnOnColliders();
+        //}
+    }
+        
 }

@@ -11,13 +11,10 @@ public class Readable : MonoBehaviour, IActivatable
     public GameObject readableStationery;
     public string readableText;
     public GameObject readableImage;
+    public bool itemsAreUnder;
     public bool putNoteBack;
-
-    //public string PickUpNoteSound;
-
     public bool verbose;
 
-    bool isInteracting = false;
     string inputText;
     string outputText;
     TextMeshProUGUI m_TextMeshProText;
@@ -26,7 +23,6 @@ public class Readable : MonoBehaviour, IActivatable
     {
 
         if (verbose) print("Activate Method in Readable Class starts " + gameObject.name);
-        //AudioManager.instance.Play(PickUpNoteSound);
         reader.SetActive(true);
         readableStationery.SetActive(true);
         if (readableImage != null) readableImage.SetActive(true);
@@ -41,12 +37,15 @@ public class Readable : MonoBehaviour, IActivatable
             string output = input.Replace("\\n", "\n");
             m_TextMeshProText.text = output;
         }
-        isInteracting = true;
         if (!putNoteBack)
         {
             gameObject.SetActive(false);
         }
-        GameObject player = GameObject.FindWithTag("Player");
+        if (itemsAreUnder)
+        {
+            GetComponent<TurnOnHiddenItems>();
+        }
+        GameObject player = GameObject.Find("Player");
         player.GetComponent<CursorLockBehaviour>().UnlockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
         player.GetComponent<Interact>().PlayerInteractEnabled(false);

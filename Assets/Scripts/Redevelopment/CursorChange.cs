@@ -8,8 +8,6 @@ using UnityEngine.UI;
 public class CursorChange : MonoBehaviour
 {
     [Header("Cursor Canvas Panels")]
-    public Image cursorPanel;
-    public Image toolPanel;
 
     [Header("Cursor Sprites")]
     public Sprite defaultCursor;
@@ -29,14 +27,22 @@ public class CursorChange : MonoBehaviour
     //3 readable is top priority 1 (Something that is readable will is takeable )// To do: make book hex white instead of red
 
     bool mouseOverInteractable;
-    public int cursorIndex;
 
+    [HideInInspector]
+    public int cursorIndex;
+    [HideInInspector]
+    public Image pointerImage;
+    [HideInInspector]
+    public GameObject pointerPanel;
     Interact interact;
     void Start()
     {
+        var pointerPanel = GameObject.Find("PointerPanel");
+        var pointerImage = pointerPanel.GetComponent<Image>();
+
         cursorSpriteArr = new Sprite[5] { defaultCursor, interactableCursor, takeableCursor, readableCursor, receptacleCursor };
 
-        if (cursorPanel == null)
+        if (pointerPanel == null)
         {
             print("CursorChange script requires an active UI panel, there is none set on " + gameObject.name);
         }
@@ -46,15 +52,9 @@ public class CursorChange : MonoBehaviour
         }
         else
         {
-            cursorPanel.sprite = cursorSpriteArr[0];
-            cursorPanel.enabled = true;
+            pointerImage.sprite = cursorSpriteArr[0];
+            pointerPanel.SetActive(true); //assumes start with default cursor turned on
         }
-
-        if (toolPanel == null)
-        {
-            Debug.Log("CursorChange script requires a tool panel, To show which item player carries, none set on " + gameObject.name);
-        }
-        else toolPanel.enabled = false;   //assumes game starts player has no item in hand
 
         interact = GetComponent<Interact>();
         {
@@ -68,18 +68,18 @@ public class CursorChange : MonoBehaviour
         if (interact.mouseOverInteractable)
         {
             if (verbose) print("Changing Cursor to " + cursorSpriteArr[interact.cursorIndex] + interact.mouseOverInteractable);
-            cursorPanel.sprite = cursorSpriteArr[interact.cursorIndex];
+            pointerImage.sprite = cursorSpriteArr[interact.cursorIndex];
         }
 
         if(!interact.mouseOverInteractable)
         {
-            cursorPanel.sprite = cursorSpriteArr[0];
+            pointerImage.sprite = cursorSpriteArr[0];
             if (verbose) print("Changing Cursor back to " + cursorSpriteArr[0] + interact.mouseOverInteractable);
         }
     }
 
     public void ChangeToAlternativeCursor()
     {
-        cursorPanel.sprite = cursorSpriteArr[interact.cursorIndex];
+        pointerImage.sprite = cursorSpriteArr[interact.cursorIndex];
     }
 }

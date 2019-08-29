@@ -5,20 +5,19 @@ using UnityEngine;
 public class CarryItems : MonoBehaviour
 
 {
-    //Put this on the Player who carries items
+    private bool hasItem;
+    private Takeable.Item item;
+    private Takeable.Colour colour;
 
-    [HideInInspector]
-    public GameObject itemIcarry;
-    GameObject FocusItem;
-
-    void Start()
+    public void SetItem(Takeable.Item item, Takeable.Colour colour)
     {
-        //carriedItem = GetComponent<Interact>();
+        this.hasItem = true;
+        this.item = item;
+        this.colour = colour;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DropItem()
     {
-        
+        this.hasItem = false;
     }
 }

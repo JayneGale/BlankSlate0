@@ -7,10 +7,8 @@ public class CursorLockBehaviour : MonoBehaviour
 {
     [Header("InGame Cursor")]
     public GameObject pointer;
-    //    public GameObject tool;
-
-    [Header("KeyCode to Toggle Cursor")]
-    public KeyCode cursorToggleKey = KeyCode.Tab;
+    //[Header("KeyCode to Toggle Cursor")]
+    //public KeyCode cursorToggleKey = KeyCode.Tab;
 
     public bool verbose;
 
@@ -24,19 +22,18 @@ public class CursorLockBehaviour : MonoBehaviour
         cursorIsLocked = true;
     }
 
-    void Update()
-    {
+    //void Update()
+    //{
         //if (Input.GetKeyDown(KeyCode.Escape))
         //{
-        //    UnlockCursor();
         //    Application.Quit();
         //}
 
-        if (Input.GetKeyDown(cursorToggleKey))
-        {
-            ToggleCursor();
-        }
-    }
+    //    if (Input.GetKeyDown(cursorToggleKey))
+    //    {
+    //        ToggleCursor();
+    //    }
+    //}
 
     public void LockCursor() //So the cursor sprite remains in the middle of the screen
     {

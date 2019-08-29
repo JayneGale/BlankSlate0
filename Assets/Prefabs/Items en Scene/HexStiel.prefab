@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3278739970735115487}
   - component: {fileID: 3278739970735115474}
   - component: {fileID: 3278739970735115486}
+  - component: {fileID: 6000818817539566070}
   m_Layer: 9
   m_Name: HexStiel
   m_TagString: Note
@@ -124,6 +125,19 @@ MonoBehaviour:
   readableStationery: {fileID: 0}
   readableText: Ys \n Arrogant words here\n S'tiel
   readableImage: {fileID: 0}
+  itemsAreUnder: 0
   putNoteBack: 0
-  PickUpNoteSound: Pick Up Note
   verbose: 1
+--- !u!114 &6000818817539566070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278739970735115484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810b71c2c7b75a04f80c574653c3b3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemsHiddenArray: []

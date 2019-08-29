@@ -8,7 +8,6 @@ public class UnfreezePlay : MonoBehaviour
     // Start is called before the first frame update
     public void UnFreeze()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponentInChildren<FirstPersonController>().GetComponent<MouseLook>().isEnabled = true;
+        GameObject.FindWithTag("Player").GetComponentInChildren<FirstPersonController>().GetComponent<MouseLook>().isEnabled = true;
     }
 }
