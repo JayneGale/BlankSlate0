@@ -2457,6 +2457,12 @@ Transform:
   m_Father: {fileID: 479207221}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &119324997 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7747082923978735040, guid: 4a06e9effe1652c42a90db186572724e,
+    type: 3}
+  m_PrefabInstance: {fileID: 123682597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &123682597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13527,6 +13533,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8a81eb1b354454745af40d80fba93229, type: 3}
+--- !u!4 &494267673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7747082923978735040, guid: 4a06e9effe1652c42a90db186572724e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1673172222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &494382626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24011,12 +24023,6 @@ ParticleSystem:
 --- !u!1 &866132051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1748729421873826051, guid: 4a06e9effe1652c42a90db186572724e,
-    type: 3}
-  m_PrefabInstance: {fileID: 123682597}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &866132057 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1748729421874320675, guid: 4a06e9effe1652c42a90db186572724e,
     type: 3}
   m_PrefabInstance: {fileID: 123682597}
   m_PrefabAsset: {fileID: 0}
@@ -44037,12 +44043,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1673172222}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1826131586 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1748729421874320675, guid: 4a06e9effe1652c42a90db186572724e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1673172222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1827078605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9db524b25eef6954c8227849f8948f2e,
@@ -45938,19 +45938,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5654185378093141514}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1975589613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975589612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundName: Pick Up Crystal
 --- !u!4 &1976733310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5654185377124384080, guid: 8cebbbac079ed5f4ebebe295cf89dc35,
@@ -49737,8 +49724,8 @@ Transform:
   - {fileID: 812571118}
   - {fileID: 595748125}
   - {fileID: 93312744}
-  - {fileID: 866132057}
-  - {fileID: 1826131586}
+  - {fileID: 119324997}
+  - {fileID: 494267673}
   - {fileID: 1833999424}
   - {fileID: 1629784860}
   m_Father: {fileID: 752327284}
@@ -52197,6 +52184,11 @@ PrefabInstance:
       propertyPath: readableStationery
       value: 
       objectReference: {fileID: 241081093}
+    - target: {fileID: 3278739970735115486, guid: 4e370c28ff14ed94db1e502ea0516457,
+        type: 3}
+      propertyPath: itemsAreUnder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6000818817539566070, guid: 4e370c28ff14ed94db1e502ea0516457,
         type: 3}
       propertyPath: ItemsHiddenArray.Array.size
@@ -58379,6 +58371,31 @@ PrefabInstance:
       propertyPath: SoundName
       value: ButtonClick
       objectReference: {fileID: 0}
+    - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
+    - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8435e428a3732104db54096bee3f9077, type: 2}
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: state0Mat
+      value: 
+      objectReference: {fileID: 2100000, guid: 8435e428a3732104db54096bee3f9077, type: 2}
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: verbose
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11, type: 3}
 --- !u!23 &6856029917800522558
@@ -59072,6 +59089,11 @@ PrefabInstance:
       propertyPath: readableImage
       value: 
       objectReference: {fileID: 945392432}
+    - target: {fileID: 7583303131703268554, guid: 56d9c307faad4f74984f2c5cdf4653e2,
+        type: 3}
+      propertyPath: itemsAreUnder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 507948175983020181, guid: 56d9c307faad4f74984f2c5cdf4653e2,
         type: 3}
       propertyPath: ItemsHiddenArray.Array.size

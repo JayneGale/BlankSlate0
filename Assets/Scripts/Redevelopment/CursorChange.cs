@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class CursorChange : MonoBehaviour
 {
-    [Header("Cursor Canvas Panels")]
-
     [Header("Cursor Sprites")]
     public Sprite defaultCursor;
     public Sprite interactableCursor;
@@ -21,30 +19,32 @@ public class CursorChange : MonoBehaviour
 
     Sprite[] cursorSpriteArr;
 
-    //0 defaultCursor is priority 4   To do: make a white hex instead of red 
-    //1 interactable is priority 3 (interactables that are not takeables are clickables (buttons, doorknobs, crystal dockers))To do: make a white pointing finger instead of red filled hex 
-    //2 takeable is priority 2 (Something that is takeable is interactable by definition); To do: make an open hand - requires sprites on tool panel for takeables
-    //3 readable is top priority 1 (Something that is readable will is takeable )// To do: make book hex white instead of red
+    //0 defaultCursor is priority 4   
+    //1 interactable is priority 3 (interactables that are not takeable are clickables (buttons, doorknobs, crystal dockers)) 
+    //2 takeable is priority 2 (Takeables are interactables by definition); Takeables also require tool sprites on the player tool panel
+    //3 readable is priority 1 (Readables are takeables, or will be)     
+    //4 receptacle is top priority (receives Takeables)
 
     bool mouseOverInteractable;
 
-    [HideInInspector]
+    //[HideInInspector]
     public int cursorIndex;
-    [HideInInspector]
+    //[HideInInspector]
     public Image pointerImage;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject pointerPanel;
     Interact interact;
+
     void Start()
     {
-        var pointerPanel = GameObject.Find("PointerPanel");
-        var pointerImage = pointerPanel.GetComponent<Image>();
-
+        pointerPanel = GameObject.Find("PointerPanel"); // Find only finds Active GameObjects so set it active if its not
+        pointerImage = pointerPanel.GetComponent<Image>();
+        if (pointerImage == null) print("No Pointer Image component on PointerPanel in script on " + gameObject.name);
         cursorSpriteArr = new Sprite[5] { defaultCursor, interactableCursor, takeableCursor, readableCursor, receptacleCursor };
 
         if (pointerPanel == null)
         {
-            print("CursorChange script requires an active UI panel, there is none set on " + gameObject.name);
+            print("CursorChange script requires an active UI panel, there is none active on " + gameObject.name); // See above Find only finds Active GameObjects 
         }
         else if (cursorSpriteArr.Length <= 0)
         {
@@ -53,7 +53,8 @@ public class CursorChange : MonoBehaviour
         else
         {
             pointerImage.sprite = cursorSpriteArr[0];
-            pointerPanel.SetActive(true); //assumes start with default cursor turned on
+            if (pointerImage.sprite == null) print("No cursor Image sprite ");
+            //pointerPanel.SetActive(true); //assumes the game starts with default cursor turned on
         }
 
         interact = GetComponent<Interact>();
@@ -67,14 +68,14 @@ public class CursorChange : MonoBehaviour
     {
         if (interact.mouseOverInteractable)
         {
-            if (verbose) print("Changing Cursor to " + cursorSpriteArr[interact.cursorIndex] + interact.mouseOverInteractable);
+            if (verbose) print("Changing Cursor to " + cursorSpriteArr[interact.cursorIndex]);
             pointerImage.sprite = cursorSpriteArr[interact.cursorIndex];
         }
 
         if(!interact.mouseOverInteractable)
         {
             pointerImage.sprite = cursorSpriteArr[0];
-            if (verbose) print("Changing Cursor back to " + cursorSpriteArr[0] + interact.mouseOverInteractable);
+            if (verbose) print("Changing Cursor back to " + cursorSpriteArr[0]);
         }
     }
 

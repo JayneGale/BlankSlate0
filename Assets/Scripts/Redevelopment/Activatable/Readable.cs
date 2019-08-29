@@ -41,10 +41,10 @@ public class Readable : MonoBehaviour, IActivatable
         {
             gameObject.SetActive(false);
         }
-        if (itemsAreUnder)
-        {
-            GetComponent<TurnOnHiddenItems>();
-        }
+        //if (itemsAreUnder)
+        //{
+        //    GetComponent<TurnOnHiddenItems>();
+        //}
         GameObject player = GameObject.Find("Player");
         player.GetComponent<CursorLockBehaviour>().UnlockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);

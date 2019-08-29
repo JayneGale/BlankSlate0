@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6379692396655171599}
   - component: {fileID: 7611734374779010550}
   - component: {fileID: 7098284702365468005}
+  - component: {fileID: 7998255693082571858}
   - component: {fileID: 5193660375961107353}
   m_Layer: 9
   m_Name: Button
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Targets: []
+  cursor: 0
 --- !u!114 &7098284702365468005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +161,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundName: Button Click
+--- !u!114 &7998255693082571858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474464338343819009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac84a0d05d5b664aa5599823488b955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state0Mat: {fileID: 2100000, guid: fd4480a72591cf0459edcce3d73d1250, type: 2}
+  state1Mat: {fileID: 2100000, guid: 2a4db8b1b3fffba4f8d29c6271510cb9, type: 2}
 --- !u!114 &5193660375961107353
 MonoBehaviour:
   m_ObjectHideFlags: 0
