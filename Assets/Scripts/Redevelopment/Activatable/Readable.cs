@@ -13,7 +13,7 @@ public class Readable : MonoBehaviour, IActivatable
     public GameObject readableImage;
     public bool putNoteBack;
 
-    public string PickUpNoteSound;
+    //public string PickUpNoteSound;
 
     public bool verbose;
 
@@ -26,7 +26,7 @@ public class Readable : MonoBehaviour, IActivatable
     {
 
         if (verbose) print("Activate Method in Readable Class starts " + gameObject.name);
-        AudioManager.instance.Play(PickUpNoteSound);
+        //AudioManager.instance.Play(PickUpNoteSound);
         reader.SetActive(true);
         readableStationery.SetActive(true);
         if (readableImage != null) readableImage.SetActive(true);

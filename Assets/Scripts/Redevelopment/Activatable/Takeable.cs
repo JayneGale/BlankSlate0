@@ -8,18 +8,23 @@ public class Takeable : MonoBehaviour, IActivatable
 {
     public GameObject toolPanel;
     public Sprite toolSprite;
-    public string PickUpTakeableSound;
+    //public string PickUpTakeableSound;
     public bool verbose = true;
     Image toolImage;
+    [HideInInspector]
+    public bool isCarrying;
+    public GameObject itemCarried;
 
     public void Activate()
     {
         if (verbose) print("Activate started in Takeable Class on " + gameObject.name);
-        AudioManager.instance.Play(PickUpTakeableSound);
+        //AudioManager.instance.Play(PickUpTakeableSound);
         toolImage = toolPanel.GetComponent<Image>();
         toolImage.enabled = true;
         toolImage.sprite = toolSprite;
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
+        itemCarried = this.gameObject;
+        isCarrying = true;
     }
 
 }
