@@ -173,8 +173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac84a0d05d5b664aa5599823488b955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state0Mat: {fileID: 2100000, guid: fd4480a72591cf0459edcce3d73d1250, type: 2}
-  state1Mat: {fileID: 2100000, guid: 2a4db8b1b3fffba4f8d29c6271510cb9, type: 2}
+  state0Mat: {fileID: 2100000, guid: 2a4db8b1b3fffba4f8d29c6271510cb9, type: 2}
+  state1Mat: {fileID: 2100000, guid: fd4480a72591cf0459edcce3d73d1250, type: 2}
+  disabledMat: {fileID: 2100000, guid: 118be310237b245deb4ebbfc4a541e41, type: 2}
+  verbose: 0
+  enableTheButton: 1
+  decideItem: {fileID: 0}
 --- !u!114 &5193660375961107353
 MonoBehaviour:
   m_ObjectHideFlags: 0

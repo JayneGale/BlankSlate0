@@ -27,11 +27,11 @@ public class CursorChange : MonoBehaviour
 
     bool mouseOverInteractable;
 
-    //[HideInInspector]
+    [HideInInspector]
     public int cursorIndex;
-    //[HideInInspector]
+    [HideInInspector]
     public Image pointerImage;
-    //[HideInInspector]
+    [HideInInspector]
     public GameObject pointerPanel;
     Interact interact;
 

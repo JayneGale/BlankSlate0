@@ -9,9 +9,7 @@ public class Takeable : MonoBehaviour, IActivatable
     public Sprite toolSprite;
     public Colour colour;
     public Item item;
-    
     public bool verbose = true;
-    //public bool itemsAreUnder;
 
     private void Start()
     {
