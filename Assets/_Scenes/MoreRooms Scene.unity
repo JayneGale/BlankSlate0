@@ -16371,6 +16371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 641402918}
+  - {fileID: 1597612165693731027}
   cursor: 3
 --- !u!114 &641402926
 MonoBehaviour:
@@ -16401,6 +16402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableButton: 0
+  ButtonToEnable: {fileID: 1597612165693731027}
   verbose: 1
 --- !u!1 &646907213
 GameObject:
@@ -40888,7 +40890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1576428696
 Transform:
   m_ObjectHideFlags: 0
@@ -42896,6 +42898,31 @@ PrefabInstance:
       propertyPath: SoundName
       value: ButtonClick
       objectReference: {fileID: 0}
+    - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9c37d611003c3e42997c92d11bd6485, type: 2}
+    - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9c37d611003c3e42997c92d11bd6485, type: 2}
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: state1Mat
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a4db8b1b3fffba4f8d29c6271510cb9, type: 2}
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: state0Mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fd4480a72591cf0459edcce3d73d1250, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11, type: 3}
 --- !u!1 &1744893884
@@ -58372,7 +58399,7 @@ PrefabInstance:
     - target: {fileID: 7611734374779010550, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: Targets.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7611734374779010550, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
@@ -58384,6 +58411,11 @@ PrefabInstance:
       propertyPath: Targets.Array.data[1]
       value: 
       objectReference: {fileID: 1597612165693731027}
+    - target: {fileID: 7611734374779010550, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: Targets.Array.data[2]
+      value: 
+      objectReference: {fileID: 1593549909}
     - target: {fileID: 7098284702365468005, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: SoundName
@@ -58392,7 +58424,7 @@ PrefabInstance:
     - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
@@ -58403,7 +58435,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8435e428a3732104db54096bee3f9077, type: 2}
+      objectReference: {fileID: 2100000, guid: 118be310237b245deb4ebbfc4a541e41, type: 2}
     - target: {fileID: 6453253987512571673, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
