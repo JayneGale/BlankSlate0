@@ -3645,6 +3645,52 @@ Transform:
   m_Father: {fileID: 863582177}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
+--- !u!1 &177588848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177588849}
+  - component: {fileID: 177588850}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &177588849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177588848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1594492613794461117}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177588850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177588848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e3c94f45221754d8cf4bfd26532726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Targets:
+  - {fileID: 1597612165693731027}
+  cursor: 0
 --- !u!1 &183938872
 GameObject:
   m_ObjectHideFlags: 0
@@ -25652,6 +25698,7 @@ GameObject:
   - component: {fileID: 945392433}
   - component: {fileID: 945392435}
   - component: {fileID: 945392434}
+  - component: {fileID: 945392436}
   m_Layer: 5
   m_Name: Smashed image
   m_TagString: Untagged
@@ -25715,6 +25762,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945392432}
   m_CullTransparentMesh: 0
+--- !u!114 &945392436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945392432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5274227343586893699}
+          m_MethodName: TurnOffUIReadable
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8210409269239300844}
+          m_MethodName: OnMouseEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8210409269239300844}
+          m_MethodName: OnMouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1001 &945718833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53881,7 +53992,31 @@ PrefabInstance:
         type: 3}
       propertyPath: receptacleCursor
       value: 
-      objectReference: {fileID: -5727327777885925181, guid: a481423b58f49574184e0c7b43ba08a2,
+      objectReference: {fileID: -9169921954131905425, guid: d7a34d25b3469ab498bb916602c132df,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: -4448993282491055871, guid: d7a34d25b3469ab498bb916602c132df,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: interactableCursor
+      value: 
+      objectReference: {fileID: 819402351853950025, guid: d7a34d25b3469ab498bb916602c132df,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: takeableCursor
+      value: 
+      objectReference: {fileID: -7407831275009568643, guid: d7a34d25b3469ab498bb916602c132df,
+        type: 3}
+    - target: {fileID: 1179995635100617583, guid: 8971299870d1b74469064caaa8797050,
+        type: 3}
+      propertyPath: readableCursor
+      value: 
+      objectReference: {fileID: -5897036775713592226, guid: d7a34d25b3469ab498bb916602c132df,
         type: 3}
     - target: {fileID: 4447236285664002173, guid: 8971299870d1b74469064caaa8797050,
         type: 3}
@@ -58341,6 +58476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 6474464338343819009, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6472506483020755567, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59761,7 +59901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88492423, b: 0.23113209, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
