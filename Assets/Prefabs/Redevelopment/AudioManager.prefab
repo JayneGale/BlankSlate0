@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
   sounds:
-  - name: Button Click
+  - name: ButtonClick
     clip: {fileID: 8300000, guid: 301511542daff98449c5a04fdbb8082a, type: 3}
     volume: 0.8
     volumeVariance: 0.2
@@ -101,10 +101,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Drop Note
     clip: {fileID: 8300000, guid: 2f87f183567d2044094e26cfd9e33d12, type: 3}
-    volume: 0.8
-    volumeVariance: 0.2
+    volume: 1
+    volumeVariance: 0
     pitch: 1
-    pitchVariance: 0.1
+    pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
@@ -123,6 +123,60 @@ MonoBehaviour:
     volumeVariance: 0.2
     pitch: 1
     pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CrystalInDocker
+    clip: {fileID: 8300000, guid: 4d6b12346e2a64d579d225c813dfe731, type: 3}
+    volume: 0.6
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: LiftUp
+    clip: {fileID: 0}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Button Unlock
+    clip: {fileID: 8300000, guid: f913287a55582b74995153b1285d0423, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Disabled0
+    clip: {fileID: 8300000, guid: dcc73b4afa720be49ae427d9e1919c90, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Disabled1
+    clip: {fileID: 8300000, guid: f6aa5a38af2c14b5791c3c28a90a9269, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

@@ -19,5 +19,6 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
     public void Activate()
     {
         Anim.SetBool(BooleanName, Value);
+        Value = !Value;
     }
 }

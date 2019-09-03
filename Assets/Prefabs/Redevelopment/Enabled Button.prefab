@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundName: Button Click
+  SoundName: ButtonClick
 --- !u!114 &7998255693082571858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,11 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac84a0d05d5b664aa5599823488b955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state0Mat: {fileID: 2100000, guid: 2a4db8b1b3fffba4f8d29c6271510cb9, type: 2}
-  state1Mat: {fileID: 2100000, guid: fd4480a72591cf0459edcce3d73d1250, type: 2}
-  disabledMat: {fileID: 2100000, guid: 118be310237b245deb4ebbfc4a541e41, type: 2}
+  mat1: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
+  mat2: {fileID: 2100000, guid: 80d032a654cbb8249855fc64a8c805af, type: 2}
+  isMat1: 1
   verbose: 0
-  buttonStartsEnabled: 1
 --- !u!114 &5193660375961107353
 MonoBehaviour:
   m_ObjectHideFlags: 0
