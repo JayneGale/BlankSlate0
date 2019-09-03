@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7583303131703268566}
   - component: {fileID: 7583303131703268554}
   - component: {fileID: 507948175983020181}
+  - component: {fileID: 3500783718145624486}
   m_Layer: 9
   m_Name: HexScrap
   m_TagString: Note
@@ -141,3 +142,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemsHiddenArray: []
+--- !u!114 &3500783718145624486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583303131703268560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSoundName: Pick Up Note
+  offSoundName: 
+  isOn: 1
+  verbose: 0

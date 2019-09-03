@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3940473341865227533}
   - component: {fileID: 7044924204806024622}
   - component: {fileID: 8353107448994030088}
+  - component: {fileID: 4360515069268072230}
   m_Layer: 9
   m_Name: GlowingStandardCrystal
   m_TagString: Crystal
@@ -122,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57197a73cbae3ae4590b6b4655619f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolPanel: {fileID: 0}
   toolSprite: {fileID: 21300006, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
-  PickUpTakeableSound: Pick Up Crystal
+  colour: 0
+  item: 0
   verbose: 1
 --- !u!64 &8353107448994030088
 MeshCollider:
@@ -140,3 +141,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: e103f0e8c0b52414caef533e3d5b327b, type: 3}
+--- !u!114 &4360515069268072230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317457634156878409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSoundName: Pick Up Crystal
+  offSoundName: Drop Crystal
+  isOn: 1
+  verbose: 0

@@ -160,7 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundName: Disabled1
+  onSoundName: Disabled1
+  offSoundName: Disabled1
+  isOn: 1
+  verbose: 0
 --- !u!114 &5164844160219531670
 MonoBehaviour:
   m_ObjectHideFlags: 0

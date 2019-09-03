@@ -137,4 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundName: Pick Up Crystal
+  onSoundName: Pick Up Crystal
+  offSoundName: Drop Crystal
+  isOn: 1
+  verbose: 0

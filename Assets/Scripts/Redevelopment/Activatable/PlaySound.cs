@@ -5,10 +5,28 @@ using UnityEngine;
 public class PlaySound : MonoBehaviour, IActivatable
 {
     [SerializeField]
-    private string SoundName;
+    private string onSoundName;
+    [SerializeField]
+    private string offSoundName;
+
+    public bool isOn = true;
+
+    public bool verbose;
+
+    private void Start()
+    {
+        if (onSoundName == null && offSoundName == null) print("PlaySound has no sounds speficied for " + gameObject.name);
+        if (onSoundName != null && offSoundName == null) offSoundName = onSoundName;
+        if (verbose) print("OnSound and OffSound names are " + onSoundName + "and " + offSoundName + " on " + gameObject.name);
+    }
 
     public void Activate()
     {
-        AudioManager.instance.Play(SoundName);
+        if (isOn)
+        {
+            AudioManager.instance.Play(onSoundName);
+        }
+        else AudioManager.instance.Play(offSoundName);
+        isOn = !isOn;
     }
 }

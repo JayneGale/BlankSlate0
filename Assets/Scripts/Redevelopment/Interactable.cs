@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
         {
             foreach (var activatable in target.GetComponents<IActivatable>())
             {
-                activatable.Activate();
+                if(activatable != null ) activatable.Activate();
             }
         }
     }

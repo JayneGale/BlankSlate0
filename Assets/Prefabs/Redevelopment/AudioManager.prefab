@@ -54,7 +54,7 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: ' Portal Door Open'
+  - name: Portal Door Open
     clip: {fileID: 8300000, guid: 0465000cf63e4410c8816304479e9fff, type: 3}
     volume: 0.8
     volumeVariance: 0.1
@@ -171,11 +171,11 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: Test Sound
+    clip: {fileID: 8300000, guid: 3790725f1ce8c41a382a14c2f9658305, type: 3}
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
