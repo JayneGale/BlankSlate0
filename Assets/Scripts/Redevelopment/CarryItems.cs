@@ -5,9 +5,9 @@ using UnityEngine;
 public class CarryItems : MonoBehaviour
 
 {
-    private bool hasItem;
-    private Takeable.Item item;
-    private Takeable.Colour colour;
+    public bool hasItem;
+    public Takeable.Item item;
+    public Takeable.Colour colour;
 
     public void SetItem(Takeable.Item item, Takeable.Colour colour)
     {

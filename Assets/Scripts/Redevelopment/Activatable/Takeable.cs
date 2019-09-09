@@ -39,12 +39,13 @@ public class Takeable : MonoBehaviour, IActivatable
     public void Activate()
     {
         if (verbose) print("Activate started in Takeable Class on " + gameObject.name);
+        GameObject.Find("Player").GetComponent<CarryItems>().SetItem(item, colour);
+        if (verbose) print("Item " + item + "Colour " + colour + " for " + gameObject);
         var toolPanel = GameObject.Find("PlayerToolPanel");
         var toolImage = toolPanel.GetComponent<Image>();
         toolImage.enabled = true;
         toolImage.sprite = toolSprite;
         gameObject.SetActive(false);
-        GameObject.Find("Player").GetComponent<CarryItems>().SetItem(item, colour);
     }
         
 }
