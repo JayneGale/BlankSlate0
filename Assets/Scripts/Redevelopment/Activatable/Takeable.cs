@@ -27,6 +27,9 @@ public class Takeable : MonoBehaviour, IActivatable
         red,
         orange,
         yellow,
+        green,
+        blue,
+        indigo,
         violet,
     }
 
@@ -38,14 +41,12 @@ public class Takeable : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (verbose) print("Activate started in Takeable Class on " + gameObject.name);
         GameObject.Find("Player").GetComponent<CarryItems>().SetItem(item, colour);
-        if (verbose) print("Item " + item + "Colour " + colour + " for " + gameObject);
-        var toolPanel = GameObject.Find("PlayerToolPanel");
-        var toolImage = toolPanel.GetComponent<Image>();
-        toolImage.enabled = true;
-        toolImage.sprite = toolSprite;
-        gameObject.SetActive(false);
+        if (verbose) print("Activate starts in Takeable on object " + gameObject.name + "Item " + item + "Colour " + colour);
+        var toolImage = GameObject.Find("PlayerToolPanel").GetComponent<Image>();
+        toolImage.enabled = true; // turn on the player carrying a tool UI panel
+        toolImage.sprite = toolSprite; // use the tool sprite for this object being carried
+        gameObject.SetActive(false); // vanish the object from the scene
     }
         
 }
