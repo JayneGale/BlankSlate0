@@ -36,6 +36,8 @@ public class Receptacle : MonoBehaviour, IActivatable
         {
             toolImageSprite = toolImage.sprite;
         }
+        if (verbose) print("toolImageSprite is " + toolImageSprite + "and toolImage.sprite is " + toolImage.sprite + "spriteToolIAccept is " + spriteToolIAccept);
+
         if (toolImageSprite != null && toolImageSprite == spriteToolIAccept)
         {
             objectToGoInReceptacle.SetActive(true);

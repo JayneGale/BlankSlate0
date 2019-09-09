@@ -8,22 +8,25 @@ public class ButtonEnabler : MonoBehaviour, IActivatable
     public GameObject ButtonISetInactive; //could be an array for more than one target, or add two scripts for two buttons
     public bool targetStartsEnabled = true; //belts and braces: buttons default to enabled, on Start turn off the target button if this is set false;
     public bool verbose;
+    bool targetEnabled;
 
     private void Start()
     {
         if (targetStartsEnabled == true) SetButtonsActive();
         if (verbose) print("Target Button is " + gameObject.name);
+        targetEnabled = targetStartsEnabled;
     }
 
     public void Activate()
     {
         if (verbose) print("DisabledButton " + gameObject.name + "enabling the Button " + gameObject.name);
+        targetEnabled = !targetEnabled;
         SetButtonsActive();
     }
 
     private void SetButtonsActive()
     {
-        ButtonISetActive.SetActive(true);
-        ButtonISetInactive.SetActive(false);
+        ButtonISetActive.SetActive(targetEnabled);
+        ButtonISetInactive.SetActive(!targetEnabled);
     }
 }
