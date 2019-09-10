@@ -9,6 +9,8 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
     [SerializeField]
     private bool Value;
 
+    public bool verbose;
+
     private Animator Anim;
 
     private void Start()
