@@ -128,7 +128,7 @@ MonoBehaviour:
   readableImage: {fileID: 0}
   itemsAreUnder: 0
   putNoteBack: 0
-  verbose: 1
+  verbose: 0
 --- !u!114 &6000818817539566070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onSoundName: Pick Up Note
-  offSoundName: 
+  offSoundName: Drop Note
   isOn: 0
   verbose: 0
