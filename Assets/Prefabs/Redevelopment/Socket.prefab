@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 9091141350815030715}
   - component: {fileID: 8560342203381341651}
   - component: {fileID: 5748650944708684657}
+  - component: {fileID: 1142652805533694988}
   m_Layer: 9
   m_Name: SocketBody
   m_TagString: Untagged
@@ -198,6 +199,21 @@ MonoBehaviour:
   onSoundName: CrystalInDocker
   offSoundName: CrystalInDocker
   isOn: 1
+  verbose: 0
+--- !u!114 &1142652805533694988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5252434866086554727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6660aea575c2e4e8e3173bcfc6d04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BooleanName: dock
+  Value: 1
   verbose: 0
 --- !u!1 &9161400579725549424
 GameObject:
