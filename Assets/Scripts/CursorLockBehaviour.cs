@@ -20,14 +20,17 @@ public class CursorLockBehaviour : MonoBehaviour
         Cursor.visible = false; // hide the Windows cursor
         LockCursor();
         cursorIsLocked = true;
+        gameObject.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        gameObject.GetComponent<Interact>().PlayerInteractEnabled(true);
+
     }
 
     //void Update()
     //{
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    Application.Quit();
-        //}
+    //if (Input.GetKeyDown(KeyCode.Escape))
+    //{
+    //    Application.Quit();
+    //}
 
     //    if (Input.GetKeyDown(cursorToggleKey))
     //    {

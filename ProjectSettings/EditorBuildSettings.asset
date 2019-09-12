@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Scenes/MoreRooms Scene.unity
+    guid: bc53b3cb9933b2046be091f3699bac8e
   m_configObjects: {}

@@ -11,7 +11,7 @@ public class Readable : MonoBehaviour, IActivatable
     public GameObject readableStationery;
     public string readableText;
     public GameObject readableImage;
-    public bool itemsAreUnder;
+    //public bool itemsAreUnder;
     public bool putNoteBack;
     public bool verbose;
 

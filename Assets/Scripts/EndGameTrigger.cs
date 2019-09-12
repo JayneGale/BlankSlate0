@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
+
 
 public class EndGameTrigger : MonoBehaviour
 {
@@ -13,9 +15,13 @@ public class EndGameTrigger : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             endGamePanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0;
+            GameObject player = GameObject.Find("Player");
+            player.GetComponent<CursorLockBehaviour>().UnlockCursor();
+            player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
+            player.GetComponent<Interact>().PlayerInteractEnabled(false);
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Time.timeScale = 0;
 
         }
     }
