@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6775830228698050742}
   - component: {fileID: 1179995635100617583}
   - component: {fileID: 1014173121}
+  - component: {fileID: 3288314155820590546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -326,20 +327,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5759f005222cabf4ea6ecaa15c9e04d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorPanel: {fileID: 0}
-  toolPanel: {fileID: 0}
-  defaultCursor: {fileID: 952867798611544341, guid: a481423b58f49574184e0c7b43ba08a2,
+  defaultCursor: {fileID: -4448993282491055871, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
-  interactableCursor: {fileID: -5901016149876345584, guid: a481423b58f49574184e0c7b43ba08a2,
+  interactableCursor: {fileID: 819402351853950025, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
-  takeableCursor: {fileID: 8365528592263655012, guid: a481423b58f49574184e0c7b43ba08a2,
+  takeableCursor: {fileID: -7407831275009568643, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
-  readableCursor: {fileID: -4573466232237197790, guid: a481423b58f49574184e0c7b43ba08a2,
+  readableCursor: {fileID: -5897036775713592226, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
-  receptacleCursor: {fileID: -5727327777885925181, guid: a481423b58f49574184e0c7b43ba08a2,
+  receptacleCursor: {fileID: -9169921954131905425, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
   verbose: 0
   cursorIndex: 0
+  pointerImage: {fileID: 0}
+  pointerPanel: {fileID: 0}
 --- !u!114 &1014173121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,9 +354,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 0}
-  cursorToggleKey: 9
-  verbose: 1
+  verbose: 0
   cursorIsLocked: 0
+--- !u!114 &3288314155820590546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447236285670061469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7bf4e117ed6144fa400d0d6dc712f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasItem: 0
+  item: 1
+  colour: 2
 --- !u!1 &4447236285670061471
 GameObject:
   m_ObjectHideFlags: 0

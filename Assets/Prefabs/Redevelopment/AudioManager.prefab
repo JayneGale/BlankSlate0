@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 301511542daff98449c5a04fdbb8082a, type: 3}
-    volume: 0.8
+    volume: 0.6
     volumeVariance: 0.2
     pitch: 1
     pitchVariance: 0.1
@@ -56,7 +56,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Portal Door Open
     clip: {fileID: 8300000, guid: 0465000cf63e4410c8816304479e9fff, type: 3}
-    volume: 0.8
+    volume: 0.6
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.2
@@ -65,7 +65,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Portal Door Close
     clip: {fileID: 8300000, guid: 0d5e1b474fbc34b93a605fb0ae777c23, type: 3}
-    volume: 0.8
+    volume: 0.6
     volumeVariance: 0.2
     pitch: 1
     pitchVariance: 0.1
@@ -127,7 +127,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: CrystalInDocker
-    clip: {fileID: 8300000, guid: 4d6b12346e2a64d579d225c813dfe731, type: 3}
+    clip: {fileID: 8300000, guid: e2a39bbf401074276b2da61f19fbf3c7, type: 3}
     volume: 0.6
     volumeVariance: 0.1
     pitch: 1
@@ -146,10 +146,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Button Unlock
     clip: {fileID: 8300000, guid: f913287a55582b74995153b1285d0423, type: 3}
-    volume: 1
-    volumeVariance: 0
+    volume: 0.605
+    volumeVariance: 0.073
     pitch: 1
-    pitchVariance: 0
+    pitchVariance: 0.044
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Disabled1
     clip: {fileID: 8300000, guid: f6aa5a38af2c14b5791c3c28a90a9269, type: 3}
-    volume: 1
+    volume: 0.793
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -177,6 +177,24 @@ MonoBehaviour:
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Drawer Open
+    clip: {fileID: 8300000, guid: 5cba5421f45da2a4b8e66a0dc1922d8f, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Drawer Close
+    clip: {fileID: 8300000, guid: 4db8fcbec0623d748beb5b80c819fb59, type: 3}
+    volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

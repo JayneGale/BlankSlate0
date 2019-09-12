@@ -126,7 +126,6 @@ MonoBehaviour:
   readableStationery: {fileID: 0}
   readableText: Ys \n Some nice text here \n Tris
   readableImage: {fileID: 0}
-  itemsAreUnder: 0
   putNoteBack: 0
   verbose: 0
 --- !u!114 &507948175983020181
