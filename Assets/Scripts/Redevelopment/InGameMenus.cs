@@ -25,12 +25,16 @@ public class InGameMenus : MonoBehaviour
         if (Input.GetKeyDown(quitKeyCode))
         {
             endMenu.SetActive(true);
+            player.GetComponent<CursorLockBehaviour>().UnlockCursor();
+            player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
+            player.GetComponent<Interact>().PlayerInteractEnabled(false);
+
         }
     }
     public void ResumeGame()
     {
-        endMenu.SetActive(true);
-        player.GetComponent<CursorLockBehaviour>().UnlockCursor();
+        endMenu.SetActive(false);
+        player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
@@ -38,12 +42,21 @@ public class InGameMenus : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
+        player.GetComponent<CursorLockBehaviour>().LockCursor();
+        player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 
     public void ReallyQuit()
     {
         Application.Quit();
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+        player.GetComponent<CursorLockBehaviour>().UnlockCursor();
+
     }
 
 }

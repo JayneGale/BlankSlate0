@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: JGI
   productName: Minatoa2019
-  defaultCursor: {fileID: 2800000, guid: 9cb816b2a8b40cb47adbfbbb113390e9, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 3905aca272130d247add6595d8c24827, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -31,7 +31,7 @@ PlayerSettings:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.99999994
     height: 1
   m_SplashScreenBackgroundPortraitUvs:
     serializedVersion: 2
@@ -39,7 +39,9 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: bb8c494a28b67f4429d143b04fda9ee1, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -268,13 +270,13 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: ecc7f33885239cf48b5907c1c64f32de,
+  resolutionDialogBanner: {fileID: 2800000, guid: 7c9143c7bdc9076499cd487df8ea4688,
     type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 317a53c9108e32b40bbeab592c50c160, type: 3}
+      m_Icon: {fileID: 2800000, guid: bb8c494a28b67f4429d143b04fda9ee1, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -506,7 +508,8 @@ PlayerSettings:
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 7c9143c7bdc9076499cd487df8ea4688,
+    type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
   webGLMemorySize: 256
