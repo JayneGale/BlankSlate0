@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 8781127967933403064}
   - component: {fileID: 8781127967932632984}
   - component: {fileID: 8781127967931501912}
+  - component: {fileID: 4836883165838153750}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -591,6 +592,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4836883165838153750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781127967933502360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.979103, y: 6.8946714, z: 0.24475749}
+  m_Center: {x: 1.9895505, y: 3.4473357, z: 0.12237971}
 --- !u!1 &8781127967933502364
 GameObject:
   m_ObjectHideFlags: 0
