@@ -8,9 +8,10 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Readable : MonoBehaviour, IActivatable
 {
     public GameObject reader; //this is the gameobject that can be set inactive 
-    public GameObject readableStationery;
-    public string readableText;
-    public GameObject readableImage;
+    public GameObject readableStationery;//The paper texture, outline and font
+    public string readableText;//the text to go in the font space on the stationery
+    public GameObject readableImage;//any additional imagery
+     //GameObject UICloseNote; //the UI panel on top of all the others with mouseClick, PointerEnter and PointerExit properties
     //public bool itemsAreUnder;
     public bool putNoteBack;
     public bool verbose;
@@ -23,7 +24,9 @@ public class Readable : MonoBehaviour, IActivatable
     {
 
         if (verbose) print("Activate Method in Readable Class starts " + gameObject.name);
+        //UICloseNote = GameObject.Find("PointerPanel"); // Find only finds Active GameObjects so set it active if its not
         reader.SetActive(true);
+        //UICloseNote.SetActive(true);
         readableStationery.SetActive(true);
         if (readableImage != null) readableImage.SetActive(true);
         m_TextMeshProText = readableStationery.GetComponentInChildren<TextMeshProUGUI>();
@@ -41,13 +44,11 @@ public class Readable : MonoBehaviour, IActivatable
         {
             gameObject.SetActive(false);
         }
-        //if (itemsAreUnder)
-        //{
-        //    GetComponent<TurnOnHiddenItems>();
-        //}
+
         GameObject player = GameObject.Find("Player");
         player.GetComponent<CursorLockBehaviour>().UnlockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
         player.GetComponent<Interact>().PlayerInteractEnabled(false);
+
     }
 }

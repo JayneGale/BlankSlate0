@@ -136,7 +136,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: LiftUp
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 0465000cf63e4410c8816304479e9fff, type: 3}
     volume: 0
     volumeVariance: 0
     pitch: 0
@@ -192,6 +192,24 @@ MonoBehaviour:
   - name: Drawer Close
     clip: {fileID: 8300000, guid: 4db8fcbec0623d748beb5b80c819fb59, type: 3}
     volume: 0.8
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: LockedDoorRattle
+    clip: {fileID: 8300000, guid: 08590472d5430434391589c30bed1abf, type: 3}
+    volume: 1
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GateOpens
+    clip: {fileID: 8300000, guid: 8625fd6326ff044b78d38c3091382fb7, type: 3}
+    volume: 1
     volumeVariance: 0.2
     pitch: 1
     pitchVariance: 0.1

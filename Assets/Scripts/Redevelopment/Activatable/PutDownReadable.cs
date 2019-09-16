@@ -34,6 +34,7 @@ public class PutDownReadable : MonoBehaviour
             reader.SetActive(false);
             player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
             player.GetComponent<Interact>().PlayerInteractEnabled(true);
+            mouseClickArmed = false;
         }
 
     }
