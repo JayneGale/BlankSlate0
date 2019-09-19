@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2513854360080637095}
   - component: {fileID: 3311970938947356727}
   - component: {fileID: 8212609290139105066}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Standard Drawer
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -275,11 +275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493040997083033264}
     m_Modifications:
-    - target: {fileID: 7477620481799737216, guid: 08b4ffa2cb41494449cfed190c291a8c,
-        type: 3}
-      propertyPath: m_Name
-      value: DeskLockSocket
-      objectReference: {fileID: 0}
     - target: {fileID: 8807157934876250048, guid: 08b4ffa2cb41494449cfed190c291a8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -334,6 +329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477620481799737216, guid: 08b4ffa2cb41494449cfed190c291a8c,
+        type: 3}
+      propertyPath: m_Name
+      value: DeskLockSocket
       objectReference: {fileID: 0}
     - target: {fileID: 2330693640326388163, guid: 08b4ffa2cb41494449cfed190c291a8c,
         type: 3}
