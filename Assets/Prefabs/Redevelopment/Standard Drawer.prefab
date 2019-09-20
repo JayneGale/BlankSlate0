@@ -524,6 +524,16 @@ PrefabInstance:
       propertyPath: Targets.Array.data[1]
       value: 
       objectReference: {fileID: 2513854360080637091}
+    - target: {fileID: 2263285428999620286, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
 --- !u!1 &3065608115180020545 stripped
@@ -551,11 +561,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493040997083033264}
     m_Modifications:
-    - target: {fileID: 7477620481799737216, guid: 08b4ffa2cb41494449cfed190c291a8c,
-        type: 3}
-      propertyPath: m_Name
-      value: DeskLockSocket
-      objectReference: {fileID: 0}
     - target: {fileID: 8807157934876250048, guid: 08b4ffa2cb41494449cfed190c291a8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -611,6 +616,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7477620481799737216, guid: 08b4ffa2cb41494449cfed190c291a8c,
+        type: 3}
+      propertyPath: m_Name
+      value: DeskLockSocket
+      objectReference: {fileID: 0}
     - target: {fileID: 2330693640326388163, guid: 08b4ffa2cb41494449cfed190c291a8c,
         type: 3}
       propertyPath: Targets.Array.data[2]
@@ -637,6 +647,11 @@ PrefabInstance:
       propertyPath: Targets.Array.data[2]
       value: 
       objectReference: {fileID: 4632186144495621091}
+    - target: {fileID: 3225043010482332065, guid: 08b4ffa2cb41494449cfed190c291a8c,
+        type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b4ffa2cb41494449cfed190c291a8c, type: 3}
 --- !u!4 &1266380117126019732 stripped
