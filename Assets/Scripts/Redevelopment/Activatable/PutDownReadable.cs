@@ -11,7 +11,7 @@ public class PutDownReadable : MonoBehaviour
     public GameObject background; //the UI panel that can't be deactivated 
     public string PutDownNoteSound; //note or book depending on how heavy the readable is
     public bool verbose; //enable all the debug messages
-    bool mouseClickArmed = false;
+    bool mouseClickArmed = true;
     private TextMeshProUGUI m_TextMeshProText;
 
     public void TurnOffUIReadable()
@@ -34,7 +34,7 @@ public class PutDownReadable : MonoBehaviour
             reader.SetActive(false);
             player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
             player.GetComponent<Interact>().PlayerInteractEnabled(true);
-            mouseClickArmed = false;
+ //           mouseClickArmed = false;
         }
 
     }

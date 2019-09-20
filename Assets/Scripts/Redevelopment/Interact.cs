@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class Interact : MonoBehaviour
 {
@@ -30,29 +32,33 @@ public class Interact : MonoBehaviour
 
     void Update()
     {
-        var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-        Debug.DrawLine(ray.origin, ray.origin + (ray.direction * MaxDistance), Color.yellow);
-        if (Physics.Raycast(ray, out var hit, MaxDistance, Layers))
+        if (!EventSystem.current.IsPointerOverGameObject()) //check if the mouse is over a gameObject or over a UI element. If over a UI element, don't raycase
         {
-            var interactable = hit.collider.gameObject.GetComponent<Interactable>();
-            if (interactable != null && GetComponent<CursorLockBehaviour>().cursorIsLocked)
+            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            Debug.DrawLine(ray.origin, ray.origin + (ray.direction * MaxDistance), Color.yellow);
+            if (Physics.Raycast(ray, out var hit, MaxDistance, Layers))
             {
-                FocusObject = interactable;
-                mouseOverInteractable = true;
-                ChooseInteractableCursor(interactable);
+                var interactable = hit.collider.gameObject.GetComponent<Interactable>();
+                if (interactable != null && GetComponent<CursorLockBehaviour>().cursorIsLocked)
+                {
+                    FocusObject = interactable;
+                    mouseOverInteractable = true;
+                    ChooseInteractableCursor(interactable);
+                }
+
+                if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled)
+                {
+                    if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
+                    FocusObject.Interact();
+                }
             }
 
-            if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled)
+            else
             {
-                if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
-                FocusObject.Interact();
+                FocusObject = null;
+                mouseOverInteractable = false;
+                cursorIndex = 0; //default cursor
             }
-        }
-        else
-        {
-            FocusObject = null;
-            mouseOverInteractable = false;
-            cursorIndex = 0; //default cursor
         }
 
     }
