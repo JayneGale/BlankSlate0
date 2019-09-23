@@ -11,35 +11,25 @@ public class PutDownReadable : MonoBehaviour
     public GameObject background; //the UI panel that can't be deactivated 
     public string PutDownNoteSound; //note or book depending on how heavy the readable is
     public bool verbose; //enable all the debug messages
-    bool mouseClickArmed = true;
     private TextMeshProUGUI m_TextMeshProText;
 
     public void TurnOffUIReadable()
     {
         if (verbose) print("TurnOFFUIReadable Method in PutDownReadable Class starts " + gameObject.name);
-        if (mouseClickArmed)
+        AudioManager.instance.Play(PutDownNoteSound);
+        GameObject player = GameObject.Find("Player");
+        player.GetComponent<CursorLockBehaviour>().LockCursor();
+
+        for (int a = 0; a < background.transform.childCount; a++)
         {
-            AudioManager.instance.Play(PutDownNoteSound);
-            GameObject player = GameObject.Find("Player");
-            player.GetComponent<CursorLockBehaviour>().LockCursor();
-
-            for (int a = 0; a < background.transform.childCount; a++)
-            {
-                var child = background.transform.GetChild(a).gameObject;
-                child.SetActive(false);
-                if (child.GetComponent<TextMeshProUGUI>() != null) child.GetComponent<TextMeshProUGUI>().text = null;
-            }
-
-            if (verbose) print("Deactivated all the children on " + background);
-            reader.SetActive(false);
-            player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
-            player.GetComponent<Interact>().PlayerInteractEnabled(true);
- //           mouseClickArmed = false;
+            var child = background.transform.GetChild(a).gameObject;
+            child.SetActive(false);
+            if (child.GetComponent<TextMeshProUGUI>() != null) child.GetComponent<TextMeshProUGUI>().text = null;
         }
 
-    }
-    public void ArmMouseClick()
-    {
-    mouseClickArmed = true;
+        if (verbose) print("Deactivated all the children on " + background);
+        reader.SetActive(false);
+        player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 }
