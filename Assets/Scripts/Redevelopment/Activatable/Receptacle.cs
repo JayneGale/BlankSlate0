@@ -29,13 +29,13 @@ public class Receptacle : MonoBehaviour, IActivatable
     public void Activate()
     {
         if (verbose) print("Activate Method, Receptacle Class starts this gameObject accepts colour and item type " + gameObject + colourIAccept + itemIAccept);
-        var objCarried = GameObject.Find("Player").GetComponent<CarryItems>();
-        if (verbose) print("The Item colour the player is carrying is " + objCarried.colour + " and Item type " + objCarried.item + " player has an item "+ GameObject.Find("Player").GetComponent<CarryItems>().hasItem);
-
-        if (objCarried.hasItem && colourIAccept == objCarried.colour && itemIAccept == objCarried.item && !receptacleFull)
+        var objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
+        if(objsCarried.HasItem(itemIAccept, colourIAccept) && !receptacleFull)
+            //if (verbose) print("The Item colour the player is carrying is " + objsCarried.colour + " and Item type " + objsCarried.item + " player has an item "+ GameObject.Find("Player").GetComponent<CarryItems>().hasItem);
+            //if (objsCarried.hasItem && colourIAccept == objsCarried.colour && itemIAccept == objsCarried.item && !receptacleFull)
         {
             GoInSocket();
-            objCarried.DropItem(); // sets bool hasItem false ie player is no longer carrying an item 
+            objsCarried.DropItem(itemIAccept, colourIAccept); // sets bool hasItem false ie player is no longer carrying an item 
             receptacleFull = true;
         }
     }
