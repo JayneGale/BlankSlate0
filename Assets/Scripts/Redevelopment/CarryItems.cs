@@ -13,13 +13,12 @@ public class CarryItems : MonoBehaviour
 
     public void DropItem(Takeable.Item item, Takeable.Colour colour)
     {
-        print("DropItem Method called...but its not got anything in it yet");
-        //carriedItems.Remove(new HeldItem(item, colour));
+        carriedItems.Remove(new HeldItem(item, colour));
     }
 
     public bool HasItem(Takeable.Item item, Takeable.Colour colour)
     {
-        foreach(var carriedItem in carriedItems)
+        foreach(var carriedItem in carriedItems) //loops through determines if player has the item the socket needs
         {
             var colourMatch = carriedItem.colour == colour;
             var itemMatch = carriedItem.item == item;
@@ -28,7 +27,7 @@ public class CarryItems : MonoBehaviour
                 return true;
             }
         }
-        return false;//loops through determines if player has the item the socket needs
+        return false; 
     }
 
     private class HeldItem
@@ -44,10 +43,14 @@ public class CarryItems : MonoBehaviour
 
         public override bool Equals(object obj)
         {
+            if (this == obj)
+            {
+                return true;
+            }
             if (obj is HeldItem)
             {
                 var testItem = obj as HeldItem;
-                // check if test item equals this item's item and colour
+                return testItem.colour == this.colour && testItem.item == this.item;
             }
             return false;
         }
