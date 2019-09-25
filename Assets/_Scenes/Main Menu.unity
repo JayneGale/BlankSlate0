@@ -1112,7 +1112,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\n\n\nIntro \n- You are sucked into a portal on Min'atoa, a strange world
     \n- Shocked by your arrival, a stranger drops items as she leaves\n\nKnown Issues\n-
-    No Inventory yet, can only carry one item \n- No way yet to re-read notes\n"
+    No way yet to re-read notes\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd1f9243d987de143988ead23efe26dd, type: 2}
   m_sharedMaterial: {fileID: -4775092310492096817, guid: dd1f9243d987de143988ead23efe26dd,
@@ -1182,12 +1182,12 @@ MonoBehaviour:
   m_margin: {x: -7.1679077, y: -25.003845, z: -14.807129, w: -209.84772}
   m_textInfo:
     textComponent: {fileID: 1966924107}
-    characterCount: 224
+    characterCount: 179
     spriteCount: 0
-    spaceCount: 50
-    wordCount: 44
+    spaceCount: 40
+    wordCount: 35
     linkCount: 0
-    lineCount: 10
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
