@@ -361,6 +361,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1819356868946625808}
     m_Modifications:
+    - target: {fileID: 100000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
+      propertyPath: m_Name
+      value: CrystalStem
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -417,10 +421,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
-      propertyPath: m_Name
-      value: CrystalStem
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -440,6 +440,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8833788683007649223}
     m_Modifications:
+    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
+        type: 3}
+      propertyPath: m_Name
+      value: Docking Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5227601852686950497, guid: ac0e114ddab67c948b2d4f472a16f9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -499,16 +509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 6.666666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
-        type: 3}
-      propertyPath: m_Name
-      value: Docking Crystal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5227601852688851585, guid: ac0e114ddab67c948b2d4f472a16f9be,
         type: 3}
