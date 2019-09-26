@@ -44,6 +44,8 @@ MonoBehaviour:
     markMeshAsStatic: 1
     useLightmapping: 0
     meshCompress: 1
+    castShadows: 1
+    receiveShadows: 1
     useVertexColors: 1
     leafVertexColors:
       serializedVersion: 2
@@ -59,7 +61,7 @@ MonoBehaviour:
       ctime1: 13493
       ctime2: 26021
       ctime3: 38936
-      ctime4: 52428
+      ctime4: 52235
       ctime5: 65535
       ctime6: 0
       ctime7: 0

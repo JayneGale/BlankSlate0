@@ -178,13 +178,14 @@ GameObject:
   - component: {fileID: 812962356386979098}
   - component: {fileID: 3577460726100300425}
   - component: {fileID: 6491858990183845368}
+  - component: {fileID: 4489473880256457237}
   m_Layer: 9
   m_Name: Docking Crystal
   m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2313472425803131045
 Transform:
   m_ObjectHideFlags: 0
@@ -336,6 +337,26 @@ MonoBehaviour:
   myController: {fileID: 1756234128899094449}
   receptacleFull: 0
   animBool: 0
+--- !u!114 &4489473880256457237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313472425803625605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7366b716e3df5414e9d74f5007e6d471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matColours:
+  - {fileID: 2100000, guid: 615bb6d3a27b4cd4096241688d1c58c4, type: 2}
+  - {fileID: 2100000, guid: cdfb7fda821940f488ab98d3856c364a, type: 2}
+  - {fileID: 2100000, guid: d595e3aceee854444964f40f9224b799, type: 2}
+  - {fileID: 2100000, guid: 3b58d3ab9dc82d94a8489f37f6079c81, type: 2}
+  - {fileID: 2100000, guid: c9984c5b19315fb498703d75d001631d, type: 2}
+  - {fileID: 2100000, guid: 40c2717b0f654514ba8ef14ebba32741, type: 2}
+  - {fileID: 2100000, guid: fe0fbe79d0ba68c4591697f1075fba9a, type: 2}
 --- !u!1 &6086667868696125062
 GameObject:
   m_ObjectHideFlags: 0
