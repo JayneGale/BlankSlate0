@@ -7,12 +7,6 @@ public class DockingCrystalMaterials : MonoBehaviour
     public Material[] matColours;
     Material mat;
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    matColours = new Material[7];
-    //}
-
     public Material SetMaterial(Takeable.Colour colour)
     {
         if (colour == Takeable.Colour.red) mat = matColours[0];
