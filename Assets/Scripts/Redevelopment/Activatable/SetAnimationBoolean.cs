@@ -7,7 +7,7 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
     [SerializeField]
     private string BooleanName;
     [SerializeField]
-    private bool Value;
+    public bool Value;
 
     public bool verbose;
 

@@ -35,7 +35,7 @@ public class Receptacle : MonoBehaviour, IActivatable
             //if (objsCarried.hasItem && colourIAccept == objsCarried.colour && itemIAccept == objsCarried.item && !receptacleFull)
         {
             GoInSocket();
-            objsCarried.DropItem(itemIAccept, colourIAccept); // sets bool hasItem false ie player is no longer carrying an item 
+            objsCarried.DropItem(itemIAccept, colourIAccept); // removes this item from list of items player is carrying 
             receptacleFull = true;
         }
     }
@@ -48,5 +48,14 @@ public class Receptacle : MonoBehaviour, IActivatable
         {
             if (activatable != null) activatable.Activate();
         }
+    }
+
+    public void TakeOutOfSocket()
+    {
+        receptacleFull = false;
+        //foreach (var activatable in objectToActiveIfCorrect.GetComponents<IActivatable>())
+        //{
+        //    if (activatable != null) activatable.Activate();
+        //}
     }
 }

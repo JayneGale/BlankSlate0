@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 5974851604392656528}
   - component: {fileID: 812962356386979098}
   - component: {fileID: 3577460726100300425}
+  - component: {fileID: 6491858990183845368}
   m_Layer: 9
   m_Name: Docking Crystal
   m_TagString: Crystal
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 2313472425803625605}
+  - {fileID: 6086667868696125062}
   cursor: 3
 --- !u!114 &5035273564630494881
 MonoBehaviour:
@@ -318,6 +320,22 @@ CapsuleCollider:
   m_Height: 0.05
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6491858990183845368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313472425803625605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae387f6164f21647a4bec623a866d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verbose: 0
+  myController: {fileID: 1756234128899094449}
+  receptacleFull: 0
+  animBool: 0
 --- !u!1 &6086667868696125062
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onSoundName: CrystalInDocker
-  offSoundName: CrystalInDocker
+  offSoundName: 
   isOn: 1
   verbose: 0
 --- !u!114 &1389309010446765805
