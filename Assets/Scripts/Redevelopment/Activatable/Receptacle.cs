@@ -53,9 +53,9 @@ public class Receptacle : MonoBehaviour, IActivatable
     public void TakeOutOfSocket()
     {
         receptacleFull = false;
-        //foreach (var activatable in objectToActiveIfCorrect.GetComponents<IActivatable>())
-        //{
-        //    if (activatable != null) activatable.Activate();
-        //}
+        foreach (var activatable in objectToActiveIfCorrect.GetComponents<IActivatable>())
+        {
+            if (activatable != null) activatable.Activate();
+        }
     }
 }
