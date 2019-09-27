@@ -46,7 +46,7 @@ public class Interact : MonoBehaviour
             if (Physics.Raycast(ray, out var hit, MaxDistance, Layers) && hit.collider.gameObject.GetComponent<Interactable>()!=null)
             {
                 var interactable = hit.collider.gameObject.GetComponent<Interactable>();
-                if (interactable != null && GetComponent<CursorLockBehaviour>().cursorIsLocked)
+                if (interactable != null && interactable != FocusObject && GetComponent<CursorLockBehaviour>().cursorIsLocked)
                 {
                     FocusObject = interactable;
                     mouseOverInteractable = true;
@@ -91,6 +91,11 @@ public class Interact : MonoBehaviour
             case Interactable.CursorType.readable: cursorIndex = 3;
                 break;
             case Interactable.CursorType.receptacle: cursorIndex = 4;
+                var receptacle = interactThing.GetComponent<MultiCrystalReceptacle>();
+                if (receptacle != null)
+                {
+                    receptacle.GiveUIInformation();
+                }
                 break;
         }
     }

@@ -17,10 +17,14 @@ public class Receptacle : MonoBehaviour, IActivatable
     void Start()
     {
         if (verbose) print("Start Method in Receptacle Class starts " + gameObject + colourIAccept + itemIAccept);
+
         if (objectToGoInReceptacle != null)
         {
-            objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(colourIAccept);            
             objectToGoInReceptacle.SetActive(false);// set inactive the crystal that's ready to drop into the socket
+            if(itemIAccept == Takeable.Item.crystal)
+            {
+                objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(colourIAccept);
+            }
         }
         else print("This receptacle " + gameObject + "has no animation object ready to dock ");
 
