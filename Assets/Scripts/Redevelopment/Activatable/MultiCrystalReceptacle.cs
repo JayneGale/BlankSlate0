@@ -19,15 +19,14 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     void Start()
     {
         itemIAccept = itemRecAccepts;//in case I ever put this script onto drawers
-        colourIAccept = coloursICanAccept[0];//just to set the initial docking crystal colour
 
-        if (verbose) print("Start Method in MultiReceptacle Class starts " + gameObject + colourIAccept + itemIAccept);
+        if (verbose) print("Start Method in MultiReceptacle Class starts " + gameObject + coloursICanAccept[0] + itemIAccept);
         if (objectToGoInReceptacle != null)
         {
             if (itemIAccept == Takeable.Item.crystal)
             {
                 //this looks very complex
-                objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(coloursICanAccept[0]);
+                objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(coloursICanAccept[0]); //just to set the initial docking crystal colour
             }
             objectToGoInReceptacle.SetActive(false);// set inactive the crystal that's ready to drop into the socket
         }
@@ -36,7 +35,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (verbose) print("Activate Method, MutliReceptacle Class starts this gameObject " + gameObject + "accepts colour " + coloursICanAccept[0] + " and item type " + itemIAccept);
+        if (verbose) print("Activate Method, MutliReceptacle Class starts this gameObject " + gameObject + "accepts at least this colour  0 " + coloursICanAccept[0] + " and item type " + itemIAccept);
         var objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
         //I need here to work out if the player is carrying a crystal, not a key, and ONE OF the colours of crystals it accepts
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
