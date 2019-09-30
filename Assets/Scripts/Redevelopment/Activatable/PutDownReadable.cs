@@ -30,6 +30,7 @@ public class PutDownReadable : MonoBehaviour
         if (verbose) print("Deactivated all the children on " + background);
         reader.SetActive(false);
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 }

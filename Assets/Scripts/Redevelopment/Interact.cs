@@ -97,6 +97,8 @@ public class Interact : MonoBehaviour
                     receptacle.GiveUIInformation();
                 }
                 break;
+            case Interactable.CursorType.draggable: cursorIndex = 5;
+                break;
         }
     }
 }

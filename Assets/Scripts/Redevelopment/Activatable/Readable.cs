@@ -48,6 +48,7 @@ public class Readable : MonoBehaviour, IActivatable
         GameObject player = GameObject.Find("Player");
         player.GetComponent<CursorLockBehaviour>().UnlockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(false);
         player.GetComponent<Interact>().PlayerInteractEnabled(false);
 
     }

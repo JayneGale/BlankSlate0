@@ -17,6 +17,7 @@ public class InGameMenus : MonoBehaviour
         player = GameObject.Find("Player");
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 
@@ -27,6 +28,7 @@ public class InGameMenus : MonoBehaviour
             endMenu.SetActive(true);
             player.GetComponent<CursorLockBehaviour>().UnlockCursor();
             player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
+            player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
             player.GetComponent<Interact>().PlayerInteractEnabled(false);
 
         }
@@ -36,6 +38,7 @@ public class InGameMenus : MonoBehaviour
         endMenu.SetActive(false);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 
@@ -45,6 +48,7 @@ public class InGameMenus : MonoBehaviour
         SceneManager.LoadScene(1);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 

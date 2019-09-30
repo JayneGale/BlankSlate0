@@ -13,6 +13,8 @@ public class CursorChange : MonoBehaviour
     public Sprite takeableCursor;
     public Sprite readableCursor;
     public Sprite receptacleCursor;
+    public Sprite draggableCursor;
+
 
     [Header("Print all debug messages")]
     public bool verbose;
@@ -40,7 +42,7 @@ public class CursorChange : MonoBehaviour
         pointerPanel = GameObject.Find("PointerPanel"); // Find only finds Active GameObjects so set it active if its not
         pointerImage = pointerPanel.GetComponent<Image>();
         if (pointerImage == null) print("No Pointer Image component on PointerPanel in script on " + gameObject.name);
-        cursorSpriteArr = new Sprite[5] { defaultCursor, interactableCursor, takeableCursor, readableCursor, receptacleCursor };
+        cursorSpriteArr = new Sprite[6] { defaultCursor, interactableCursor, takeableCursor, readableCursor, receptacleCursor, draggableCursor };
 
         if (pointerPanel == null)
         {

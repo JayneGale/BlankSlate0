@@ -21,22 +21,10 @@ public class CursorLockBehaviour : MonoBehaviour
         LockCursor();
         cursorIsLocked = true;
         gameObject.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        gameObject.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         gameObject.GetComponent<Interact>().PlayerInteractEnabled(true);
 
     }
-
-    //void Update()
-    //{
-    //if (Input.GetKeyDown(KeyCode.Escape))
-    //{
-    //    Application.Quit();
-    //}
-
-    //    if (Input.GetKeyDown(cursorToggleKey))
-    //    {
-    //        ToggleCursor();
-    //    }
-    //}
 
     public void LockCursor() //So the cursor sprite remains in the middle of the screen
     {
