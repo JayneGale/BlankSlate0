@@ -14,9 +14,11 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public Takeable.Colour colourIAccept;
     public bool verbose;
     public bool receptacleFull = false;
+    [HideInInspector]
+    public Takeable.Colour[] coloursCarried;
 
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
     {
         itemIAccept = itemRecAccepts;//in case I ever put this script onto drawers
 
@@ -89,6 +91,9 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
             if (verbose) print("ColoursIAccept " + i + " " + coloursICanAccept[i]); 
         }
 
-        
+        var itemsHeld = GameObject.Find("Player").GetComponent<CarryItems>(); // turn off the 'item being carried' image
+
+
+
     }
 }
