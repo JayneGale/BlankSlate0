@@ -16,9 +16,11 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public bool receptacleFull = false;
     [HideInInspector]
     public Takeable.Colour[] coloursCarried;
+    [HideInInspector]
+    public CarryItems objsCarried;
 
-// Start is called before the first frame update
-void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         itemIAccept = itemRecAccepts;//in case I ever put this script onto drawers
 
@@ -38,7 +40,7 @@ void Start()
     public void Activate()
     {
         if (verbose) print("Activate Method, MutliReceptacle Class starts this gameObject " + gameObject + "accepts at least this colour  0 " + coloursICanAccept[0] + " and item type " + itemIAccept);
-        var objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
+        objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
         //I need here to work out if the player is carrying a crystal, not a key, and ONE OF the colours of crystals it accepts
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
 
@@ -88,12 +90,14 @@ void Start()
     {
         for (int i = 0; i < coloursICanAccept.Length; i++)
         {
-            if (verbose) print("ColoursIAccept " + i + " " + coloursICanAccept[i]); 
+            if (verbose) print("ColoursIAccept " + i + " " + coloursICanAccept[i]);
         }
 
-        var itemsHeld = GameObject.Find("Player").GetComponent<CarryItems>(); // turn off the 'item being carried' image
+        //foreach (var carriedItem in objsCarried.HeldItem) //loops through determines if player has an item 
+        //{
+        //    if (verbose) print("ColoursPlayerCarriest " + i + " " + carriedItem.colour);
+        //}
 
-
-
+        //so I need to crteate new method HasItems instead of hasItem, should check how many items 
     }
 }
