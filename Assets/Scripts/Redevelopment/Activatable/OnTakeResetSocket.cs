@@ -10,7 +10,8 @@ public class OnTakeResetSocket : MonoBehaviour, IActivatable
     public bool receptacleFull;
     [HideInInspector]
     public bool animBool;
-
+    [HideInInspector]
+    public Takeable.Colour colourInReceptacle;
 
 
     void Start()
@@ -27,9 +28,9 @@ public class OnTakeResetSocket : MonoBehaviour, IActivatable
         var receptacle = myController.GetComponentInChildren<MultiCrystalReceptacle>().GetComponent<MultiCrystalReceptacle>();
         if (receptacle != null)
         {
-            var colourInReceptacle = receptacle.colourIAccept;
-            myController.GetComponentInChildren<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the receptacel script thinks it is
-            //I am up to here, now trying to find the list of carried items and print that out too
+            colourInReceptacle = receptacle.colourIAccept;
+            if (verbose) print("OnTakeResetSocket Activate colourInReceptacle " + colourInReceptacle);
+            myController.GetComponentInChildren<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the receptacle script thinks it is
         }
         animBool = !animBool;
         print("receptacleFull bool is " + receptacleFull + " and animBool is " + animBool);

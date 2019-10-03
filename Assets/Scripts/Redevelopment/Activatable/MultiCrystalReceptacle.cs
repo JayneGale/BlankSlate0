@@ -14,14 +14,17 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public Takeable.Colour colourIAccept;
     public bool verbose;
     public bool receptacleFull = false;
-    [HideInInspector]
-    public Takeable.Colour[] coloursCarried;
+    //[HideInInspector]
+    //Takeable.Colour[] coloursCarried;
     [HideInInspector]
     public CarryItems objsCarried;
+
+    List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
 
     // Start is called before the first frame update
     void Start()
     {
+
         itemIAccept = itemRecAccepts;//in case I ever put this script onto drawers
 
         if (verbose) print("Start Method in MultiReceptacle Class starts " + gameObject + coloursICanAccept[0] + itemIAccept);
@@ -43,17 +46,30 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
         //I need here to work out if the player is carrying a crystal, not a key, and ONE OF the colours of crystals it accepts
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
-
+        int j = 0;
         for (int i = 0; i < coloursICanAccept.Length; i++)
         {
-            if (verbose) print(coloursICanAccept[i]);
-            if (objsCarried.HasItem(itemIAccept, coloursICanAccept[i])) //so  I need to LOOP through the items the player is carrying
+            if (verbose) print("In for loop 1, Colours I Can Accept " + i + " " + coloursICanAccept[i]);
+            if (objsCarried.HasItem(itemIAccept, coloursICanAccept[i])) //if the player is carrying the colour [i] put it into coloursCarried[j]
             {
-                colourIAccept = coloursICanAccept[i];
-                if (verbose) print(colourIAccept);
-                break; //as soon as I find one, break
+                if (verbose) print("Index of a colour the player is carrying that I accept is " + j + " which is " + coloursICanAccept[i] + "and i is " +i);
+                colourIAccept = coloursICanAccept[i]; //this is incorrect; eventually it will be chosen by the player
+                colsCarried.Add(coloursICanAccept[i]);//put the one that matches into the list of overlapping items
+                j++;
+            }
+            if (j <= 0)
+            {
+                if(verbose) print("Not carrying any colour match");
             }
         }
+
+        //    if (verbose) print("Colour I Can Accept " + i + " " + colourIAccept);
+        //    if (objsCarried.HasItem(itemIAccept, colourIAccept) //
+        //    {
+        //        if (verbose) print("The  colour the player is carrying that I accept is" + colourIAccept);
+        //        break; //as soon as I find one, break
+        //    }
+
 
         if (objsCarried.HasItem(itemIAccept, colourIAccept) && !receptacleFull)
         {
@@ -86,18 +102,23 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         }
     }
 
-    public void GiveUIInformation()
+    public void GiveUIInformation() //this is called by interact on choose interactable cursor
     {
-        for (int i = 0; i < coloursICanAccept.Length; i++)
-        {
-            if (verbose) print("ColoursIAccept " + i + " " + coloursICanAccept[i]);
-        }
-
-        //foreach (var carriedItem in objsCarried.HeldItem) //loops through determines if player has an item 
+        //for (int i = 0; i < coloursICanAccept.Length; i++)
         //{
-        //    if (verbose) print("ColoursPlayerCarriest " + i + " " + carriedItem.colour);
+        //    if (verbose) print("GiveUIinfo For loop i ColoursIAccept " + i + " " + coloursICanAccept[i]);
         //}
+        foreach (var colour in coloursICanAccept)
+        {
+            if (verbose) print("GiveUIinfo Foreach ColoursIAccept " + colour);
+        }
+        if (verbose) print("End Foreach Colours Receptacle accepts");
 
-        //so I need to crteate new method HasItems instead of hasItem, should check how many items 
+        foreach (var colour in colsCarried)
+        {
+            if (verbose) print("Foreach ColoursCarried that I accept " + colour);
+        }
+        if(verbose) print("End Foreach Colours carried");
+
     }
 }
