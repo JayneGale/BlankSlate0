@@ -51,6 +51,12 @@ public class Interact : MonoBehaviour
                     FocusObject = interactable;
                     mouseOverInteractable = true;
                     ChooseInteractableCursor(interactable);
+                    var receptacle = interactable.GetComponent<MultiCrystalReceptacle>();
+                    if (receptacle != null && !receptacle.receptacleFull)
+                    {
+                        FindUsefulCarriedItems(interactable, receptacle);
+
+                    }
                 }
 
                 if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled && mouseClickArmed)
@@ -74,6 +80,34 @@ public class Interact : MonoBehaviour
         }
     }
 
+    private void FindUsefulCarriedItems(Interactable interactable, MultiCrystalReceptacle receptacle)
+    {
+        Takeable.Colour[] coloursRecAccepts = interactable.GetComponent<MultiCrystalReceptacle>().coloursICanAccept;
+        var carriedItems = gameObject.GetComponent<CarryItems>().CarriedItems;
+        Takeable.Item acceptedItem = receptacle.itemRecAccepts;
+        List<Takeable.Colour> matchingColours = new List<Takeable.Colour>();
+        List<Takeable.Colour> carriedColours = new List<Takeable.Colour>();
+
+        foreach (var carriedItem in carriedItems)
+        {
+            if (carriedItem.item == acceptedItem)// if the receptacle accepts this sort of item eg a crystal (or key)
+            {
+                carriedColours.Add(carriedItem.colour);
+                for (int i = 0; i < coloursRecAccepts.Length; i++) //go through the colours the player carries of that type of item
+                {
+
+                    if (carriedItem.colour == coloursRecAccepts[i])
+                    {
+                        matchingColours.Add(coloursRecAccepts[i]);
+                    }
+                }
+            }
+        }
+        if(verbose) print("Interact Script List of objects player is carrying now " + string.Join(", ", carriedColours));
+        if (verbose) print("Interact Script List of objects this receptacle accepts " + string.Join(", ", coloursRecAccepts));
+        if(verbose) print("Interact Script List of colours that match " + string.Join(", ", matchingColours));
+    }
+
     public void PlayerInteractEnabled(bool enabled)
     {
         this.playerInteractEnabled = enabled;
@@ -91,11 +125,6 @@ public class Interact : MonoBehaviour
             case Interactable.CursorType.readable: cursorIndex = 3;
                 break;
             case Interactable.CursorType.receptacle: cursorIndex = 4;
-                var receptacle = interactThing.GetComponent<MultiCrystalReceptacle>();
-                if (receptacle != null)
-                {
-                    receptacle.GiveUIInformation();
-                }
                 break;
             case Interactable.CursorType.draggable: cursorIndex = 5;
                 break;

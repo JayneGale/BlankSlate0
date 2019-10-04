@@ -25,12 +25,12 @@ public class OnTakeResetSocket : MonoBehaviour, IActivatable
     {
         if (verbose) print("Activate starts in OnTakeResetSocket on removing docking crystal " + gameObject.name + " from controller" + myController.name);
         myController.GetComponent<MultiCrystalReceptacle>().TakeOutOfSocket();
-        var receptacle = myController.GetComponentInChildren<MultiCrystalReceptacle>().GetComponent<MultiCrystalReceptacle>();
+        var receptacle = myController.GetComponentInChildren<MultiCrystalReceptacle>();
         if (receptacle != null)
         {
-            colourInReceptacle = receptacle.colourIAccept;
+            colourInReceptacle = receptacle.colourICurrentlyHold;
             if (verbose) print("OnTakeResetSocket Activate colourInReceptacle " + colourInReceptacle);
-            myController.GetComponentInChildren<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the receptacle script thinks it is
+            gameObject.GetComponent<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the receptacle script thinks it is
         }
         animBool = !animBool;
         print("receptacleFull bool is " + receptacleFull + " and animBool is " + animBool);

@@ -25,7 +25,7 @@ public class Takeable : MonoBehaviour, IActivatable
         if (gameObject.GetComponent<OnTakeResetSocket>() != null)
         {
             myController = gameObject.GetComponent<OnTakeResetSocket>().myController;
-            colour = myController.GetComponent<MultiCrystalReceptacle>().colourIAccept;
+            colour = myController.GetComponent<MultiCrystalReceptacle>().colourICurrentlyHold;
             isDockingCrystalInMultiRec = true;
         }
         else
@@ -42,6 +42,7 @@ public class Takeable : MonoBehaviour, IActivatable
         blue,
         indigo,
         violet,
+        ERROR
     }
 
     public enum Item
@@ -52,8 +53,8 @@ public class Takeable : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (isDockingCrystalInMultiRec) colour = myController.GetComponent<MultiCrystalReceptacle>().colourIAccept;
-        GameObject.Find("Player").GetComponent<CarryItems>().SetItem(item, colour);
+        if (isDockingCrystalInMultiRec) colour = myController.GetComponent<MultiCrystalReceptacle>().colourICurrentlyHold;
+        GameObject.Find("Player").GetComponent<CarryItems>().AddItem(item, colour);
         if (verbose) print("Activate starts in Takeable on object " + gameObject.name + "Item " + item + "Colour " + colour);
         if (isDockingCrystalInMultiRec) toolSprite = GetComponent<DockingCrystalMaterials>().SetSprite(colour);
         var toolImage = GameObject.Find("PlayerToolPanel").GetComponent<Image>();

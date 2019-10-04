@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class CarryItems : MonoBehaviour
 {
-    List<HeldItem> carriedItems = new List<HeldItem>();
+    public List<HeldItem> CarriedItems = new List<HeldItem>();
     
-    public void SetItem(Takeable.Item item, Takeable.Colour colour)
+    public void AddItem(Takeable.Item item, Takeable.Colour colour)
     {
-        carriedItems.Add(new HeldItem(item, colour));
+        CarriedItems.Add(new HeldItem(item, colour));
     }
 
     public void DropItem(Takeable.Item item, Takeable.Colour colour)
     {
-        carriedItems.Remove(new HeldItem(item, colour));
+        CarriedItems.Remove(new HeldItem(item, colour));
     }
 
     public bool HasItem(Takeable.Item item, Takeable.Colour colour)
     {
-        foreach(var carriedItem in carriedItems) //loops through determines if player has the item the socket needs
+        foreach(var carriedItem in CarriedItems) //loops through determines if player has the item the socket needs
         {
             var colourMatch = carriedItem.colour == colour;
             var itemMatch = carriedItem.item == item;
@@ -29,6 +29,9 @@ public class CarryItems : MonoBehaviour
         }
         return false; 
     }
+
+//    List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
+
     //public List<> MatchingItems(Takeable.Item item, Takeable.Colour colour)
     //{
     //    foreach (var carriedItem in carriedItems) //loops through determines if player has the item the socket needs
@@ -45,7 +48,7 @@ public class CarryItems : MonoBehaviour
 
 
 
-    private class HeldItem
+    public class HeldItem
     {
         public Takeable.Item item;
         public Takeable.Colour colour;

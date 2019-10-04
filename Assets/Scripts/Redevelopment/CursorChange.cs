@@ -81,8 +81,8 @@ public class CursorChange : MonoBehaviour
         }
     }
 
-    public void ChangeToAlternativeCursor()
-    {
-        pointerImage.sprite = cursorSpriteArr[interact.cursorIndex];
-    }
+    //public void ChangeToAlternativeCursor()
+    //{
+    //    pointerImage.sprite = cursorSpriteArr[interact.cursorIndex];
+    //}
 }
