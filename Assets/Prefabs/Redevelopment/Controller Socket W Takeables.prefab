@@ -337,6 +337,7 @@ MonoBehaviour:
   myController: {fileID: 1756234128899094449}
   receptacleFull: 0
   animBool: 0
+  colourInReceptacle: 0
 --- !u!114 &4489473880256457237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +358,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c9984c5b19315fb498703d75d001631d, type: 2}
   - {fileID: 2100000, guid: 40c2717b0f654514ba8ef14ebba32741, type: 2}
   - {fileID: 2100000, guid: fe0fbe79d0ba68c4591697f1075fba9a, type: 2}
+  toolSprites:
+  - {fileID: 21300006, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  - {fileID: 21300004, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  - {fileID: 21300002, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  - {fileID: 21300000, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  - {fileID: 21300014, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  - {fileID: 21300012, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
+  - {fileID: 21300010, guid: 0f07d9eaaaebe924baa76e75aab66d0b, type: 3}
 --- !u!1 &6086667868696125062
 GameObject:
   m_ObjectHideFlags: 0

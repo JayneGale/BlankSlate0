@@ -33,6 +33,6 @@ public class OnTakeResetSocket : MonoBehaviour, IActivatable
             gameObject.GetComponent<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the receptacle script thinks it is
         }
         animBool = !animBool;
-        print("receptacleFull bool is " + receptacleFull + " and animBool is " + animBool);
+        if(verbose) print("receptacleFull bool is " + receptacleFull + " and animBool is " + animBool);
     }
 }
