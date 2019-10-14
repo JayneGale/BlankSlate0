@@ -53,10 +53,13 @@ public class Takeable : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (isDockingCrystalInMultiRec) colour = myController.GetComponent<MultiCrystalReceptacle>().colourICurrentlyHold;
+        if (isDockingCrystalInMultiRec)
+        {
+            colour = myController.GetComponent<MultiCrystalReceptacle>().colourICurrentlyHold;
+            toolSprite = GetComponent<DockingCrystalMaterials>().SetSprite(colour);
+        }
         GameObject.Find("Player").GetComponent<CarryItems>().AddItem(item, colour);
         if (verbose) print("Activate starts in Takeable on object " + gameObject.name + "Item " + item + "Colour " + colour);
-        if (isDockingCrystalInMultiRec) toolSprite = GetComponent<DockingCrystalMaterials>().SetSprite(colour);
         var toolImage = GameObject.Find("PlayerToolPanel").GetComponent<Image>();
         toolImage.enabled = true; // turn on the player carrying a tool UI panel
         toolImage.sprite = toolSprite; // use the tool sprite for this object being carried

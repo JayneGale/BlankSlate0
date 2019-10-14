@@ -8,8 +8,6 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
     private string BooleanName;
     [SerializeField]
     public bool Value;
-    [HideInInspector]
-    public bool animBool;
 
     public bool verbose;
 
@@ -18,12 +16,11 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
     private void Start()
     {
         Anim = gameObject.GetComponent<Animator>();
-        animBool = Value;
     }
 
     public void Activate()
     {
-        Anim.SetBool(BooleanName, animBool);
-        animBool = !animBool;
+        Anim.SetBool(BooleanName, Value);
+        Value = !Value;
     }
 }
