@@ -259,7 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 2313472425803625605}
-  - {fileID: 6086667868696125062}
   cursor: 3
 --- !u!114 &5035273564630494881
 MonoBehaviour:
@@ -496,6 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BooleanName: dock
   Value: 1
+  animBool: 0
   verbose: 0
 --- !u!1 &7187605138365017489
 GameObject:
