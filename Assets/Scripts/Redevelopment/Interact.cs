@@ -30,6 +30,8 @@ public class Interact : MonoBehaviour
 
     bool mouseClickArmed;
 
+    bool turnOnSelectItemUI;
+
     void Start()
     {
         //int cursorIndex = GetComponent<CursorChange>().cursorIndex;
@@ -103,6 +105,13 @@ public class Interact : MonoBehaviour
                 }
             }
         }
+        if (matchingColours.Count > 1)
+        {
+            //turn on UI canvas by starting the SelectItemUI.cs; how? through a bool?
+            turnOnSelectItemUI = true;
+        }
+        else turnOnSelectItemUI = false;
+
         if(verbose) print("Interact Script List of objects player is carrying now " + string.Join(", ", carriedColours));
         if (verbose) print("Interact Script List of objects this receptacle accepts " + string.Join(", ", coloursRecAccepts));
         if(verbose) print("Interact Script List of colours that match " + string.Join(", ", matchingColours));
