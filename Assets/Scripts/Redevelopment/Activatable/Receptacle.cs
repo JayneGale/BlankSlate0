@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Receptacle : MonoBehaviour, IActivatable
 {
-    public GameObject objectToGoInReceptacle; //the (inactive )object that will appear and animate into the receptacle
+    public GameObject objectToGoInReceptacle; //the (inactive )object that will appear and animate into the multiReceptacle
     public GameObject objectToActiveIfCorrect;
     public Takeable.Colour colourIAccept; //what is the colour of the object(s) I need to activate (that the player has picked up and is carrying)
     public Takeable.Item itemIAccept; // do I need a key or a crystal?
@@ -26,7 +26,7 @@ public class Receptacle : MonoBehaviour, IActivatable
                 objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(colourIAccept);
             }
         }
-        else print("This receptacle " + gameObject + "has no animation object ready to dock ");
+        else print("This multiReceptacle " + gameObject + "has no animation object ready to dock ");
 
     }
 

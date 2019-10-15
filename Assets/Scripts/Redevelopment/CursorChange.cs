@@ -25,7 +25,7 @@ public class CursorChange : MonoBehaviour
     //1 interactable is priority 3 (interactables that are not takeable are clickables (buttons, doorknobs, crystal dockers)) 
     //2 takeable is priority 2 (Takeables are interactables by definition); Takeables also require tool sprites on the player tool panel
     //3 readable is priority 1 (Readables are takeables, or will be)     
-    //4 receptacle is top priority (receives Takeables)
+    //4 multiReceptacle is top priority (receives Takeables)
 
     bool mouseOverInteractable;
 

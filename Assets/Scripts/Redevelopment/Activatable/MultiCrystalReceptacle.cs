@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
 {
-    public GameObject objectToGoInReceptacle; //the (inactive )object that will appear and animate into the receptacle
+    public GameObject objectToGoInReceptacle; //the (inactive )object that will appear and animate into the multiReceptacle
     public GameObject objectToActivateIfCorrect;
     public Takeable.Colour[] coloursICanAccept;
     public Takeable.Colour colourICurrentlyHold;
@@ -28,7 +28,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
             }
             objectToGoInReceptacle.SetActive(false);// set inactive the crystal that's ready to drop into the socket
         }
-        else print("This receptacle " + gameObject + "has no animation object ready to dock ");
+        else print("This multiReceptacle " + gameObject + "has no animation object ready to dock ");
     }
 
     public void Activate()
@@ -43,11 +43,9 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
             if (objsCarried.HasItem(itemRecAccepts, coloursICanAccept[i])) //if the player is carrying a crystal, not a key, and if it accepts the crystal colour [i], add it to coloursThatMatch[j]
             {
                 colourIAccept = coloursICanAccept[i]; //this is incorrect; eventually it will be chosen by the player
-                //colsCarried.Add(coloursICanAccept[i]);//put the one that matches into the list of overlapping items
             }
         }
-        if (verbose) print("MultiRec script List of objects this receptacle accepts " + string.Join(", ", coloursICanAccept));
-        //if (verbose) print("MultiRec script Objects carried this receptacle accepts " + string.Join(", ", colsCarried));
+        if (verbose) print("MultiRec script List of objects this multiReceptacle accepts " + string.Join(", ", coloursICanAccept));
         
 
         if (objsCarried.HasItem(itemRecAccepts, colourIAccept) && !receptacleFull)

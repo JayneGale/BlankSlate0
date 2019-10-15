@@ -29,7 +29,7 @@ public class OnTakeResetSocket : MonoBehaviour, IActivatable
         {
             colourInReceptacle = receptacle.colourICurrentlyHold;
             if (verbose) print("OnTakeResetSocket Activate colourInReceptacle " + colourInReceptacle);
-            gameObject.GetComponent<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the receptacle script thinks it is
+            gameObject.GetComponent<Takeable>().colour = colourInReceptacle; //change the docking crystal's takeable.colour to the colour the multiReceptacle script thinks it is
         }
         animBool = myController.GetComponentInChildren<SetAnimationBoolean>().Value;
         animBool = !animBool;
