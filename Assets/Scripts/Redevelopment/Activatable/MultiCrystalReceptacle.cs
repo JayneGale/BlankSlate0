@@ -12,8 +12,6 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public Takeable.Item itemRecAccepts;
     public bool verbose;
     public bool receptacleFull = false;
-    [HideInInspector]
-    public Takeable.Colour colourIAccept;
 
     List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
 
@@ -39,7 +37,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         var objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
         
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
-         colourIAccept = Takeable.Colour.ERROR;
+        Takeable.Colour colourIAccept = Takeable.Colour.ERROR;
         for (int i = 0; i < coloursICanAccept.Length; i++)
         {
             if (objsCarried.HasItem(itemRecAccepts, coloursICanAccept[i])) //if the player is carrying a crystal, not a key, and if it accepts the crystal colour [i], add it to coloursThatMatch[j]
@@ -58,7 +56,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         }
     } 
 
-    public void GoInSocket(Takeable.Colour colourIAccept)
+    void GoInSocket(Takeable.Colour colourIAccept)
     {
         if (itemRecAccepts == Takeable.Item.crystal)
         {

@@ -44,7 +44,7 @@ public class Interact : MonoBehaviour
     Image toolImage;
     int numChildren;
 
-    public List<Takeable.Colour> matchingColours = new List<Takeable.Colour>();
+
 
 
     void Start()
@@ -63,7 +63,7 @@ public class Interact : MonoBehaviour
         {
             var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
             Debug.DrawLine(ray.origin, ray.origin + (ray.direction * MaxDistance), Color.yellow);
-            if (Physics.Raycast(ray, out var hit, MaxDistance, Layers) && hit.collider.gameObject.GetComponent<Interactable>() != null)
+            if (Physics.Raycast(ray, out var hit, MaxDistance, Layers) && hit.collider.gameObject.GetComponent<Interactable>()!=null)
             {
                 var interactable = hit.collider.gameObject.GetComponent<Interactable>();
                 if (interactable != null && interactable != FocusObject && GetComponent<CursorLockBehaviour>().cursorIsLocked)
@@ -75,51 +75,28 @@ public class Interact : MonoBehaviour
                     if (multiReceptacle != null && !multiReceptacle.receptacleFull)
                     {
                         FindUsefulCarriedItems(interactable, multiReceptacle);
-                        if (matchingColours.Count > 1)
-                        {
-                            TurnOnSprites();
-                        }
-                    }
-
-
-                    if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled && mouseClickArmed)
-                    {
-                        if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
-                        if (crystalSelectPanel.activeSelf)
-                        {
-                            if (Input.mouseScrollDelta.y > 1)
-                            {
-                                yellowSprite.transform.GetChild(0).gameObject.SetActive(true);
-                                //multiReceptacle.colourIAccept = Takeable.Colour.yellow;
-                                if (Input.GetMouseButtonDown(0))
-                                {
-                                    multiReceptacle.GoInSocket(Takeable.Colour.yellow);
-                                }
-                            }
-                        }
-
-                        FocusObject.Interact();
                     }
                 }
 
-
-                else
+                if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled && mouseClickArmed)
                 {
-                    if (multiReceptacle != null)
-                    {
-                        for (int i = 0; i < numChildren; i++)
-                        {
-                            var child = crystalSelectPanel.transform.GetChild(i).gameObject;
-                            child.SetActive(false);
-                        }
-                        if (verbose) print("Mouse off multirec; set child multi-sprites inactive");
-                        crystalSelectPanel.SetActive(false);
-                        multiReceptacle = null;
-                    }
-                    //FocusObject = null;
-                    mouseOverInteractable = false;
-                    cursorIndex = 0; //default cursor
+                    if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
+                    FocusObject.Interact();
                 }
+            }
+
+            else
+            {
+                FocusObject = null;
+                mouseOverInteractable = false;
+                cursorIndex = 0; //default cursor
+                if (verbose) print("Interact Update else: Mouse off multirec; set child multi-sprites inactive");
+                for (int i = 0; i < numChildren; i++)
+                {
+                    var child = crystalSelectPanel.transform.GetChild(i).gameObject;
+                    child.SetActive(false);
+                }
+                crystalSelectPanel.SetActive(false);
             }
         }
 
@@ -134,7 +111,7 @@ public class Interact : MonoBehaviour
         Takeable.Colour[] coloursRecAccepts = interactable.GetComponent<MultiCrystalReceptacle>().coloursICanAccept;
         var carriedItems = gameObject.GetComponent<CarryItems>().CarriedItems;
         Takeable.Item acceptedItem = receptacle.itemRecAccepts;
-        //List<Takeable.Colour> matchingColours = new List<Takeable.Colour>();
+        List<Takeable.Colour> matchingColours = new List<Takeable.Colour>();
         List<Takeable.Colour> carriedColours = new List<Takeable.Colour>();
 
         foreach (var carriedItem in carriedItems)
@@ -151,28 +128,30 @@ public class Interact : MonoBehaviour
                     }
                 }
             }
-            if (verbose) print("Interact Script List of objects player is carrying now " + string.Join(", ", carriedColours));
-            if (verbose) print("Interact Script List of objects this multiReceptacle accepts " + string.Join(", ", coloursRecAccepts));
-            if (verbose) print("Interact Script List of colours that match " + string.Join(", ", matchingColours));
         }
 
-    }
-    private void TurnOnSprites()
-    {
-        for (int i = 0; i < matchingColours.Count; i++)
+        if (matchingColours.Count > 1)
         {
-            if (matchingColours[i] == Takeable.Colour.red) redSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.orange) orangeSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.yellow) yellowSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.green) greenSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.blue) blueSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.indigo) indigoSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.violet) violetSprite.SetActive(true);
-        }
+            for (int i = 0; i < matchingColours.Count; i++)
+            {
+                if (matchingColours[i] == Takeable.Colour.red) redSprite.SetActive(true);
+                if (matchingColours[i] == Takeable.Colour.orange) orangeSprite.SetActive(true);
+                if (matchingColours[i] == Takeable.Colour.yellow) yellowSprite.SetActive(true);
+                if (matchingColours[i] == Takeable.Colour.green) greenSprite.SetActive(true);
+                if (matchingColours[i] == Takeable.Colour.blue) blueSprite.SetActive(true);
+                if (matchingColours[i] == Takeable.Colour.indigo) indigoSprite.SetActive(true);
+                if (matchingColours[i] == Takeable.Colour.violet) violetSprite.SetActive(true);
+            }
 
             crystalSelectPanel.SetActive(true);
             cursorIndex = 0;
             toolImage.enabled = false;
+            //if()
+        }
+
+        if (verbose) print("Interact Script List of objects player is carrying now " + string.Join(", ", carriedColours));
+        if (verbose) print("Interact Script List of objects this multiReceptacle accepts " + string.Join(", ", coloursRecAccepts));
+        if(verbose) print("Interact Script List of colours that match " + string.Join(", ", matchingColours));
     }
 
     public void PlayerInteractEnabled(bool enabled)
