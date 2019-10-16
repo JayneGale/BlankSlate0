@@ -73,7 +73,7 @@ MonoBehaviour:
   m_WalkSpeed: 5
   m_RunSpeed: 10
   m_RunstepLenghten: 0.7
-  m_JumpSpeed: 10
+  m_JumpSpeed: 0
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
   m_MouseLook:
@@ -173,15 +173,16 @@ MonoBehaviour:
       m_RotationOrder: 4
     VerticaltoHorizontalRatio: 2
   m_JumpBob:
-    BobDuration: 0.2
-    BobAmount: 0.1
+    BobDuration: 0
+    BobAmount: 0
   m_StepInterval: 5
   m_FootstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  m_JumpSound: {fileID: 0}
+  m_LandSound: {fileID: 0}
   mouseLookEnabled: 1
+  moveEnabled: 1
 --- !u!54 &4447236285673019133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -306,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8578aa6a667a54943bedd525b0b719f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDistance: 4
+  MaxDistance: 2.5
   Layers:
     serializedVersion: 2
     m_Bits: 512
@@ -315,6 +316,14 @@ MonoBehaviour:
   verbose: 0
   mouseOverInteractable: 0
   cursorIndex: 0
+  crystalSelectPanel: {fileID: 0}
+  redSprite: {fileID: 0}
+  orangeSprite: {fileID: 0}
+  yellowSprite: {fileID: 0}
+  greenSprite: {fileID: 0}
+  blueSprite: {fileID: 0}
+  indigoSprite: {fileID: 0}
+  violetSprite: {fileID: 0}
 --- !u!114 &1179995635100617583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +345,8 @@ MonoBehaviour:
   readableCursor: {fileID: -5897036775713592226, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
   receptacleCursor: {fileID: -9169921954131905425, guid: d7a34d25b3469ab498bb916602c132df,
+    type: 3}
+  draggableCursor: {fileID: 8836911739657527363, guid: d7a34d25b3469ab498bb916602c132df,
     type: 3}
   verbose: 0
   cursorIndex: 0
@@ -368,9 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7bf4e117ed6144fa400d0d6dc712f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasItem: 0
-  item: 1
-  colour: 2
 --- !u!1 &4447236285670061471
 GameObject:
   m_ObjectHideFlags: 0

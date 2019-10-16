@@ -38,6 +38,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
         Takeable.Colour colourIAccept = Takeable.Colour.ERROR;
+
         for (int i = 0; i < coloursICanAccept.Length; i++)
         {
             if (objsCarried.HasItem(itemRecAccepts, coloursICanAccept[i])) //if the player is carrying a crystal, not a key, and if it accepts the crystal colour [i], add it to coloursThatMatch[j]
@@ -45,6 +46,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
                 colourIAccept = coloursICanAccept[i]; //this is incorrect; eventually it will be chosen by the player
             }
         }
+
         if (verbose) print("MultiRec script List of objects this multiReceptacle accepts " + string.Join(", ", coloursICanAccept));
         
 
@@ -56,7 +58,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         }
     } 
 
-    void GoInSocket(Takeable.Colour colourIAccept)
+    public void GoInSocket(Takeable.Colour colourIAccept)
     {
         if (itemRecAccepts == Takeable.Item.crystal)
         {
