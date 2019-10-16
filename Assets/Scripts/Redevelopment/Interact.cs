@@ -45,7 +45,7 @@ public class Interact : MonoBehaviour
     int numChildren;
     int selectedItem;
     [HideInInspector]
-    int maxChoiceIndex;
+    int maxChoiceCount;
     bool startSelect;
     //public List<Takeable.Colour> matchingColours = new List<Takeable.Colour>();
     Takeable.Colour colourSelected;
@@ -66,7 +66,7 @@ public class Interact : MonoBehaviour
         //print(EventSystem.current.IsPointerOverGameObject()); false if its on the game, true if its on the UI
         FindCurrentInteractable();
 
-        if (multiReceptacle != null)
+        if (multiReceptacle != null && !multiReceptacle.receptacleFull)
         { 
             if (Input.mouseScrollDelta.y != 0 && startSelect)
             {
@@ -86,8 +86,7 @@ public class Interact : MonoBehaviour
                 //or try System.Math.Sign() as int
                 if (verbose) print("Sign of Scroll Delta.y " + (int)Mathf.Sign(Input.mouseScrollDelta.y));
                 selectedItem += (int)Mathf.Sign(Input.mouseScrollDelta.y);
-                selectedItem = Mathf.Clamp(selectedItem, 0, maxChoiceIndex+1); //  clamp index to the number in the matchingColours List
-
+                selectedItem = Mathf.Clamp(selectedItem, 0, numChildren-1); //  clamp index to the number of sprite children in the SelectPanel gameObject
                 if (verbose) print("New selection index " + selectedItem);
                 crystalSelectPanel.transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 //This is where I am up to, current bug is that the violet crystal is not being selected
@@ -106,6 +105,7 @@ public class Interact : MonoBehaviour
                 if (selectedItem == 5) colourSelected = Takeable.Colour.indigo;
                 if (selectedItem == 6) colourSelected = Takeable.Colour.violet;
                 multiReceptacle.GoInSocket(colourSelected);
+                crystalSelectPanel.transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 //this is where I am, now pass the selectedItem's Takeable.Colour to GoInSocket(Takeable.Colour) in MultiReceptacle class
             }
         }
@@ -160,6 +160,7 @@ public class Interact : MonoBehaviour
                 {
                     var child = crystalSelectPanel.transform.GetChild(i).gameObject;
                     child.SetActive(false);
+                    child.transform.GetChild(0).gameObject.SetActive(false);
                 }
                 crystalSelectPanel.SetActive(false);
             }
@@ -190,7 +191,7 @@ public class Interact : MonoBehaviour
             }
         }
 
-        if (matchingColours.Count > 1)
+        if (matchingColours.Count > 1 && !multiReceptacle.receptacleFull)
         {
             if (verbose) print("Matching Colours Count " + matchingColours.Count);
             for (int i = 0; i < matchingColours.Count; i++)
@@ -207,7 +208,7 @@ public class Interact : MonoBehaviour
             toolImage.enabled = false;
             pointerPanelImage.enabled = false;
         }
-        maxChoiceIndex = matchingColours.Count-1;
+        maxChoiceCount = matchingColours.Count;
 
         if (verbose) print("Interact Script List of objects player is carrying now " + string.Join(", ", carriedColours));
         if (verbose) print("Interact Script List of objects this multiReceptacle accepts " + string.Join(", ", coloursRecAccepts));
