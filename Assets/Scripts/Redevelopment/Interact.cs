@@ -96,6 +96,8 @@ public class Interact : MonoBehaviour
             if (!mouseScrollTip.activeSelf && Input.GetMouseButtonDown(0))// on Mouse click then use item at cursor position 
             {
                 print("Player selects item index " + selectedItem + " and name " + crystalSelectPanel.transform.GetChild(selectedItem).gameObject.name);
+                //I can't access matchingColours[selectedItem].Takeable.colour
+                //...aaaand all this should go on the crystalSelectPanel as a separate script
                 if (selectedItem == 0) colourSelected = Takeable.Colour.red;
                 if (selectedItem == 1) colourSelected = Takeable.Colour.orange;
                 if (selectedItem == 2) colourSelected = Takeable.Colour.yellow;
@@ -106,10 +108,6 @@ public class Interact : MonoBehaviour
                 multiReceptacle.GoInSocket(colourSelected);
                 //this is where I am, now pass the selectedItem's Takeable.Colour to GoInSocket(Takeable.Colour) in MultiReceptacle class
             }
-
-
-            //if selector active:
-            // and Mouse click then use item at cursor position 
         }
 
         if (Input.GetMouseButtonUp(0) && !mouseClickArmed)
