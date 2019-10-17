@@ -10,16 +10,20 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public Takeable.Colour[] coloursICanAccept;
     public Takeable.Colour colourICurrentlyHold;
     public Takeable.Item itemRecAccepts;
+    public bool isEndChoiceRec;
     public bool verbose;
     public bool receptacleFull = false;
     CarryItems objsCarried;
-
+    EndGameSelect canvas;
     List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
 
     // Start is called before the first frame update
     void Start()
     {
+        canvas =  GameObject.Find("Canvas_Readable").GetComponent<EndGameSelect>();
+
         if (verbose) print("Start Method in MultiReceptacle Class starts " + gameObject + coloursICanAccept[0] + itemRecAccepts);
+        
         if (objectToGoInReceptacle != null)
         {
             if (itemRecAccepts == Takeable.Item.crystal)
@@ -65,6 +69,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
             objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(colourIAccept);
             this.colourICurrentlyHold = colourIAccept;
         }
+        if (isEndChoiceRec) canvas.SelectEnding();
 
         objectToGoInReceptacle.SetActive(true); // turn on the hidden object waiting to go in the socket
         GameObject.Find("PlayerToolPanel").GetComponent<Image>().enabled = false; // turn off the 'item being carried' image
