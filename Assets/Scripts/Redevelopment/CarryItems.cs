@@ -14,6 +14,7 @@ public class CarryItems : MonoBehaviour
     public void DropItem(Takeable.Item item, Takeable.Colour colour)
     {
         CarriedItems.Remove(new HeldItem(item, colour));
+        print("Removing colour " + colour + "for item type " + item);
     }
 
     public bool HasItem(Takeable.Item item, Takeable.Colour colour)

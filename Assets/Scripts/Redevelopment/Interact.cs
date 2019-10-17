@@ -26,36 +26,17 @@ public class Interact : MonoBehaviour
     [HideInInspector]
     public int cursorIndex = 0;
 
-    public GameObject crystalSelectPanel;
+    public SelectItemUI crystalSelectPanel;
     bool mouseClickArmed;
-        
-    MultiCrystalReceptacle multiReceptacle;
+    [HideInInspector]
+    public MultiCrystalReceptacle multiReceptacle;
 
-    public GameObject redSprite;
-    public GameObject orangeSprite;
-    public GameObject yellowSprite;
-    public GameObject greenSprite;
-    public GameObject blueSprite;
-    public GameObject indigoSprite;
-    public GameObject violetSprite;
-    public GameObject mouseScrollTip;
     GameObject toolPanel;
     Image pointerPanelImage;
     Image toolImage;
-    int numChildren;
-    int selectedItem;
-    [HideInInspector]
-    int maxChoiceCount;
-    bool startSelect;
-    //public List<Takeable.Colour> matchingColours = new List<Takeable.Colour>();
-    Takeable.Colour colourSelected;
 
     void Start()
     {
-        numChildren = crystalSelectPanel.transform.childCount;
-        startSelect = true;
-        if (verbose) print("Interact Start number of children on crystalSpritePanels" + numChildren);
-        //redSprite = crystalSpritePanels.transform.GetChild(0).gameObject;
         toolPanel = GameObject.Find("PlayerToolPanel");
         pointerPanelImage = GameObject.Find("PointerPanel").GetComponent<Image>();
         toolImage = toolPanel.GetComponent<Image>();
@@ -63,52 +44,7 @@ public class Interact : MonoBehaviour
 
     void Update()
     {
-        //print(EventSystem.current.IsPointerOverGameObject()); false if its on the game, true if its on the UI
         FindCurrentInteractable();
-
-        if (multiReceptacle != null && !multiReceptacle.receptacleFull)
-        { 
-            if (Input.mouseScrollDelta.y != 0 && startSelect)
-            {
-                mouseScrollTip.SetActive(false);
-                selectedItem = 0;
-                startSelect = false;
-                var firstChoice = crystalSelectPanel.transform.GetChild(selectedItem).gameObject;
-                firstChoice.transform.GetChild(0).gameObject.SetActive(true);
-                if(verbose) print ("First Choice index is " + selectedItem);
-                //mousewheel != 0 set cursor position at [0] and selector active
-            }
-
-            if (!mouseScrollTip.activeSelf && Input.mouseScrollDelta.y != 0)
-            {
-                if(verbose) print("Starting selection index " + selectedItem);
-                crystalSelectPanel.transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                //or try System.Math.Sign() as int
-                if (verbose) print("Sign of Scroll Delta.y " + (int)Mathf.Sign(Input.mouseScrollDelta.y));
-                selectedItem += (int)Mathf.Sign(Input.mouseScrollDelta.y);
-                selectedItem = Mathf.Clamp(selectedItem, 0, numChildren-1); //  clamp index to the number of sprite children in the SelectPanel gameObject
-                if (verbose) print("New selection index " + selectedItem);
-                crystalSelectPanel.transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                //This is where I am up to, current bug is that the violet crystal is not being selected
-            }
-
-            if (!mouseScrollTip.activeSelf && Input.GetMouseButtonDown(0))// on Mouse click then use item at cursor position 
-            {
-                print("Player selects item index " + selectedItem + " and name " + crystalSelectPanel.transform.GetChild(selectedItem).gameObject.name);
-                //I can't access matchingColours[selectedItem].Takeable.colour
-                //...aaaand all this should go on the crystalSelectPanel as a separate script
-                if (selectedItem == 0) colourSelected = Takeable.Colour.red;
-                if (selectedItem == 1) colourSelected = Takeable.Colour.orange;
-                if (selectedItem == 2) colourSelected = Takeable.Colour.yellow;
-                if (selectedItem == 3) colourSelected = Takeable.Colour.green;
-                if (selectedItem == 4) colourSelected = Takeable.Colour.blue;
-                if (selectedItem == 5) colourSelected = Takeable.Colour.indigo;
-                if (selectedItem == 6) colourSelected = Takeable.Colour.violet;
-                multiReceptacle.GoInSocket(colourSelected);
-                crystalSelectPanel.transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                //this is where I am, now pass the selectedItem's Takeable.Colour to GoInSocket(Takeable.Colour) in MultiReceptacle class
-            }
-        }
 
         if (Input.GetMouseButtonUp(0) && !mouseClickArmed)
         {
@@ -134,9 +70,7 @@ public class Interact : MonoBehaviour
                     if (multiReceptacle != null && !multiReceptacle.receptacleFull)
                     {
                         FindUsefulCarriedItems(interactable, multiReceptacle);
-                        mouseScrollTip.SetActive(true);
-                        startSelect = true;
-                        selectedItem = 0;
+                        crystalSelectPanel.StartSelect();
                     }
                 }
 
@@ -153,16 +87,8 @@ public class Interact : MonoBehaviour
                 multiReceptacle = null;
                 mouseOverInteractable = false;
                 pointerPanelImage.enabled = true;
-                mouseScrollTip.SetActive(false);
+                crystalSelectPanel.TurnOffItemSelectUI(); 
                 cursorIndex = 0; //default cursor
-                //if (verbose) print("Interact Update else: Mouse off multirec; set child multi-sprites inactive");
-                for (int i = 0; i < numChildren; i++)
-                {
-                    var child = crystalSelectPanel.transform.GetChild(i).gameObject;
-                    child.SetActive(false);
-                    child.transform.GetChild(0).gameObject.SetActive(false);
-                }
-                crystalSelectPanel.SetActive(false);
             }
         }
     }
@@ -190,25 +116,14 @@ public class Interact : MonoBehaviour
                 }
             }
         }
-
+        //This bit turns on the crystal selection panel
         if (matchingColours.Count > 1 && !multiReceptacle.receptacleFull)
         {
-            if (verbose) print("Matching Colours Count " + matchingColours.Count);
-            for (int i = 0; i < matchingColours.Count; i++)
-            {
-                if (matchingColours[i] == Takeable.Colour.red) redSprite.SetActive(true);
-                if (matchingColours[i] == Takeable.Colour.orange) orangeSprite.SetActive(true);
-                if (matchingColours[i] == Takeable.Colour.yellow) yellowSprite.SetActive(true);
-                if (matchingColours[i] == Takeable.Colour.green) greenSprite.SetActive(true);
-                if (matchingColours[i] == Takeable.Colour.blue) blueSprite.SetActive(true);
-                if (matchingColours[i] == Takeable.Colour.indigo) indigoSprite.SetActive(true);
-                if (matchingColours[i] == Takeable.Colour.violet) violetSprite.SetActive(true);
-            }
-            crystalSelectPanel.SetActive(true);
+            crystalSelectPanel.gameObject.SetActive(true);
+            crystalSelectPanel.TurnOnItemSelectUI(matchingColours.ToArray());
             toolImage.enabled = false;
             pointerPanelImage.enabled = false;
         }
-        maxChoiceCount = matchingColours.Count;
 
         if (verbose) print("Interact Script List of objects player is carrying now " + string.Join(", ", carriedColours));
         if (verbose) print("Interact Script List of objects this multiReceptacle accepts " + string.Join(", ", coloursRecAccepts));

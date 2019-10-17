@@ -12,6 +12,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public Takeable.Item itemRecAccepts;
     public bool verbose;
     public bool receptacleFull = false;
+    CarryItems objsCarried;
 
     List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
 
@@ -34,7 +35,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public void Activate()
     {
         if (verbose) print("Activate Method, MutliReceptacle Class starts on this gameObject " + gameObject + "accepts item type " + itemRecAccepts);
-        var objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
+        objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
         
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
         Takeable.Colour colourIAccept = Takeable.Colour.ERROR;
@@ -53,8 +54,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         if (objsCarried.HasItem(itemRecAccepts, colourIAccept) && !receptacleFull)
         {
             GoInSocket(colourIAccept);
-            objsCarried.DropItem(itemRecAccepts, colourIAccept); // removes this item from list of items player is carrying 
-            receptacleFull = true;
+            //objsCarried.DropItem(itemRecAccepts, colourIAccept); // removes this item from list of items player is carrying 
         }
     } 
 
@@ -72,6 +72,9 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         {
             if (activatable != null) activatable.Activate();
         }
+        receptacleFull = true;
+        objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
+        objsCarried.DropItem(Takeable.Item.crystal, colourICurrentlyHold); // removes this item from list of items player is carrying 
     }
 
     public void TakeOutOfSocket()

@@ -1,33 +1,126 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectItemUI : MonoBehaviour
 {
+    public GameObject mouseScrollTip;
 
-    public GameObject itemSelectPanel;
+    public GameObject redSprite;
+    public GameObject orangeSprite;
+    public GameObject yellowSprite;
+    public GameObject greenSprite;
+    public GameObject blueSprite;
+    public GameObject indigoSprite;
+    public GameObject violetSprite;
 
-    //private MultiCrystalReceptacle multiReceptacle;
+    //List<GameObject> activeSelection = new List<GameObject>();
 
     public bool verbose;
 
+    Interact interact;
+    int numChildren;
+    int selectedItem;
+    [HideInInspector]
+    public int maxChoiceCount;
+    bool startSelect;
+    Takeable.Colour colourSelected;
+
     void Start()
     {
-        var receptacle = GetComponent<Interact>();
-        //put this script on the Player (Player has Interact, which knows if FocusObject is a multireceptacle).
-        //Call iff (List matchingColours.Count >1) ie player has to choose between at least two items 
-        //Show dropzone cursor when player hovers over the multireceptacle as usual. 
-        //When Player clicks on the multi-multiReceptacle, show UI panel for item options 
-        //get the component of the interact script (not multireceptacle) that has the UI information List matchingColours
-        //UIcursorchange could change the cursor and switch on the panel as a kind of new cursor option instead of the dropzone, make it a multireceptacle cursor? 
+        numChildren = transform.childCount;
+        startSelect = true;
+        if (verbose) print("Interact Start number of children on crystalSpritePanels" + numChildren);
+        interact = GameObject.Find("Player").GetComponent<Interact>();
+        //put this script on the CrystalSelectPanel 
+    }
+    void Update()
+    {
+        if (interact.multiReceptacle != null && !interact.multiReceptacle.receptacleFull)
+        {
 
+            if (Input.mouseScrollDelta.y != 0 && startSelect)
+            {
+                mouseScrollTip.SetActive(false);
+                selectedItem = 0;
+                startSelect = false;
+                var firstChoice = transform.GetChild(selectedItem).gameObject;
+                firstChoice.transform.GetChild(0).gameObject.SetActive(true);
+                if (verbose) print("First Choice index is " + selectedItem);
+            }
+
+            if (!mouseScrollTip.activeSelf && Input.mouseScrollDelta.y != 0)
+            {
+                if (verbose) print("Starting selection index " + selectedItem);
+                transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                if (verbose) print("Sign of Scroll Delta.y " + (int)Mathf.Sign(Input.mouseScrollDelta.y));
+                int delta = (int)Mathf.Sign(Input.mouseScrollDelta.y);
+                selectedItem += delta;
+                selectedItem = Mathf.Clamp(selectedItem, 0, numChildren - 1); //  clamp index to the number of sprite children in the SelectPanel gameObject
+                    //if (!crystalSelectPanel.transform.GetChild(selectedItem).gameObject.activeSelf) //if this sprite is not active
+                    //{
+                    //    //move the arrow onto the next one
+                    //}                
+                if (verbose) print("New selection index " + selectedItem);
+                transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            }
+
+            if (!mouseScrollTip.activeSelf && Input.GetMouseButtonDown(0))// on Mouse click then use item at cursor position 
+            {
+                print("Player selects item index " + selectedItem + " and name " + transform.GetChild(selectedItem).gameObject.name);
+                //I can't access matchingColours[selectedItem].Takeable.colour
+                //...aaaand all this should go on the crystalSelectPanel as a separate script
+                if (selectedItem == 0) colourSelected = Takeable.Colour.red;
+                if (selectedItem == 1) colourSelected = Takeable.Colour.orange;
+                if (selectedItem == 2) colourSelected = Takeable.Colour.yellow;
+                if (selectedItem == 3) colourSelected = Takeable.Colour.green;
+                if (selectedItem == 4) colourSelected = Takeable.Colour.blue;
+                if (selectedItem == 5) colourSelected = Takeable.Colour.indigo;
+                if (selectedItem == 6) colourSelected = Takeable.Colour.violet;
+                transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                interact.multiReceptacle.GoInSocket(colourSelected);
+            }
+        }
     }
 
-    public void TurnOnItemSelectUI()
+
+
+public void TurnOnItemSelectUI(Takeable.Colour[] matchingColours) //Call only when (List matchingColours.Count >1) ie player has to choose between at least two items 
+
     {
-        if (true)
+        var maxChoiceCount = matchingColours.Length;
+        if (verbose) print("Matching Colours Length " + matchingColours.Length);
+
+        for (int i = 0; i < maxChoiceCount; i++)
         {
-            // if the FocusObject has a multireceptacle script, check matchingColours.Count
+            if (matchingColours[i] == Takeable.Colour.red) redSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.orange) orangeSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.yellow) yellowSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.green) greenSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.blue) blueSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.indigo) indigoSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.violet) violetSprite.SetActive(true);
         }
+            
+    }
+    public void TurnOffItemSelectUI()
+    {
+        //Call only when (List matchingColours.Count >1) ie player has to choose between at least two items 
+        mouseScrollTip.SetActive(false);
+        for (int i = 0; i < numChildren; i++)
+        {
+            var child = transform.GetChild(i).gameObject;
+            child.SetActive(false);
+            child.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        gameObject.SetActive(false);
+    }
+
+    public void StartSelect()
+    {
+        mouseScrollTip.SetActive(true);
+        startSelect = true;
+        selectedItem = 0;
     }
 }
