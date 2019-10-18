@@ -7,6 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class InGameMenus : MonoBehaviour
 {
     public GameObject endMenu;
+    public GameObject pauseMenu;
+    public GameObject PortalDoorExit;
     public KeyCode quitKeyCode = KeyCode.Q;
     GameObject player;
 
@@ -26,6 +28,7 @@ public class InGameMenus : MonoBehaviour
         if (Input.GetKeyDown(quitKeyCode))
         {
             endMenu.SetActive(true);
+            pauseMenu.SetActive(true);
             player.GetComponent<CursorLockBehaviour>().UnlockCursor();
             player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
             player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
@@ -36,11 +39,24 @@ public class InGameMenus : MonoBehaviour
     public void ResumeGame()
     {
         endMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
+    public void ResumeGameSetBack()
+    {
+        endMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        PortalDoorExit.GetComponent<SetAnimationBoolean>().Activate();
+        player.transform.position = new Vector3(21.5f, player.transform.position.y, player.transform.position.z);
+        player.GetComponent<CursorLockBehaviour>().LockCursor();
+        player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
+        player.GetComponent<Interact>().PlayerInteractEnabled(true);
+    }
+
 
 
     public void PlayGame()

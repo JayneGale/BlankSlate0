@@ -20,7 +20,7 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     // Start is called before the first frame update
     void Start()
     {
-        canvas =  GameObject.Find("Canvas_Readable").GetComponent<EndGameSelect>();
+        canvas =  GameObject.Find("Canvas_Readables").GetComponent<EndGameSelect>();
 
         if (verbose) print("Start Method in MultiReceptacle Class starts " + gameObject + coloursICanAccept[0] + itemRecAccepts);
         

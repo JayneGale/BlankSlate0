@@ -11,6 +11,7 @@ public class EndGameSelect : MonoBehaviour
     public GameObject irEndGamePanel;
     public Material[] endMaterials; //there should be one material for each ending, so the length of this array should be the same as the number of panels
     public GameObject destMultiRec;
+    public bool verbose;
     MeshRenderer[] endGameWallsRend;
     Material[] endGameWallsMats;
     Takeable.Colour chosenDest;
@@ -18,61 +19,75 @@ public class EndGameSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (verbose) print("EndgameWalls.Length " + endGameWalls.Length + endGameWalls[0].name);
+        endGameWallsRend = new MeshRenderer[endGameWalls.Length];
         for (int i = 0; i < endGameWalls.Length; i++)
         {
+            print("Wall name " + endGameWalls[i].name + "and index " + i);
             endGameWallsRend[i] = endGameWalls[i].GetComponent<MeshRenderer>();
-            endGameWallsMats[i] = endGameWallsRend[i].material;//there should be one single material on all the walls
         }
-
     }
 
     public void SelectEnding()
     {
-        //if the crystal in the Destination receptacle is 
+        //the crystal in the Destination receptacle is the chosenDestination
         chosenDest = destMultiRec.GetComponent<MultiCrystalReceptacle>().colourICurrentlyHold;
-        if (chosenDest == Takeable.Colour.red)//destination Tempire = first mat
+        for (int i = 0; i < endGameWalls.Length; i++) //clear out any previous ending
         {
-            for (int i = 0; i < endGameWalls.Length; i++)
-            {
-                endGameWallsMats[i] = endMaterials[1];
-            }
-            teEndGamePanel.SetActive(true);
+            teEndGamePanel.SetActive(false);
             vaEndGamePanel.SetActive(false);
             goEndGamePanel.SetActive(false);
             irEndGamePanel.SetActive(false);
         }
-        if (chosenDest == Takeable.Colour.orange)//destination Vantire = second mat
+
+        switch (chosenDest) // turn on the current end Panel and change the materials
         {
-            for (int i = 0; i < endGameWalls.Length; i++)
-            {
-                endGameWallsMats[i] = endMaterials[2];
-            }
-            teEndGamePanel.SetActive(false);
-            vaEndGamePanel.SetActive(true);
-            goEndGamePanel.SetActive(false);
-            irEndGamePanel.SetActive(false);
+            case Takeable.Colour.red:
+                teEndGamePanel.SetActive(true);
+                print("Red crystal in Destination ");
+                ChangeEndWallMat(0);
+                break;
+            case Takeable.Colour.orange:
+                vaEndGamePanel.SetActive(true);
+                print("Orange crystal in Destination ");
+                ChangeEndWallMat(1);
+                break;
+            case Takeable.Colour.yellow:
+                goEndGamePanel.SetActive(true);
+                ChangeEndWallMat(2);
+                break;
+            case Takeable.Colour.green:
+                goEndGamePanel.SetActive(true);
+                ChangeEndWallMat(2);
+                break;
+            case Takeable.Colour.blue:
+                goEndGamePanel.SetActive(true);
+                ChangeEndWallMat(2);
+                break;
+            case Takeable.Colour.indigo:
+                irEndGamePanel.SetActive(true);
+                ChangeEndWallMat(3);
+                print("Indigo crystal in Destination ");
+
+                break;
+            case Takeable.Colour.violet:
+                print("Sort out the Min ending pls " + chosenDest);
+                break;
+            case Takeable.Colour.ERROR:
+                print("Colour of crystal in Dest rec is unknown " + chosenDest);
+                break;
         }
-        if (chosenDest == Takeable.Colour.yellow || chosenDest == Takeable.Colour.green || chosenDest == Takeable.Colour.blue || chosenDest == Takeable.Colour.ERROR) //destination Go Ses or  = second mat
+    }
+
+
+    void ChangeEndWallMat(int matIndex)
+    {
+
+        for (int i = 0; i < endGameWalls.Length; i++)
         {
-            for (int i = 0; i < endGameWalls.Length; i++)
-            {
-                endGameWallsMats[i] = endMaterials[3];
-            }
-            teEndGamePanel.SetActive(false);
-            vaEndGamePanel.SetActive(false);
-            goEndGamePanel.SetActive(true);
-            irEndGamePanel.SetActive(false);
+            endGameWallsRend[i].material = endMaterials[matIndex];
         }
-        if (chosenDest == Takeable.Colour.indigo)//destination Vantire = second mat
-        {
-            for (int i = 0; i < endGameWalls.Length; i++)
-            {
-                endGameWallsMats[i] = endMaterials[4];
-            }
-            teEndGamePanel.SetActive(false);
-            vaEndGamePanel.SetActive(false);
-            goEndGamePanel.SetActive(false);
-            irEndGamePanel.SetActive(true);
-        }
+
     }
 }

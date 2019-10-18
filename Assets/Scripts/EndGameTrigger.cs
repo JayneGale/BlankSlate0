@@ -15,15 +15,10 @@ public class EndGameTrigger : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             endGamePanel.SetActive(true);
-            GameObject player = GameObject.Find("Player");
-            player.GetComponent<CursorLockBehaviour>().UnlockCursor();
-            player.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
-            player.GetComponent<FirstPersonController>().SetMoveEnabled(false);
-            player.GetComponent<Interact>().PlayerInteractEnabled(false);
-            //Cursor.lockState = CursorLockMode.None;
-            //Cursor.visible = true;
-            //Time.timeScale = 0;
-
+            col.GetComponent<CursorLockBehaviour>().UnlockCursor();
+            col.GetComponent<FirstPersonController>().SetMouseLookEnabled(false);
+            col.GetComponent<FirstPersonController>().SetMoveEnabled(false);
+            col.GetComponent<Interact>().PlayerInteractEnabled(false);
         }
     }
 
