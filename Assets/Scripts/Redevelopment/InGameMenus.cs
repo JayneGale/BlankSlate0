@@ -8,9 +8,11 @@ public class InGameMenus : MonoBehaviour
 {
     public GameObject endMenu;
     public GameObject pauseMenu;
-    public GameObject PortalDoorExit;
+    [SerializeField]
+    private GameObject[] Targets;
     public KeyCode quitKeyCode = KeyCode.Q;
     GameObject player;
+    public bool verbose = false;
 
     void Start()
     {
@@ -49,7 +51,14 @@ public class InGameMenus : MonoBehaviour
     {
         endMenu.SetActive(false);
         pauseMenu.SetActive(false);
-        PortalDoorExit.GetComponent<SetAnimationBoolean>().Activate();
+        foreach (var target in Targets)
+        {
+            if (verbose) print("Resume Game Setback triggered activate on " + target.name);
+            foreach (var activatable in target.GetComponents<IActivatable>())
+            {
+                activatable.Activate();
+            }
+        }
         player.transform.position = new Vector3(21.5f, player.transform.position.y, player.transform.position.z);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);

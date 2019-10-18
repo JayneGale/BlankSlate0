@@ -6,6 +6,7 @@ public class PortalExitClose : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] Targets;
+    public bool verbose = false;
 
     private void OnTriggerExit(Collider other)
     {
@@ -13,6 +14,7 @@ public class PortalExitClose : MonoBehaviour
         {
             foreach (var target in Targets)
             {
+                if (verbose) print("Portal exit triggered activate on " + target.name);
                 foreach (var activatable in target.GetComponents<IActivatable>())
                 {
                     activatable.Activate();

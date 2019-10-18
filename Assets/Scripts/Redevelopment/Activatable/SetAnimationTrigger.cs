@@ -6,7 +6,7 @@ public class SetAnimationTrigger : MonoBehaviour, IActivatable
 {
     [SerializeField]
     private string TriggerName;
-
+    public bool verbose = false;
     private Animator Anim;
 
     private void Start()
@@ -17,5 +17,6 @@ public class SetAnimationTrigger : MonoBehaviour, IActivatable
     public void Activate()
     {
         Anim.SetTrigger(TriggerName);
+        if (verbose) print("Trigger name " + TriggerName + "on GameObject " + gameObject.name);
     }
 }
