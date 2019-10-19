@@ -23,15 +23,16 @@ public class SelectItemUI : MonoBehaviour
     int numChildren;
     int selectedItem;
     [HideInInspector]
-    public int maxChoiceCount;
+
     bool startSelect;
     Takeable.Colour colourSelected;
+    List<int> activeSelection = new List<int>();
 
     void Start()
     {
         numChildren = transform.childCount;
         startSelect = true;
-        if (verbose) print("Interact Start number of children on crystalSpritePanels" + numChildren);
+        //if (verbose) print("Interact Start number of children on crystalSpritePanels" + numChildren);
         interact = GameObject.Find("Player").GetComponent<Interact>();
         //put this script on the CrystalSelectPanel 
     }
@@ -94,15 +95,48 @@ public void TurnOnItemSelectUI(Takeable.Colour[] matchingColours) //Call only wh
 
         for (int i = 0; i < maxChoiceCount; i++)
         {
-            if (matchingColours[i] == Takeable.Colour.red) redSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.orange) orangeSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.yellow) yellowSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.green) greenSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.blue) blueSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.indigo) indigoSprite.SetActive(true);
-            if (matchingColours[i] == Takeable.Colour.violet) violetSprite.SetActive(true);
+            if (matchingColours[i] == Takeable.Colour.red)
+            {
+                redSprite.SetActive(true);
+                activeSelection.Add(0);
+            }
+
+            if (matchingColours[i] == Takeable.Colour.orange) 
+            {
+                orangeSprite.SetActive(true);
+                activeSelection.Add(1);
+            }
+
+            if (matchingColours[i] == Takeable.Colour.yellow)
+            {
+                yellowSprite.SetActive(true);
+                activeSelection.Add(2);
+            }
+
+            if (matchingColours[i] == Takeable.Colour.green)
+            {
+                greenSprite.SetActive(true);
+                activeSelection.Add(3);
+            }
+            if (matchingColours[i] == Takeable.Colour.blue)
+            {
+                blueSprite.SetActive(true);
+                activeSelection.Add(4);
+            }
+
+            if (matchingColours[i] == Takeable.Colour.indigo)
+            {
+                indigoSprite.SetActive(true);
+                activeSelection.Add(5);
+            }
+
+            if (matchingColours[i] == Takeable.Colour.violet)
+            {
+                violetSprite.SetActive(true);
+                activeSelection.Add(6);//instead of i or Takeable.Colour.violet
+            }
         }
-            
+
     }
     public void TurnOffItemSelectUI()
     {
