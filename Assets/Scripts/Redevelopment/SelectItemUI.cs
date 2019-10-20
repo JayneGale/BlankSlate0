@@ -16,14 +16,12 @@ public class SelectItemUI : MonoBehaviour
     public GameObject indigoSprite;
     public GameObject violetSprite;
 
-
     public bool verbose;
 
     Interact interact;
     int selectIndex;
     bool startSelect;
     Takeable.Colour colourSelected;
-    List<int> activeIndex = new List<int>();
     List<GameObject> activeSpritePanels = new List<GameObject>();
 
 
@@ -31,7 +29,6 @@ public class SelectItemUI : MonoBehaviour
     {
         startSelect = true;
         interact = GameObject.Find("Player").GetComponent<Interact>();
-        List <GameObject> spritePanels =  new List<GameObject> {redSprite, orangeSprite, yellowSprite, greenSprite, blueSprite, indigoSprite, violetSprite };
     }
     void Update()
     {
@@ -64,8 +61,6 @@ public class SelectItemUI : MonoBehaviour
             {
                 if(verbose)print("Player selects item index " + selectIndex + " and name " + activeSpritePanels[selectIndex].name);
                 //I can't access matchingColours[selectedItem].Takeable.colour
-                //...aaaand all this should go on the crystalSelectPanel as a separate script
-
                 //colourSelected = interact.matchingColours[selectIndex].Takeable.Colour; // dammit this would make it all so much easier!
 
                 if (activeSpritePanels[selectIndex] == redSprite) colourSelected = Takeable.Colour.red;
@@ -167,6 +162,5 @@ public void StartSelectAtTop()
     {
         mouseScrollTip.SetActive(true);
         startSelect = true;
-        //selectedItem = activeSelection[0];//zero is the first crystal in the active List matchingColours so the arrow starts at the top active crystal
     }
 }

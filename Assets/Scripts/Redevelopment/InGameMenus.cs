@@ -40,7 +40,7 @@ public class InGameMenus : MonoBehaviour
     }
     public void ResumeGame()
     {
-        endMenu.SetActive(false);
+        //endMenu.SetActive(false);
         pauseMenu.SetActive(false);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
@@ -49,8 +49,7 @@ public class InGameMenus : MonoBehaviour
     }
     public void ResumeGameSetBack()
     {
-        endMenu.SetActive(false);
-        pauseMenu.SetActive(false);
+        //endMenu.SetActive(false);
         foreach (var target in Targets)
         {
             if (verbose) print("Resume Game Setback triggered activate on " + target.name);
@@ -59,14 +58,13 @@ public class InGameMenus : MonoBehaviour
                 activatable.Activate();
             }
         }
+
         player.transform.position = new Vector3(21.5f, player.transform.position.y, player.transform.position.z);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
-
-
 
     public void PlayGame()
     {
