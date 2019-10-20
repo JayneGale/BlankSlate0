@@ -40,8 +40,8 @@ public class InGameMenus : MonoBehaviour
     }
     public void ResumeGame()
     {
-        //endMenu.SetActive(false);
-        pauseMenu.SetActive(false);
+        endMenu.SetActive(false);//endGame can stay on, its empty?
+        pauseMenu.SetActive(false);//do I need this or endGame menu?
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
@@ -49,7 +49,8 @@ public class InGameMenus : MonoBehaviour
     }
     public void ResumeGameSetBack()
     {
-        //endMenu.SetActive(false);
+        endMenu.SetActive(false);
+        this.GetComponent<EndGameSelect>().SelectEnding();
         foreach (var target in Targets)
         {
             if (verbose) print("Resume Game Setback triggered activate on " + target.name);
