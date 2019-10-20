@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SelectItemUI : MonoBehaviour
 {
@@ -15,26 +16,22 @@ public class SelectItemUI : MonoBehaviour
     public GameObject indigoSprite;
     public GameObject violetSprite;
 
-    //List<GameObject> activeSelection = new List<GameObject>();
 
     public bool verbose;
 
     Interact interact;
-    int numChildren;
-    int selectedItem;
-    [HideInInspector]
-
+    int selectIndex;
     bool startSelect;
     Takeable.Colour colourSelected;
-    List<int> activeSelection = new List<int>();
+    List<int> activeIndex = new List<int>();
+    List<GameObject> activeSpritePanels = new List<GameObject>();
 
-    void Start()
+
+    void Start() //put this script on the CrystalSelectPanel 
     {
-        numChildren = transform.childCount;
         startSelect = true;
-        //if (verbose) print("Interact Start number of children on crystalSpritePanels" + numChildren);
         interact = GameObject.Find("Player").GetComponent<Interact>();
-        //put this script on the CrystalSelectPanel 
+        List <GameObject> spritePanels =  new List<GameObject> {redSprite, orangeSprite, yellowSprite, greenSprite, blueSprite, indigoSprite, violetSprite };
     }
     void Update()
     {
@@ -44,117 +41,132 @@ public class SelectItemUI : MonoBehaviour
             if (Input.mouseScrollDelta.y != 0 && startSelect)
             {
                 mouseScrollTip.SetActive(false);
-                selectedItem = 0;
+                selectIndex = 0;
                 startSelect = false;
-                var firstChoice = transform.GetChild(selectedItem).gameObject;
-                firstChoice.transform.GetChild(0).gameObject.SetActive(true);
-                if (verbose) print("First Choice index is " + selectedItem);
+                activeSpritePanels[selectIndex].transform.GetChild(0).gameObject.SetActive(true);
+                if (verbose) print("First Choice is " + activeSpritePanels[selectIndex].name);
             }
 
             if (!mouseScrollTip.activeSelf && Input.mouseScrollDelta.y != 0)
             {
-                if (verbose) print("Starting selection index " + selectedItem);
-                transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                
+                if (verbose) print("Starting selection index " + activeSpritePanels[selectIndex]);
+                activeSpritePanels[selectIndex].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 if (verbose) print("Sign of Scroll Delta.y " + (int)Mathf.Sign(Input.mouseScrollDelta.y));
                 int delta = (int)Mathf.Sign(Input.mouseScrollDelta.y);
-                selectedItem += delta;
-                selectedItem = Mathf.Clamp(selectedItem, 0, numChildren - 1); //  clamp index to the number of sprite children in the SelectPanel gameObject
-                    //if (!crystalSelectPanel.transform.GetChild(selectedItem).gameObject.activeSelf) //if this sprite is not active
-                    //{
-                    //    //move the arrow onto the next one
-                    //}                
-                if (verbose) print("New selection index " + selectedItem);
-                transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                selectIndex += delta;
+                selectIndex = Mathf.Clamp(selectIndex, 0, activeSpritePanels.Count - 1); //  clamp index to the number of sprite children in the SelectPanel gameObject
+                if (verbose) print("New selection index " + selectIndex + " and name " + activeSpritePanels[selectIndex].name);
+                activeSpritePanels[selectIndex].transform.GetChild(0).gameObject.SetActive(true);
             }
 
             if (!mouseScrollTip.activeSelf && Input.GetMouseButtonDown(0))// on Mouse click then use item at cursor position 
             {
-                print("Player selects item index " + selectedItem + " and name " + transform.GetChild(selectedItem).gameObject.name);
+                if(verbose)print("Player selects item index " + selectIndex + " and name " + activeSpritePanels[selectIndex].name);
                 //I can't access matchingColours[selectedItem].Takeable.colour
                 //...aaaand all this should go on the crystalSelectPanel as a separate script
-                if (selectedItem == 0) colourSelected = Takeable.Colour.red;
-                if (selectedItem == 1) colourSelected = Takeable.Colour.orange;
-                if (selectedItem == 2) colourSelected = Takeable.Colour.yellow;
-                if (selectedItem == 3) colourSelected = Takeable.Colour.green;
-                if (selectedItem == 4) colourSelected = Takeable.Colour.blue;
-                if (selectedItem == 5) colourSelected = Takeable.Colour.indigo;
-                if (selectedItem == 6) colourSelected = Takeable.Colour.violet;
-                transform.GetChild(selectedItem).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+                //colourSelected = interact.matchingColours[selectIndex].Takeable.Colour; // dammit this would make it all so much easier!
+
+                if (activeSpritePanels[selectIndex] == redSprite) colourSelected = Takeable.Colour.red;
+                if (activeSpritePanels[selectIndex] == orangeSprite) colourSelected = Takeable.Colour.orange;
+                if (activeSpritePanels[selectIndex] == yellowSprite) colourSelected = Takeable.Colour.yellow;
+                if (activeSpritePanels[selectIndex] == greenSprite) colourSelected = Takeable.Colour.green;
+                if (activeSpritePanels[selectIndex] == blueSprite) colourSelected = Takeable.Colour.blue;
+                if (activeSpritePanels[selectIndex] == indigoSprite) colourSelected = Takeable.Colour.indigo;
+                if (activeSpritePanels[selectIndex] == violetSprite) colourSelected = Takeable.Colour.violet;
+                activeSpritePanels[selectIndex].transform.GetChild(0).gameObject.SetActive(false);
                 interact.multiReceptacle.GoInSocket(colourSelected);
             }
         }
     }
 
-
-
-public void TurnOnItemSelectUI(Takeable.Colour[] matchingColours) //Call only when (List matchingColours.Count >1) ie player has to choose between at least two items 
+    public void TurnOnItemSelectUI(Takeable.Colour[] matchingColours) //Call only when (List matchingColours.Count >1) ie player has to choose between at least two items 
 
     {
-        var maxChoiceCount = matchingColours.Length;
+        //1. start with matchingColours eg orange, red, blue, red, green, violet
         if (verbose) print("Matching Colours Length " + matchingColours.Length);
+        if (verbose) print("SelectItemUI Script List of colours that match " + string.Join(", ", matchingColours));
 
-        for (int i = 0; i < maxChoiceCount; i++)
+        //2. remove duplicates from matchingColours into a new list eg orange, red, blue, green, violet
+        List<Takeable.Colour> uniqueMatchingColours = matchingColours.Distinct().ToList();
+        if (verbose) print("Unique Colours Count " + uniqueMatchingColours.Count);
+
+        //3. sort matchingColours into an ordered list  - red, orange, green, blue, violet
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
         {
-            if (matchingColours[i] == Takeable.Colour.red)
+            if (colour == Takeable.Colour.red)
             {
-                redSprite.SetActive(true);
-                activeSelection.Add(0);
-            }
-
-            if (matchingColours[i] == Takeable.Colour.orange) 
-            {
-                orangeSprite.SetActive(true);
-                activeSelection.Add(1);
-            }
-
-            if (matchingColours[i] == Takeable.Colour.yellow)
-            {
-                yellowSprite.SetActive(true);
-                activeSelection.Add(2);
-            }
-
-            if (matchingColours[i] == Takeable.Colour.green)
-            {
-                greenSprite.SetActive(true);
-                activeSelection.Add(3);
-            }
-            if (matchingColours[i] == Takeable.Colour.blue)
-            {
-                blueSprite.SetActive(true);
-                activeSelection.Add(4);
-            }
-
-            if (matchingColours[i] == Takeable.Colour.indigo)
-            {
-                indigoSprite.SetActive(true);
-                activeSelection.Add(5);
-            }
-
-            if (matchingColours[i] == Takeable.Colour.violet)
-            {
-                violetSprite.SetActive(true);
-                activeSelection.Add(6);//instead of i or Takeable.Colour.violet
+                activeSpritePanels.Add(redSprite);
             }
         }
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
+        {
+            if (colour == Takeable.Colour.orange)
+            {
+                activeSpritePanels.Add(orangeSprite);
+            }
+        }
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
+        {
+            if (colour == Takeable.Colour.yellow)
+            {
+                activeSpritePanels.Add(yellowSprite);
+            }
+        }
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
+        {
+            if (colour == Takeable.Colour.green)
+            {
+                activeSpritePanels.Add(greenSprite);
+            }
+        }
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
+        {
+            if (colour == Takeable.Colour.blue)
+            {
+                activeSpritePanels.Add(blueSprite);
+            }
+        }
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
+        {
+            if (colour == Takeable.Colour.indigo)
+            {
+                activeSpritePanels.Add(indigoSprite);
+            }
+        }
+        foreach (Takeable.Colour colour in uniqueMatchingColours)
+        {
+            if (colour == Takeable.Colour.violet)
+            {
+                activeSpritePanels.Add(violetSprite);
+            }
+        }
+        if (verbose) print("activeSpritePanels count  " + activeSpritePanels.Count);
+        if (verbose) print("SelectItemUI Script List of gameObject panels turned on " + string.Join(", ", activeSpritePanels));
 
+        for (int j = 0; j < activeSpritePanels.Count; j++)
+        {
+            activeSpritePanels[j].SetActive(true);
+        }
     }
+    
     public void TurnOffItemSelectUI()
     {
-        //Call only when (List matchingColours.Count >1) ie player has to choose between at least two items 
         mouseScrollTip.SetActive(false);
-        for (int i = 0; i < numChildren; i++)
+        for (int j = 0; j < activeSpritePanels.Count; j++)
         {
-            var child = transform.GetChild(i).gameObject;
-            child.SetActive(false);
-            child.transform.GetChild(0).gameObject.SetActive(false);
+            activeSpritePanels[j].SetActive(false);
+            activeSpritePanels[j].transform.GetChild(0).gameObject.SetActive(false);           
         }
-        gameObject.SetActive(false);
+        activeSpritePanels.Clear();
+        gameObject.SetActive(false); //and turn off the whole crystalSelect UI Panel
     }
 
-    public void StartSelect()
+public void StartSelectAtTop()
     {
         mouseScrollTip.SetActive(true);
         startSelect = true;
-        selectedItem = 0;
+        //selectedItem = activeSelection[0];//zero is the first crystal in the active List matchingColours so the arrow starts at the top active crystal
     }
 }

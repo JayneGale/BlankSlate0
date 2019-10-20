@@ -70,7 +70,7 @@ public class Interact : MonoBehaviour
                     if (multiReceptacle != null && !multiReceptacle.receptacleFull)
                     {
                         FindUsefulCarriedItems(interactable, multiReceptacle);
-                        crystalSelectPanel.StartSelect();
+                        crystalSelectPanel.StartSelectAtTop();
                     }
                 }
 

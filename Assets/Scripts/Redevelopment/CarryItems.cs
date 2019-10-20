@@ -31,24 +31,6 @@ public class CarryItems : MonoBehaviour
         return false; 
     }
 
-//    List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
-
-    //public List<> MatchingItems(Takeable.Item item, Takeable.Colour colour)
-    //{
-    //    foreach (var carriedItem in carriedItems) //loops through determines if player has the item the socket needs
-    //    {
-    //        var colourMatch = carriedItem.colour == colour;
-    //        var itemMatch = carriedItem.item == item;
-    //        if (colourMatch && itemMatch)
-    //        {
-    //            return colourMatch(i);
-    //        }
-    //    }
-    //    return false;
-    //}
-
-
-
     public class HeldItem
     {
         public Takeable.Item item;
