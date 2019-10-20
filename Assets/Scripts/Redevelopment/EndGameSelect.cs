@@ -69,7 +69,6 @@ public class EndGameSelect : MonoBehaviour
                 irEndGamePanel.SetActive(true);
                 ChangeEndWallMat(3);
                 print("Indigo crystal in Destination ");
-
                 break;
             case Takeable.Colour.violet:
                 print("Sort out the Min ending pls " + chosenDest);

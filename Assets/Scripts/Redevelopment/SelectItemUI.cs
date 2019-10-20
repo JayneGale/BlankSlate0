@@ -93,6 +93,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.red)
             {
                 activeSpritePanels.Add(redSprite);
+                break;
             }
         }
         foreach (Takeable.Colour colour in uniqueMatchingColours)
@@ -100,6 +101,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.orange)
             {
                 activeSpritePanels.Add(orangeSprite);
+                break;
             }
         }
         foreach (Takeable.Colour colour in uniqueMatchingColours)
@@ -107,6 +109,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.yellow)
             {
                 activeSpritePanels.Add(yellowSprite);
+                break;
             }
         }
         foreach (Takeable.Colour colour in uniqueMatchingColours)
@@ -114,6 +117,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.green)
             {
                 activeSpritePanels.Add(greenSprite);
+                break;
             }
         }
         foreach (Takeable.Colour colour in uniqueMatchingColours)
@@ -121,6 +125,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.blue)
             {
                 activeSpritePanels.Add(blueSprite);
+                break;
             }
         }
         foreach (Takeable.Colour colour in uniqueMatchingColours)
@@ -128,6 +133,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.indigo)
             {
                 activeSpritePanels.Add(indigoSprite);
+                break;
             }
         }
         foreach (Takeable.Colour colour in uniqueMatchingColours)
@@ -135,6 +141,7 @@ public class SelectItemUI : MonoBehaviour
             if (colour == Takeable.Colour.violet)
             {
                 activeSpritePanels.Add(violetSprite);
+                break;
             }
         }
         if (verbose) print("activeSpritePanels count  " + activeSpritePanels.Count);
