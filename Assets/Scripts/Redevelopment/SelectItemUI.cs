@@ -51,7 +51,7 @@ public class SelectItemUI : MonoBehaviour
                 activeSpritePanels[selectIndex].gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 if (verbose) print("Sign of Scroll Delta.y " + (int)Mathf.Sign(Input.mouseScrollDelta.y));
                 int delta = (int)Mathf.Sign(Input.mouseScrollDelta.y);
-                selectIndex += delta;
+                selectIndex -= delta;
                 selectIndex = Mathf.Clamp(selectIndex, 0, activeSpritePanels.Count - 1); //  clamp index to the number of sprite children in the SelectPanel gameObject
                 if (verbose) print("New selection index " + selectIndex + " and name " + activeSpritePanels[selectIndex].name);
                 activeSpritePanels[selectIndex].transform.GetChild(0).gameObject.SetActive(true);
@@ -60,8 +60,6 @@ public class SelectItemUI : MonoBehaviour
             if (!mouseScrollTip.activeSelf && Input.GetMouseButtonDown(0))// on Mouse click then use item at cursor position 
             {
                 if(verbose)print("Player selects item index " + selectIndex + " and name " + activeSpritePanels[selectIndex].name);
-                //I can't access matchingColours[selectedItem].Takeable.colour
-                //colourSelected = interact.matchingColours[selectIndex].Takeable.Colour; // dammit this would make it all so much easier!
 
                 if (activeSpritePanels[selectIndex] == redSprite) colourSelected = Takeable.Colour.red;
                 if (activeSpritePanels[selectIndex] == orangeSprite) colourSelected = Takeable.Colour.orange;
@@ -84,65 +82,26 @@ public class SelectItemUI : MonoBehaviour
         if (verbose) print("SelectItemUI Script List of colours that match " + string.Join(", ", matchingColours));
 
         //2. remove duplicates from matchingColours into a new list eg orange, red, blue, green, violet
-        List<Takeable.Colour> uniqueMatchingColours = matchingColours.Distinct().ToList();
-        if (verbose) print("Unique Colours Count " + uniqueMatchingColours.Count);
-
         //3. sort matchingColours into an ordered list  - red, orange, green, blue, violet
+        List<Takeable.Colour> uniqueMatchingColours = matchingColours.Distinct().OrderBy(a => a).ToList();
+        if (verbose) print("Unique Colours Count " + uniqueMatchingColours.Count);
+        if (verbose) print("Unique Colours contains " + string.Join(", ", uniqueMatchingColours));
+        //4. set the sprites active
         foreach (Takeable.Colour colour in uniqueMatchingColours)
         {
-            if (colour == Takeable.Colour.red)
+
+            switch (colour) // turn on the current end Panel and change the materials
             {
-                activeSpritePanels.Add(redSprite);
-                break;
+                case Takeable.Colour.red: activeSpritePanels.Add(redSprite); break;
+                case Takeable.Colour.orange: activeSpritePanels.Add(orangeSprite); break;
+                case Takeable.Colour.yellow: activeSpritePanels.Add(yellowSprite); break;
+                case Takeable.Colour.green: activeSpritePanels.Add(greenSprite); break;
+                case Takeable.Colour.blue: activeSpritePanels.Add(blueSprite); break;
+                case Takeable.Colour.indigo: activeSpritePanels.Add(indigoSprite); break;
+                case Takeable.Colour.violet: activeSpritePanels.Add(violetSprite); break;
+                case Takeable.Colour.ERROR: print("SelectItemUI script: ERROR there is no colour in the receptacle "); break;
             }
-        }
-        foreach (Takeable.Colour colour in uniqueMatchingColours)
-        {
-            if (colour == Takeable.Colour.orange)
-            {
-                activeSpritePanels.Add(orangeSprite);
-                break;
-            }
-        }
-        foreach (Takeable.Colour colour in uniqueMatchingColours)
-        {
-            if (colour == Takeable.Colour.yellow)
-            {
-                activeSpritePanels.Add(yellowSprite);
-                break;
-            }
-        }
-        foreach (Takeable.Colour colour in uniqueMatchingColours)
-        {
-            if (colour == Takeable.Colour.green)
-            {
-                activeSpritePanels.Add(greenSprite);
-                break;
-            }
-        }
-        foreach (Takeable.Colour colour in uniqueMatchingColours)
-        {
-            if (colour == Takeable.Colour.blue)
-            {
-                activeSpritePanels.Add(blueSprite);
-                break;
-            }
-        }
-        foreach (Takeable.Colour colour in uniqueMatchingColours)
-        {
-            if (colour == Takeable.Colour.indigo)
-            {
-                activeSpritePanels.Add(indigoSprite);
-                break;
-            }
-        }
-        foreach (Takeable.Colour colour in uniqueMatchingColours)
-        {
-            if (colour == Takeable.Colour.violet)
-            {
-                activeSpritePanels.Add(violetSprite);
-                break;
-            }
+
         }
         if (verbose) print("activeSpritePanels count  " + activeSpritePanels.Count);
         if (verbose) print("SelectItemUI Script List of gameObject panels turned on " + string.Join(", ", activeSpritePanels));
