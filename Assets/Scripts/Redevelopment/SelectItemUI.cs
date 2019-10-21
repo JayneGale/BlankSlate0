@@ -77,16 +77,14 @@ public class SelectItemUI : MonoBehaviour
     public void TurnOnItemSelectUI(Takeable.Colour[] matchingColours) //Call only when (List matchingColours.Count >1) ie player has to choose between at least two items 
 
     {
-        //1. start with matchingColours eg orange, red, blue, red, green, violet
         if (verbose) print("Matching Colours Length " + matchingColours.Length);
         if (verbose) print("SelectItemUI Script List of colours that match " + string.Join(", ", matchingColours));
 
-        //2. remove duplicates from matchingColours into a new list eg orange, red, blue, green, violet
-        //3. sort matchingColours into an ordered list  - red, orange, green, blue, violet
+        // remove duplicates from matchingColours and sort into an ordered list 
         List<Takeable.Colour> uniqueMatchingColours = matchingColours.Distinct().OrderBy(a => a).ToList();
         if (verbose) print("Unique Colours Count " + uniqueMatchingColours.Count);
         if (verbose) print("Unique Colours contains " + string.Join(", ", uniqueMatchingColours));
-        //4. set the sprites active
+        //now the sprites will activate in the correct order
         foreach (Takeable.Colour colour in uniqueMatchingColours)
         {
 
