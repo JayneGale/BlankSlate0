@@ -35,7 +35,10 @@ public class Interact : MonoBehaviour
     GameObject toolPanel;
     Image pointerPanelImage;
     Image toolImage;
-    CarryItems carriedItems; 
+    CarryItems carriedItems;
+    [HideInInspector]
+    public bool onlyOneCrystal;
+
 
     void Start()
     {
@@ -75,11 +78,9 @@ public class Interact : MonoBehaviour
                         FocusObject = interactable;
                         mouseOverInteractable = true;
                         ChooseInteractableCursor(interactable);
-                        var carriedItems = gameObject.GetComponent<CarryItems>().CarriedItems;
-                        if (multiReceptacle != null && playerInteractEnabled && carriedItems.Count >1)
+                        if (multiReceptacle != null && playerInteractEnabled) 
                         {
                             FindUsefulCarriedItems(interactable, multiReceptacle);
-                            crystalSelectPanel.StartSelectAtTop();
                         }
                     }
                 }
@@ -89,7 +90,7 @@ public class Interact : MonoBehaviour
                     var carriedItems = gameObject.GetComponent<CarryItems>().CarriedItems;
                     if (verbose) print("carried Items Count " + carriedItems.Count);
 
-                    if (multiReceptacle == null || carriedItems.Count == 1)
+                    if (multiReceptacle == null || onlyOneCrystal)
                     {
                         if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
                         FocusObject.Interact();
@@ -132,10 +133,12 @@ public class Interact : MonoBehaviour
                 }
             }
         }
-
+        if (matchingColours.Count == 0 || matchingColours.Count > 1) onlyOneCrystal = false;
+        if (matchingColours.Count == 1) onlyOneCrystal = true;
         if (matchingColours.Count > 1 && !multiReceptacle.receptacleFull)
         {
             crystalSelectPanel.gameObject.SetActive(true);
+            crystalSelectPanel.StartSelectAtTop();
             crystalSelectPanel.TurnOnItemSelectUI(matchingColours.ToArray());
             toolImage.enabled = false;
             pointerPanelImage.enabled = false;

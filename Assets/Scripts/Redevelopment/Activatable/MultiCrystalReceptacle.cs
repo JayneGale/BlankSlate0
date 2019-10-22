@@ -16,6 +16,9 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     CarryItems objsCarried;
     EndGameSelect canvas;
     Takeable.Colour colourIAccept;
+    GameObject toolPanel;
+    Image toolImage;
+    Sprite toolSprite;
 
 
     // Start is called before the first frame update
@@ -34,22 +37,33 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
             objectToGoInReceptacle.SetActive(false);// set inactive the crystal that's ready to drop into the socket
         }
         else print("This multiReceptacle " + gameObject + "has no animation object ready to dock ");
+
+        toolPanel = GameObject.Find("PlayerToolPanel");
+        toolImage = toolPanel.GetComponent<Image>();
     }
 
     public void Activate()
     {
         if (verbose) print("Activate Method, MutliReceptacle Class starts on this gameObject " + gameObject + "accepts item type " + itemRecAccepts);
         objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
+
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
-        if (objsCarried.CarriedItems.Count == 1)
+
+        for (int i = 0; i < objsCarried.CarriedItems.Count; i++)
         {
-            colourIAccept = objsCarried.CarriedItems[0].colour;
+            if (objsCarried.HasItem(itemRecAccepts, objsCarried.CarriedItems[i].colour))
+            {
+                colourIAccept = objsCarried.CarriedItems[i].colour;
+                break; //this should only be triggered when there is onlyOneCrystal is true, hence break after finding first one
+            }
+            else colourIAccept = Takeable.Colour.ERROR;
         }
-        else colourIAccept = Takeable.Colour.ERROR;
+        //toolSprite = GetComponent<DockingCrystalMaterials>().SetSprite(colourIAccept);
+        toolImage.enabled = true;
 
         if (verbose) print("MultiRec script List of objects this multiReceptacle accepts " + string.Join(", ", coloursICanAccept));
 
-        if (objsCarried.HasItem(itemRecAccepts, colourIAccept) && !receptacleFull)
+        if (!receptacleFull)
         {
             GoInSocket(colourIAccept);
         }
