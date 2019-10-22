@@ -15,6 +15,8 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public bool receptacleFull = false;
     CarryItems objsCarried;
     EndGameSelect canvas;
+    Takeable.Colour colourIAccept;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,19 +41,13 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         if (verbose) print("Activate Method, MutliReceptacle Class starts on this gameObject " + gameObject + "accepts item type " + itemRecAccepts);
         objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
-        Takeable.Colour colourIAccept = Takeable.Colour.ERROR;
-       
-        //if(//up to here trying to get the player to take item if player is only carrying ONE crystal that it accepts. This segment of code is garbage
-        //for (int i = 0; i < coloursICanAccept.Length; i++)
-        //{
-        //    if (objsCarried.HasItem(itemRecAccepts, coloursICanAccept[i])) //if the player is carrying a crystal, not a key, and if it accepts the crystal colour [i], add it to coloursThatMatch[j]
-        //    {
-        //        colourIAccept = coloursICanAccept[i]; //this is incorrect; eventually it will be chosen by the player
-        //    }
-        //}
+        if (objsCarried.CarriedItems.Count == 1)
+        {
+            colourIAccept = objsCarried.CarriedItems[0].colour;
+        }
+        else colourIAccept = Takeable.Colour.ERROR;
 
         if (verbose) print("MultiRec script List of objects this multiReceptacle accepts " + string.Join(", ", coloursICanAccept));
-        
 
         if (objsCarried.HasItem(itemRecAccepts, colourIAccept) && !receptacleFull)
         {
