@@ -30,10 +30,12 @@ public class Interact : MonoBehaviour
     bool mouseClickArmed;
     [HideInInspector]
     public MultiCrystalReceptacle multiReceptacle;
-
+    Receptacle receptacle;
+    bool full;
     GameObject toolPanel;
     Image pointerPanelImage;
     Image toolImage;
+    CarryItems carriedItems; 
 
     void Start()
     {
@@ -63,21 +65,35 @@ public class Interact : MonoBehaviour
                 var interactable = hit.collider.gameObject.GetComponent<Interactable>();
                 if (interactable != null && interactable != FocusObject && GetComponent<CursorLockBehaviour>().cursorIsLocked)
                 {
-                    FocusObject = interactable;
-                    mouseOverInteractable = true;
-                    ChooseInteractableCursor(interactable);
+                    receptacle = interactable.GetComponent<Receptacle>();
                     multiReceptacle = interactable.GetComponent<MultiCrystalReceptacle>();
-                    if (multiReceptacle != null && !multiReceptacle.receptacleFull)
+                    if (receptacle != null) full = receptacle.receptacleFull;
+                    else if (multiReceptacle != null) full = multiReceptacle.receptacleFull;
+                    else full = false;
+                    if (!full)
                     {
-                        FindUsefulCarriedItems(interactable, multiReceptacle);
-                        crystalSelectPanel.StartSelectAtTop();
+                        FocusObject = interactable;
+                        mouseOverInteractable = true;
+                        ChooseInteractableCursor(interactable);
+                        var carriedItems = gameObject.GetComponent<CarryItems>().CarriedItems;
+                        if (multiReceptacle != null && playerInteractEnabled && carriedItems.Count >1)
+                        {
+                            FindUsefulCarriedItems(interactable, multiReceptacle);
+                            crystalSelectPanel.StartSelectAtTop();
+                        }
                     }
                 }
 
-                if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled && mouseClickArmed && multiReceptacle==null)
-                {
-                    if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
-                    FocusObject.Interact();
+                if (Input.GetMouseButtonDown(0) && FocusObject != null && playerInteractEnabled && mouseClickArmed)
+                { 
+                    var carriedItems = gameObject.GetComponent<CarryItems>().CarriedItems;
+                    if (verbose) print("carried Items Count " + carriedItems.Count);
+
+                    if (multiReceptacle == null || carriedItems.Count == 1)
+                    {
+                        if (verbose) print("Interact Class got Mousedown on " + FocusObject.name);
+                        FocusObject.Interact();
+                    }
                 }
             }
 
@@ -116,7 +132,7 @@ public class Interact : MonoBehaviour
                 }
             }
         }
-        //This bit turns on the crystal selection panel
+
         if (matchingColours.Count > 1 && !multiReceptacle.receptacleFull)
         {
             crystalSelectPanel.gameObject.SetActive(true);

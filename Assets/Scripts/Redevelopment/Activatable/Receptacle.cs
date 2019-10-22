@@ -26,7 +26,7 @@ public class Receptacle : MonoBehaviour, IActivatable
                 objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(colourIAccept);
             }
         }
-        else print("This multiReceptacle " + gameObject + "has no animation object ready to dock ");
+        else print("This Receptacle " + gameObject + "has no animation object ready to dock ");
 
     }
 

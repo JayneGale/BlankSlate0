@@ -15,7 +15,6 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     public bool receptacleFull = false;
     CarryItems objsCarried;
     EndGameSelect canvas;
-    List<Takeable.Colour> colsCarried = new List<Takeable.Colour>();
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +27,6 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         {
             if (itemRecAccepts == Takeable.Item.crystal)
             {
-                //this looks very complex
                 objectToGoInReceptacle.GetComponent<Renderer>().material = objectToGoInReceptacle.GetComponent<DockingCrystalMaterials>().SetMaterial(coloursICanAccept[0]); //just to set the initial docking crystal colour
             }
             objectToGoInReceptacle.SetActive(false);// set inactive the crystal that's ready to drop into the socket
@@ -40,17 +38,17 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     {
         if (verbose) print("Activate Method, MutliReceptacle Class starts on this gameObject " + gameObject + "accepts item type " + itemRecAccepts);
         objsCarried = GameObject.Find("Player").GetComponent<CarryItems>();
-        
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
         Takeable.Colour colourIAccept = Takeable.Colour.ERROR;
-
-        for (int i = 0; i < coloursICanAccept.Length; i++)
-        {
-            if (objsCarried.HasItem(itemRecAccepts, coloursICanAccept[i])) //if the player is carrying a crystal, not a key, and if it accepts the crystal colour [i], add it to coloursThatMatch[j]
-            {
-                colourIAccept = coloursICanAccept[i]; //this is incorrect; eventually it will be chosen by the player
-            }
-        }
+       
+        //if(//up to here trying to get the player to take item if player is only carrying ONE crystal that it accepts. This segment of code is garbage
+        //for (int i = 0; i < coloursICanAccept.Length; i++)
+        //{
+        //    if (objsCarried.HasItem(itemRecAccepts, coloursICanAccept[i])) //if the player is carrying a crystal, not a key, and if it accepts the crystal colour [i], add it to coloursThatMatch[j]
+        //    {
+        //        colourIAccept = coloursICanAccept[i]; //this is incorrect; eventually it will be chosen by the player
+        //    }
+        //}
 
         if (verbose) print("MultiRec script List of objects this multiReceptacle accepts " + string.Join(", ", coloursICanAccept));
         
@@ -58,7 +56,6 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         if (objsCarried.HasItem(itemRecAccepts, colourIAccept) && !receptacleFull)
         {
             GoInSocket(colourIAccept);
-            //objsCarried.DropItem(itemRecAccepts, colourIAccept); // removes this item from list of items player is carrying 
         }
     } 
 
