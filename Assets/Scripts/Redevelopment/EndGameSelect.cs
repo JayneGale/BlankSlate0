@@ -11,12 +11,13 @@ public class EndGameSelect : MonoBehaviour
     public GameObject irEndGamePanel;
     public Material[] endMaterials; //there should be one material for each ending, so the length of this array should be the same as the number of panels
     public GameObject destMultiRec;
+    [HideInInspector]
+    public bool isMinDest;
     public bool verbose;
     MeshRenderer[] endGameWallsRend;
     Material[] endGameWallsMats;
     Takeable.Colour chosenDest;
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -27,51 +28,57 @@ public class EndGameSelect : MonoBehaviour
             print("Wall name " + endGameWalls[i].name + "and index " + i);
             endGameWallsRend[i] = endGameWalls[i].GetComponent<MeshRenderer>();
         }
+        teEndGamePanel.SetActive(false);
+        vaEndGamePanel.SetActive(false);
+        goEndGamePanel.SetActive(false);
+        irEndGamePanel.SetActive(false);
     }
 
     public void SelectEnding()
     {
         //the crystal in the Destination receptacle is the chosenDestination
         chosenDest = destMultiRec.GetComponent<MultiCrystalReceptacle>().colourICurrentlyHold;
-        for (int i = 0; i < endGameWalls.Length; i++) //clear out any previous ending
-        {
-            teEndGamePanel.SetActive(false);
-            vaEndGamePanel.SetActive(false);
-            goEndGamePanel.SetActive(false);
-            irEndGamePanel.SetActive(false);
-        }
+        teEndGamePanel.SetActive(false);
+        vaEndGamePanel.SetActive(false);
+        goEndGamePanel.SetActive(false);
+        irEndGamePanel.SetActive(false);
+        isMinDest = false;
 
         switch (chosenDest) // turn on the current end Panel and change the materials
         {
             case Takeable.Colour.red:
                 teEndGamePanel.SetActive(true);
-                print("Red crystal in Destination ");
+                if (verbose) print("Red crystal in Destination ");
                 ChangeEndWallMat(0);
                 break;
             case Takeable.Colour.orange:
                 vaEndGamePanel.SetActive(true);
-                print("Orange crystal in Destination ");
+                if (verbose) print("Orange crystal in Destination ");
                 ChangeEndWallMat(1);
                 break;
             case Takeable.Colour.yellow:
                 goEndGamePanel.SetActive(true);
+                if (verbose) print("Yellow crystal in Destination ");
                 ChangeEndWallMat(2);
                 break;
             case Takeable.Colour.green:
                 goEndGamePanel.SetActive(true);
+                if (verbose) print("Green crystal in Destination ");
                 ChangeEndWallMat(2);
                 break;
             case Takeable.Colour.blue:
                 goEndGamePanel.SetActive(true);
+                if (verbose) print("Blue crystal in Destination ");
                 ChangeEndWallMat(2);
                 break;
             case Takeable.Colour.indigo:
                 irEndGamePanel.SetActive(true);
                 ChangeEndWallMat(3);
-                print("Indigo crystal in Destination ");
+                if(verbose) print("Indigo crystal in Destination ");
                 break;
             case Takeable.Colour.violet:
-                print("Sort out the Min ending pls " + chosenDest);
+                if (verbose) print("Sort out the Min ending pls " + chosenDest);
+                isMinDest = true;
                 break;
             case Takeable.Colour.ERROR:
                 print("Colour of crystal in Dest rec is unknown " + chosenDest);
