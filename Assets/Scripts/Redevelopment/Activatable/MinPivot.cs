@@ -20,6 +20,7 @@ public class MinPivot : MonoBehaviour, IActivatable
     }
 
     //for Min ending, have to do (and reverse!) all these actions 
+    //While moving around in the rotated world, don't rotate again...but if in the rotated world, choose the Min ending again, do rotate again on pushing the portal button...and so on
     public void Activate()
     {
         if (canvas.isMinDest)
