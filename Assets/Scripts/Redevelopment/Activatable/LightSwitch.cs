@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class LightSwitch : MonoBehaviour, IActivatable
 {
-    public GameObject LightToSwitch;
-    public bool isOn;
+    public GameObject[] LightsToSwitch;
+    //public bool isOn;
 
     public void Activate()
     {
-        LightToSwitch.SetActive(isOn);
-        isOn = !isOn;
+        foreach (var light in LightsToSwitch)
+        {
+            light.SetActive(true);
+            //isOn = !isOn;
+        }
     }
 }
