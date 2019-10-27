@@ -41,7 +41,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -226,7 +226,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: da925177200ee274aaeb1624c2e8cc53, type: 2}
+  - {fileID: 2100000, guid: eb18690eb359a450eb73dbab10627be2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -313,7 +313,6 @@ MonoBehaviour:
   LightsToSwitch:
   - {fileID: 4813510978414277226}
   - {fileID: 932606568899134719}
-  isOn: 0
 --- !u!1 &4234604135217996087
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +431,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
-  m_Color: {r: 1, g: 0.94168514, b: 0.5424528, a: 1}
+  m_Color: {r: 0.8450364, g: 0.6961997, b: 0.990566, a: 1}
   m_Intensity: 2
   m_Range: 4
   m_SpotAngle: 60
@@ -489,6 +488,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4234604135047159926}
     m_Modifications:
+    - target: {fileID: 343170917837243728, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: m_Name
+      value: Socket
+      objectReference: {fileID: 0}
     - target: {fileID: 1819356868946625808, guid: d333da2a61686474494e9fb39df48de7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -543,11 +547,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30.001001
-      objectReference: {fileID: 0}
-    - target: {fileID: 343170917837243728, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: m_Name
-      value: Socket
       objectReference: {fileID: 0}
     - target: {fileID: 5017859287215164433, guid: d333da2a61686474494e9fb39df48de7,
         type: 3}
