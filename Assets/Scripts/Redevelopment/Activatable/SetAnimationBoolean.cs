@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class SetAnimationBoolean : MonoBehaviour, IActivatable
 {
+    public GameObject PortalToOperate;
+    [SerializeField]
+    public bool Value;
+
     [SerializeField]
     private string BooleanName;
     [SerializeField]
-    public bool Value;
 
     public bool verbose;
 
     private Animator Anim;
 
+
     private void Start()
     {
-        Anim = gameObject.GetComponent<Animator>();
+        Anim = PortalToOperate.GetComponent<Animator>();
     }
 
     public void Activate()
