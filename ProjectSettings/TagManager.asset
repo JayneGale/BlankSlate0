@@ -10,6 +10,9 @@ TagManager:
   - Note
   - Book
   - Poster
+  - Portal
+  - Room
+  - Room180
   layers:
   - Default
   - TransparentFX
