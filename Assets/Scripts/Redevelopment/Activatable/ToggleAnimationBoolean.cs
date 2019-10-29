@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetAnimationBoolean : MonoBehaviour, IActivatable
+public class ToggleAnimationBoolean : MonoBehaviour, IActivatable
 {
     [SerializeField]
     private string BooleanName;
@@ -21,5 +21,6 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
     public void Activate()
     {
         Anim.SetBool(BooleanName, Value);
+        Value = !Value;
     }
 }

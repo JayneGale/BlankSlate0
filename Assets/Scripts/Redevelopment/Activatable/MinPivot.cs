@@ -6,7 +6,7 @@ public class MinPivot : MonoBehaviour, IActivatable
 {
     public GameObject MinStationPivot;
     public GameObject portalButtonOutside;
-    public GameObject dupPortalButtonOutside;
+    public GameObject dupPortalButtonOutside; 
 
     EndGameSelect canvas;
     bool isMinEnd0;
