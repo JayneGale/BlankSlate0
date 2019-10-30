@@ -23,17 +23,12 @@ public class MinPivot : MonoBehaviour, IActivatable
     //While moving around in the rotated world, don't rotate again...but if in the rotated world, choose the Min ending again, do rotate again on pushing the portal button...and so on
     public void Activate()
     {
-        if (canvas.isMinDest) //how tf do I access the enum?
+        if (canvas.isMinDest ) //how tf do I access the enum?
         {
             //ONLY ON Irv Portal isOpening 
-            //- turn the Min pivot to 180
+            //- turn the Min pivot to 180 only ONCE  - after the player has exited, don't do it again.
+            //Continuous run 
             MinStationPivot.transform.RotateAround(MinStationPivot.transform.position, transform.up, -180f);
-
-            //- turn off the endgame walls - WHY! Just turn them around surely hence now commented out
-            //for (int i = 0; i < canvas.endGameWalls.Length; i++)
-            //{
-            //    canvas.endGameWalls[i].SetActive(false);
-            //}
             //turn off the portal button outside (and turn on the portal button outside dup)
             portalButtonOutside.SetActive(false);
             dupPortalButtonOutside.SetActive(true);

@@ -7,34 +7,13 @@ public class PortalExitClose : MonoBehaviour
     [SerializeField]
     private GameObject[] Targets;
     public bool verbose = false;
-    PlayerPos Location;
-
-    public enum PlayerPos
-
-    {
-        Portal,
-        Room,
-        Room180,
-        ERROR
-    }
+    //public PlayerInZone.PlayerPos ThisZone;
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (gameObject.CompareTag("Portal"))
-            {
-                Location = PlayerPos.Portal;
-            }
-            if (gameObject.CompareTag("Room"))
-            {
-                Location = PlayerPos.Room;
-            }
-            if (gameObject.CompareTag("Room180"))
-            {
-                Location = PlayerPos.Room180;
-            }
-            else Location = PlayerPos.ERROR;
+            //PlayerInZone.PlayerPos Location = ThisZone;
 
             foreach (var target in Targets)
             {
