@@ -11,7 +11,7 @@ public class EndGameSelect : MonoBehaviour
     public GameObject irEndGamePanel;
     public Material[] endMaterials; //there should be one material for each ending, so the length of this array should be the same as the number of panels
     public GameObject destMultiRec;
-    [HideInInspector]
+    //[HideInInspector]
     public bool isMinDest;
     public bool verbose;
     MeshRenderer[] endGameWallsRend;
