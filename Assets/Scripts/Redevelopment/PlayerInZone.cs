@@ -11,6 +11,7 @@ public class PlayerInZone : MonoBehaviour
     public PlayerPos Location;
     public GameObject liftDoors;
     public GameObject debugBalcony;
+    public GameObject RoomLights;
     public GameObject[] buttonsToEnableOnDebug;
 
     public enum PlayerPos
@@ -24,13 +25,14 @@ public class PlayerInZone : MonoBehaviour
         ERROR // Don't know where the Player is
     }
 
-    
+
     // Set where the player starts
     void Start()
     {
         Location = StartPos;
-        if(StartPos == PlayerPos.Room || StartPos == PlayerPos.Room180)
+        if (StartPos == PlayerPos.Room || StartPos == PlayerPos.Room180)
         {
+            RoomLights.SetActive(true);
             liftDoors.SetActive(false);
             debugBalcony.SetActive(true);
             foreach (var button in buttonsToEnableOnDebug)
@@ -40,6 +42,12 @@ public class PlayerInZone : MonoBehaviour
 
             }
             //for playtesting, turn all buttons to enabled and turn off disabled buttons
+        }
+        if (StartPos != PlayerPos.Room && StartPos != PlayerPos.Room180)
+        {
+            liftDoors.SetActive(true);
+            debugBalcony.SetActive(false);
+            RoomLights.SetActive(false);
 
         }
     }
