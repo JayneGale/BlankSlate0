@@ -13,6 +13,8 @@ public class InGameMenus : MonoBehaviour
     public KeyCode quitKeyCode = KeyCode.Q;
     GameObject player;
     public bool verbose = false;
+    float moveDist;
+    PlayerInZone.PlayerPos loc;
 
     void Start()
     {
@@ -59,8 +61,11 @@ public class InGameMenus : MonoBehaviour
                 activatable.Activate();
             }
         }
-
-        player.transform.position = new Vector3(21.5f, player.transform.position.y, player.transform.position.z);
+        loc = player.GetComponent<PlayerInZone>().Location;//player is in which portal doorway
+        if (verbose) print("Current location = " + loc);
+        if (loc == PlayerInZone.PlayerPos.Room180Doorway) moveDist = 11.62f;
+        else moveDist = 21.5f;
+        player.transform.position = new Vector3(moveDist, player.transform.position.y, player.transform.position.z);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<FirstPersonController>().SetMoveEnabled(true);

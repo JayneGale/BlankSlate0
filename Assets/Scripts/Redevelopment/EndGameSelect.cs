@@ -25,7 +25,7 @@ public class EndGameSelect : MonoBehaviour
         endGameWallsRend = new MeshRenderer[endGameWalls.Length];
         for (int i = 0; i < endGameWalls.Length; i++)
         {
-            print("Wall name " + endGameWalls[i].name + "and index " + i);
+            if(verbose) print("Wall name " + endGameWalls[i].name + "and index " + i);
             endGameWallsRend[i] = endGameWalls[i].GetComponent<MeshRenderer>();
         }
         teEndGamePanel.SetActive(false);
@@ -77,7 +77,7 @@ public class EndGameSelect : MonoBehaviour
                 if(verbose) print("Indigo crystal in Destination ");
                 break;
             case Takeable.Colour.violet:
-                if (verbose) print("Sort out the Min ending pls " + chosenDest);
+                if (verbose) print("Violet crystal in Destination " + chosenDest);
                 isMinDest = true;
                 break;
             case Takeable.Colour.ERROR:
