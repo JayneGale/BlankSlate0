@@ -495,7 +495,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BooleanName: dock
   Value: 1
-  animBool: 0
   verbose: 0
 --- !u!1 &7187605138365017489
 GameObject:
