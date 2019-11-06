@@ -11,6 +11,7 @@ public class EndGameSelect : MonoBehaviour
     public GameObject irEndGamePanel;
     public Material[] endMaterials; //there should be one material for each ending, so the length of this array should be the same as the number of panels
     public GameObject destMultiRec;
+    public GameObject endGameLight;
     //[HideInInspector]
     public bool isMinDest;
     public bool verbose;
@@ -23,6 +24,7 @@ public class EndGameSelect : MonoBehaviour
 
         if (verbose) print("EndgameWalls.Length " + endGameWalls.Length + endGameWalls[0].name);
         endGameWallsRend = new MeshRenderer[endGameWalls.Length];
+        endGameLight.SetActive(false);
         for (int i = 0; i < endGameWalls.Length; i++)
         {
             if(verbose) print("Wall name " + endGameWalls[i].name + "and index " + i);
@@ -78,6 +80,7 @@ public class EndGameSelect : MonoBehaviour
                 break;
             case Takeable.Colour.violet:
                 if (verbose) print("Violet crystal in Destination " + chosenDest);
+                endGameLight.SetActive(false);
                 isMinDest = true;
                 break;
             case Takeable.Colour.ERROR:
@@ -89,7 +92,7 @@ public class EndGameSelect : MonoBehaviour
 
     void ChangeEndWallMat(int matIndex)
     {
-
+        endGameLight.SetActive(true);
         for (int i = 0; i < endGameWalls.Length; i++)
         {
             endGameWallsRend[i].material = endMaterials[matIndex];
