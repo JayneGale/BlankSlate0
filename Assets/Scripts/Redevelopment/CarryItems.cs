@@ -5,7 +5,8 @@ using UnityEngine;
 public class CarryItems : MonoBehaviour
 {
     public List<HeldItem> CarriedItems = new List<HeldItem>();
-    
+    public bool verbose = false;
+
     public void AddItem(Takeable.Item item, Takeable.Colour colour)
     {
         CarriedItems.Add(new HeldItem(item, colour));
@@ -14,7 +15,7 @@ public class CarryItems : MonoBehaviour
     public void DropItem(Takeable.Item item, Takeable.Colour colour)
     {
         CarriedItems.Remove(new HeldItem(item, colour));
-        print("Removing colour " + colour + "for item type " + item);
+        if(verbose) print("Removing colour " + colour + "for item type " + item);
     }
 
     public bool HasItem(Takeable.Item item, Takeable.Colour colour)

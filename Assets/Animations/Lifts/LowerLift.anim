@@ -551,25 +551,32 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.8833333
+    functionName: StartDescent
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.0666667
     functionName: PlayClip
-    data: 
+    data: LiftUp
     objectReferenceParameter: {fileID: 8300000, guid: 0465000cf63e4410c8816304479e9fff,
       type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.0833335
-    functionName: PlayClip
+  - time: 4
+    functionName: ArrivedAtBottom
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: 8625fd6326ff044b78d38c3091382fb7,
       type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.9666667
-    functionName: ArrivedAtBottom
-    data: 
+  - time: 4.0833335
+    functionName: PlayClip
+    data: GateOpens
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
