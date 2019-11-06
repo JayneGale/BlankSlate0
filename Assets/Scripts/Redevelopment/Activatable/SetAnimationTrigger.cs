@@ -16,7 +16,7 @@ public class SetAnimationTrigger : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        Anim.SetTrigger(TriggerName);
         if (verbose) print("Trigger name " + TriggerName + "on GameObject " + gameObject.name);
+        Anim.SetTrigger(TriggerName);
     }
 }

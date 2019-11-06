@@ -8,13 +8,13 @@ public class InGameMenus : MonoBehaviour
 {
     public GameObject endMenu;
     public GameObject pauseMenu;
+    public GameObject portalCentre;
     [SerializeField]
     private GameObject[] Targets;
     public KeyCode quitKeyCode = KeyCode.Q;
-    GameObject player;
     public bool verbose = false;
+    GameObject player;
     float moveDist;
-    PlayerInZone.PlayerPos loc;
 
     void Start()
     {
@@ -61,11 +61,17 @@ public class InGameMenus : MonoBehaviour
                 activatable.Activate();
             }
         }
-        loc = player.GetComponent<PlayerInZone>().Location;//player is in which portal doorway
-        if (verbose) print("Current location = " + loc);
-        if (loc == PlayerInZone.PlayerPos.Room180Doorway) moveDist = 11.62f;
-        else moveDist = 21.5f;
-        player.transform.position = new Vector3(moveDist, player.transform.position.y, player.transform.position.z);
+        //if (loc == PlayerInZone.PlayerPos.Room180Doorway) moveDist = 11.62f;
+        //else moveDist = 21.5f;
+        //player.transform.position = new Vector3(player.transform.position.x + moveDist, player.transform.position.y, player.transform.position.z);
+        //Vector3 moveDir = 0.2f*(portalCentre.transform.position - player.transform.position).normalized;
+        moveDist = 0.2f * (portalCentre.transform.position.x - player.transform.position.x);
+        if (verbose) print("moveDist = " + moveDist);
+        //if (verbose) print("moveDir = " + moveDir);
+        //player.transform.position += moveDir;
+        player.transform.position = new Vector3 (player.transform.position.x + moveDist, player.transform.position.y, player.transform.position.z);
+        if (verbose) print("player position = " + player.transform.position);
+
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
