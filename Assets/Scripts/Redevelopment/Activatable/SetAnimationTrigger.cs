@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class SetAnimationTrigger : MonoBehaviour, IActivatable
 {
     [SerializeField]
@@ -16,7 +17,6 @@ public class SetAnimationTrigger : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (verbose) print("Trigger name " + TriggerName + "on GameObject " + gameObject.name);
         Anim.SetTrigger(TriggerName);
     }
 }

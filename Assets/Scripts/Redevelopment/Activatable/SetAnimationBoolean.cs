@@ -19,7 +19,13 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
 
     private void Start()
     {
-        Anim = PortalToOperate.GetComponent<Animator>();
+        if (PortalToOperate != null)
+        {
+            Anim = PortalToOperate.GetComponent<Animator>();
+        } else
+        {
+            Anim = GetComponent<Animator>();
+        }
     }
 
     public void Activate()

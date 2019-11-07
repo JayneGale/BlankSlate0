@@ -20,7 +20,11 @@ public class ToggleAnimationBoolean : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        Anim.SetBool(BooleanName, Value);
-        Value = !Value;
+        if (Anim == null) print("no animator on " + gameObject);
+        else
+        {
+            Anim.SetBool(BooleanName, Value);
+            Value = !Value;
+        }
     }
 }

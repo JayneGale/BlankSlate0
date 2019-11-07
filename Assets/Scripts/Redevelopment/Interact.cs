@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 //using System.Linq;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Interact : MonoBehaviour
 {
@@ -133,9 +134,12 @@ public class Interact : MonoBehaviour
                 }
             }
         }
-        if (matchingColours.Count == 0 || matchingColours.Count > 1) onlyOneCrystal = false;
-        if (matchingColours.Count == 1) onlyOneCrystal = true;
-        if (matchingColours.Count > 1 && !multiReceptacle.receptacleFull)
+
+        List<Takeable.Colour> uniqueMatchingColours = matchingColours.Distinct().OrderBy(a => a).ToList();
+        if (matchingColours.Count == 0 || uniqueMatchingColours.Count > 1) onlyOneCrystal = false;
+
+        if (uniqueMatchingColours.Count == 1) onlyOneCrystal = true;
+        if (uniqueMatchingColours.Count > 1 && !multiReceptacle.receptacleFull)
         {
             crystalSelectPanel.gameObject.SetActive(true);
             crystalSelectPanel.StartSelectAtTop();

@@ -20,8 +20,6 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
     Image toolImage;
     Sprite toolSprite;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         canvas =  GameObject.Find("Canvas_Readables").GetComponent<EndGameSelect>();
