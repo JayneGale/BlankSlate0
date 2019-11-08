@@ -17,6 +17,9 @@ public class SetAnimationTrigger : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        Anim.SetTrigger(TriggerName);
+        if (Anim != null) // Can be called on a disabled object that has not run Start yet
+        {
+            Anim.SetTrigger(TriggerName);
+        }
     }
 }
