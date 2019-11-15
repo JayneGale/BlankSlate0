@@ -14,7 +14,7 @@ public class PlayerColliderActivator : MonoBehaviour
         {
             foreach (var target in Targets)
             {
-                if (verbose) print("Portal exit triggered activate on " + target.name);
+                if (verbose) print("Exit triggered activate on " + target.name);
                 foreach (var activatable in target.GetComponents<IActivatable>())
                 {
                     activatable.Activate();
