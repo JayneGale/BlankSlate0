@@ -22,7 +22,8 @@ public class SetAnimationBoolean : MonoBehaviour, IActivatable
         if (PortalToOperate != null)
         {
             Anim = PortalToOperate.GetComponent<Animator>();
-        } else
+        }
+        else
         {
             Anim = GetComponent<Animator>();
         }

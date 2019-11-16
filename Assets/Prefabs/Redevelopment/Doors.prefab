@@ -412,8 +412,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7165053845601187063}
   - component: {fileID: 3243365596891594061}
-  - component: {fileID: 1929239248218368141}
   - component: {fileID: 5150903144236186834}
+  - component: {fileID: 2053358090475726338}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -457,22 +457,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1929239248218368141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6894506363128021421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7494460104d8154fa45bd8d69d2504c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PortalToOperate: {fileID: 6894506363128021421}
-  Value: 1
-  BooleanName: isOpening
-  verbose: 0
 --- !u!114 &5150903144236186834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +473,21 @@ MonoBehaviour:
   offSoundName: Drawer Close
   isOn: 1
   verbose: 0
+--- !u!114 &2053358090475726338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6894506363128021421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6660aea575c2e4e8e3173bcfc6d04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BooleanName: isOpening
+  Value: 1
+  verbose: 1
 --- !u!1 &8424702250803026353
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +502,7 @@ GameObject:
   - component: {fileID: 2104959577536952472}
   - component: {fileID: 8146432832350960056}
   - component: {fileID: 4516838809653183201}
+  - component: {fileID: 868661085237311208}
   m_Layer: 0
   m_Name: CloseTrigger
   m_TagString: Untagged
@@ -613,6 +613,22 @@ MonoBehaviour:
   Targets:
   - {fileID: 8424702250803026353}
   verbose: 0
+--- !u!114 &868661085237311208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424702250803026353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de1b5abd9a80f246880adf8fdb8138d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSoundName: Drawer Open
+  offSoundName: Drawer Close
+  isOn: 1
+  verbose: 0
 --- !u!1001 &6494892867342734512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -620,11 +636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9138306563240670982}
     m_Modifications:
-    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Disableable Desk Button
-      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,14 +706,24 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7914006
       objectReference: {fileID: 0}
+    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disableable Desk Button
+      objectReference: {fileID: 0}
     - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: Targets.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: Targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 4948886130606716885}
+    - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: Targets.Array.data[2]
       value: 
       objectReference: {fileID: 6894506363128021421}
     - target: {fileID: 2263285428999620286, guid: 718897a26b0ec7348a40fa20fd6172f2,
@@ -730,11 +751,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 492980695293790398}
     m_Modifications:
-    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Disableable Desk Button (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -805,6 +821,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -1.7914019
       objectReference: {fileID: 0}
+    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disableable Desk Button (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: Targets.Array.size
@@ -830,6 +851,12 @@ PrefabInstance:
 --- !u!4 &6371945180202486639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9205937063857707185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4948886130606716885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
     type: 3}
   m_PrefabInstance: {fileID: 9205937063857707185}
   m_PrefabAsset: {fileID: 0}

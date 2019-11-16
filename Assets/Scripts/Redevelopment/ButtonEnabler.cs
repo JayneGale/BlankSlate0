@@ -12,15 +12,15 @@ public class ButtonEnabler : MonoBehaviour, IActivatable
 
     private void Start()
     {
-        if (targetStartsEnabled == true) SetButtonsActive();
-        if (verbose) print("Target Button is " + gameObject.name);
         targetEnabled = targetStartsEnabled;
+        SetButtonsActive();
+        if (verbose) print("On Start, Disableable Button is " + gameObject.name + targetEnabled);
     }
 
     public void Activate()
     {
-        if (verbose) print("DisabledButton " + gameObject.name + "enabling the Button " + gameObject.name);
         targetEnabled = !targetEnabled;
+        if (verbose) print("On Activate, DisabledButton " + gameObject.name + "enabling the Button " + ButtonISetActive.name + " " + targetEnabled);
         SetButtonsActive();
     }
 
