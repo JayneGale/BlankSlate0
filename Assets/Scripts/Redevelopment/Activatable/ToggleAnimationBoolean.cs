@@ -23,8 +23,9 @@ public class ToggleAnimationBoolean : MonoBehaviour, IActivatable
         if (Anim == null) print("no animator on " + gameObject);
         else
         {
-            Anim.SetBool(BooleanName, Value);
+            Value = Anim.GetBool(BooleanName);
             Value = !Value;
+            Anim.SetBool(BooleanName, Value);
         }
     }
 }
