@@ -9,7 +9,6 @@ public class PlayerInZone : MonoBehaviour
     public PlayerPos StartPos;
     [HideInInspector]
     public PlayerPos Location;
-    public GameObject liftDoors;
     public GameObject debugBalcony;
     public GameObject RoomLights;
     public GameObject[] buttonsToEnableOnDebug;
@@ -33,7 +32,6 @@ public class PlayerInZone : MonoBehaviour
         if (StartPos == PlayerPos.Room || StartPos == PlayerPos.Room180)
         {
             RoomLights.SetActive(true);
-            liftDoors.SetActive(false);
             debugBalcony.SetActive(true);
             foreach (var button in buttonsToEnableOnDebug)
             {
@@ -45,7 +43,6 @@ public class PlayerInZone : MonoBehaviour
         }
         if (StartPos != PlayerPos.Room && StartPos != PlayerPos.Room180)
         {
-            liftDoors.SetActive(true);
             debugBalcony.SetActive(false);
             RoomLights.SetActive(false);
 

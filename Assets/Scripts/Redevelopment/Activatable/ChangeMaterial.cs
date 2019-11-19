@@ -33,8 +33,6 @@ public class ChangeMaterial : MonoBehaviour, IActivatable
             if (verbose) print("isMat1" + isMat1);
         }
         rend.material = (isMat1) ? mat1 : mat2 ;
-        //if (isMat1) rend.material = mat1;
-        //else rend.material = mat2;
         if (verbose) print("Material on renderer is " + rend.material + "and isMat1 is " + isMat1);
     }
 
