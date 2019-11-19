@@ -270,6 +270,26 @@ PrefabInstance:
       propertyPath: BooleanName
       value: isOpening
       objectReference: {fileID: 0}
+    - target: {fileID: 8360144263724686428, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Range
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360144263724686428, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.77556586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360144263724686428, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360144263724686428, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.35294116
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11, type: 3}
 --- !u!1 &6501467317597876168 stripped

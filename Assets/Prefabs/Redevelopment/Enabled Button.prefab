@@ -41,9 +41,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 0.97957546, b: 0.042452812, a: 1}
+  m_Color: {r: 0.77556586, g: 1, b: 0.35294116, a: 1}
   m_Intensity: 0.5
-  m_Range: 3
+  m_Range: 1.6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -271,6 +271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat1: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
   mat2: {fileID: 2100000, guid: 80d032a654cbb8249855fc64a8c805af, type: 2}
+  doorIOpen: {fileID: 0}
+  BooleanName: 
   isMat1: 1
   verbose: 0
 --- !u!114 &5193660375961107353
@@ -286,3 +288,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerName: ButtonPress
+  verbose: 0
