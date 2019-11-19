@@ -636,6 +636,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9138306563240670982}
     m_Modifications:
+    - target: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,10 +736,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
+    - target: {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: doorIOpen
+      value: 
+      objectReference: {fileID: 6894506363128021421}
+    - target: {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: BooleanName
+      value: isOpening
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
@@ -751,6 +761,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 492980695293790398}
     m_Modifications:
+    - target: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -841,10 +856,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
+    - target: {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: doorIOpen
+      value: 
+      objectReference: {fileID: 6894506363128021421}
+    - target: {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: BooleanName
+      value: isOpening
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}

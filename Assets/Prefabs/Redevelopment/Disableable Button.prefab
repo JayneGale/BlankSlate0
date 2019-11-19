@@ -200,16 +200,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5114279117665817458}
     m_Modifications:
-    - target: {fileID: 6474464338343819009, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
-        type: 3}
-      propertyPath: m_Name
-      value: Enabled Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 6474464338343819009, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6472506483020755567, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,6 +255,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6474464338343819009, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Name
+      value: Enabled Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474464338343819009, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: BooleanName
+      value: isOpening
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11, type: 3}
 --- !u!1 &6501467317597876168 stripped
@@ -286,11 +291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5114279117665817458}
     m_Modifications:
-    - target: {fileID: 6226028561051337998, guid: c98ea82b3a5ce1743be44db3f15effb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Disabled Button
-      objectReference: {fileID: 0}
     - target: {fileID: 6227447647352995936, guid: c98ea82b3a5ce1743be44db3f15effb4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226028561051337998, guid: c98ea82b3a5ce1743be44db3f15effb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Disabled Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c98ea82b3a5ce1743be44db3f15effb4, type: 3}

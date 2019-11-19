@@ -731,6 +731,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: doorIOpen
+      value: 
+      objectReference: {fileID: 8383340215968287142}
+    - target: {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: BooleanName
+      value: isOpening
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
 --- !u!4 &8328313367464280932 stripped
