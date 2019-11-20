@@ -449,6 +449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493040997083033264}
     m_Modifications:
+    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disableable Desk Button
+      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -504,11 +509,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Disableable Desk Button
-      objectReference: {fileID: 0}
     - target: {fileID: 4511101285753599419, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: targetStartsEnabled
@@ -533,6 +533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291537459429608307, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
@@ -561,6 +566,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493040997083033264}
     m_Modifications:
+    - target: {fileID: 7477620481799737216, guid: 08b4ffa2cb41494449cfed190c291a8c,
+        type: 3}
+      propertyPath: m_Name
+      value: DeskLockSocket
+      objectReference: {fileID: 0}
     - target: {fileID: 8807157934876250048, guid: 08b4ffa2cb41494449cfed190c291a8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -615,11 +625,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7477620481799737216, guid: 08b4ffa2cb41494449cfed190c291a8c,
-        type: 3}
-      propertyPath: m_Name
-      value: DeskLockSocket
       objectReference: {fileID: 0}
     - target: {fileID: 2330693640326388163, guid: 08b4ffa2cb41494449cfed190c291a8c,
         type: 3}
