@@ -1730,36 +1730,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.06
       objectReference: {fileID: 0}
-    - target: {fileID: 8428376308238294999, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: Targets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: Targets.Array.data[2]
-      value: 
-      objectReference: {fileID: 7651540813264261482}
-    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: Targets.Array.data[3]
-      value: 
-      objectReference: {fileID: 8777333588299472759}
-    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: Targets.Array.data[0]
-      value: 
-      objectReference: {fileID: 2647928951344680631}
-    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: Targets.Array.data[1]
-      value: 
-      objectReference: {fileID: 7536774891891550080}
     - target: {fileID: 4788864639559431998, guid: d333da2a61686474494e9fb39df48de7,
         type: 3}
       propertyPath: objectIAccept
@@ -1806,11 +1776,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 19400288d55c9b64e8069a6383861f38, type: 2}
-    - target: {fileID: 5748650944708684657, guid: d333da2a61686474494e9fb39df48de7,
-        type: 3}
-      propertyPath: isOn
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1275650468435971018, guid: d333da2a61686474494e9fb39df48de7,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1845,6 +1810,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VGlowingStandardCrystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428376308238294999, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: Targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: Targets.Array.data[2]
+      value: 
+      objectReference: {fileID: 7651540813264261482}
+    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: Targets.Array.data[3]
+      value: 
+      objectReference: {fileID: 8777333588299472759}
+    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: Targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 2647928951344680631}
+    - target: {fileID: 4854495088331346707, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: Targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 7536774891891550080}
+    - target: {fileID: 5748650944708684657, guid: d333da2a61686474494e9fb39df48de7,
+        type: 3}
+      propertyPath: isOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 852938882561434631, guid: d333da2a61686474494e9fb39df48de7,
         type: 3}
@@ -1899,6 +1899,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1444306128549236068}
     m_Modifications:
+    - target: {fileID: 100000, guid: 911807e7ae96983489a4deb724b431f0, type: 3}
+      propertyPath: m_Name
+      value: ControllerStandStems
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 911807e7ae96983489a4deb724b431f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.2
@@ -1954,10 +1958,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 911807e7ae96983489a4deb724b431f0, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 911807e7ae96983489a4deb724b431f0, type: 3}
-      propertyPath: m_Name
-      value: ControllerStandStems
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 911807e7ae96983489a4deb724b431f0, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2082,7 +2082,7 @@ PrefabInstance:
     - target: {fileID: 5654185377186768647, guid: 8cebbbac079ed5f4ebebe295cf89dc35,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3536323580279819828, guid: 8cebbbac079ed5f4ebebe295cf89dc35,
         type: 3}
@@ -2107,7 +2107,7 @@ PrefabInstance:
     - target: {fileID: 3897011815576926416, guid: 8cebbbac079ed5f4ebebe295cf89dc35,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3790815819150047812, guid: 8cebbbac079ed5f4ebebe295cf89dc35,
         type: 3}
@@ -2135,6 +2135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3682054310320930413}
     m_Modifications:
+    - target: {fileID: 100000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
+      propertyPath: m_Name
+      value: CrystalStem
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -2190,10 +2194,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
-      propertyPath: m_Name
-      value: CrystalStem
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 1ba6506962c5cdb4d94d24c1efe30c32, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2325,7 +2325,7 @@ PrefabInstance:
     - target: {fileID: 7583303131703268567, guid: 56d9c307faad4f74984f2c5cdf4653e2,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d9c307faad4f74984f2c5cdf4653e2, type: 3}
