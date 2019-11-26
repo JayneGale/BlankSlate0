@@ -22,7 +22,15 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
 
     void Start()
     {
-        canvas =  GameObject.Find("Canvas_Readables").GetComponent<EndGameSelect>();
+        var canvasReadables = GameObject.Find("Canvas_Readables");
+        if (canvasReadables == null)
+        {
+            print("MultiCrystalReceptacle could not find \"Canvas_Readables\"");
+        }
+        else
+        {
+            canvas = canvasReadables.GetComponent<EndGameSelect>();
+        }
 
         if (verbose) print("Start Method in MultiReceptacle Class starts " + gameObject + coloursICanAccept[0] + itemRecAccepts);
         
@@ -37,7 +45,10 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         else print("This multiReceptacle " + gameObject + "has no animation object ready to dock ");
 
         toolPanel = GameObject.Find("PlayerToolPanel");
-        toolImage = toolPanel.GetComponent<Image>();
+        if (toolPanel != null)
+        {
+            toolImage = toolPanel.GetComponent<Image>();
+        }
     }
 
     public void Activate()

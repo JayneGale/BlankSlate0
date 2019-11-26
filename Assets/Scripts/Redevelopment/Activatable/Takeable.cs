@@ -18,13 +18,16 @@ public class Takeable : MonoBehaviour, IActivatable
     private void Start()
     {
         var toolPanel = GameObject.Find("PlayerToolPanel");
-        toolImage = toolPanel.GetComponent<Image>();
         if (toolPanel == null)
         {
             Debug.Log("Takeable script requires a PlayerToolPanel to show a sprite of what player is carrying; no panel set on " + gameObject.name);
         }
-        else toolImage.enabled = false; //assumes game starts player has no item in hand
-        if (verbose) print("ToolImage enabled is " + toolImage.enabled);
+        else
+        {
+            toolImage = toolPanel.GetComponent<Image>();
+            toolImage.enabled = false; //assumes game starts player has no item in hand
+            if (verbose) print("ToolImage enabled is " + toolImage.enabled);
+        }
         if (gameObject.GetComponent<OnTakeResetSocket>() != null)
         {
             myController = gameObject.GetComponent<OnTakeResetSocket>().myController;
