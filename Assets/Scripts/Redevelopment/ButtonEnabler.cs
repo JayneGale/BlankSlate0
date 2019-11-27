@@ -26,7 +26,13 @@ public class ButtonEnabler : MonoBehaviour, IActivatable
 
     private void SetButtonsActive()
     {
-        ButtonISetActive.SetActive(targetEnabled);
-        ButtonISetInactive.SetActive(!targetEnabled);
+        if (ButtonISetActive != null)
+        {
+            ButtonISetActive.SetActive(targetEnabled);
+        }
+        if (ButtonISetInactive != null)
+        {
+            ButtonISetInactive.SetActive(!targetEnabled);
+        }
     }
 }
