@@ -390,7 +390,7 @@ BoxCollider:
   m_GameObject: {fileID: 58397820}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -401,7 +401,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58397820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -974,7 +974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &304519388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 1
-  testMode: 1
+  testMode: 0
   gotSignal: 0
 --- !u!4 &304519389
 Transform:
@@ -1596,16 +1596,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7279736424334468595}
     m_Modifications:
-    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
-        type: 3}
-      propertyPath: m_Name
-      value: Docking Crystal (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5227601852686950497, guid: ac0e114ddab67c948b2d4f472a16f9be,
         type: 3}
       propertyPath: m_RootOrder
@@ -1675,6 +1665,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -21.230001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
+        type: 3}
+      propertyPath: m_Name
+      value: Docking Crystal (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0e114ddab67c948b2d4f472a16f9be, type: 3}
@@ -9695,7 +9695,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2340857487982508633}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 0.07980804, b: 0, a: 1}
@@ -10912,7 +10912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3748564755800212922
 Transform:
   m_ObjectHideFlags: 0
@@ -14718,14 +14718,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8346921022909318333}
     m_Modifications:
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_Name
-      value: PortalBodyIrvaen
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.945
@@ -14780,6 +14772,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_Name
+      value: PortalBodyIrvaen
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
@@ -15341,14 +15341,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8346921022909318333}
     m_Modifications:
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_Name
-      value: PortalBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.345
@@ -15403,6 +15395,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_Name
+      value: PortalBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
