@@ -1596,6 +1596,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7279736424334468595}
     m_Modifications:
+    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
+        type: 3}
+      propertyPath: m_Name
+      value: Docking Crystal (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5227601852686950497, guid: ac0e114ddab67c948b2d4f472a16f9be,
         type: 3}
       propertyPath: m_RootOrder
@@ -1665,16 +1675,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -21.230001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5227601852686924865, guid: ac0e114ddab67c948b2d4f472a16f9be,
-        type: 3}
-      propertyPath: m_Name
-      value: Docking Crystal (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0e114ddab67c948b2d4f472a16f9be, type: 3}
@@ -1831,8 +1831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d7d751f484c9344bdd24eb96a54e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 1
-  testMode: 1
+  nextScene: 2
+  testMode: 0
   gotSignal: 0
 --- !u!114 &647804587
 MonoBehaviour:
@@ -11650,6 +11650,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat1: {fileID: 0}
   mat2: {fileID: 0}
+  doorIOpen: {fileID: 0}
+  BooleanName: 
   isMat1: 1
   verbose: 0
 --- !u!114 &5576537440376915836
@@ -11666,6 +11668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat1: {fileID: 0}
   mat2: {fileID: 0}
+  doorIOpen: {fileID: 0}
+  BooleanName: 
   isMat1: 1
   verbose: 0
 --- !u!114 &5576537440506670016
@@ -11682,6 +11686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat1: {fileID: 0}
   mat2: {fileID: 0}
+  doorIOpen: {fileID: 0}
+  BooleanName: 
   isMat1: 1
   verbose: 0
 --- !u!4 &5602514796948324683
@@ -14718,6 +14724,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8346921022909318333}
     m_Modifications:
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_Name
+      value: PortalBodyIrvaen
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.945
@@ -14772,14 +14786,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_Name
-      value: PortalBodyIrvaen
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
@@ -15341,6 +15347,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8346921022909318333}
     m_Modifications:
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_Name
+      value: PortalBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.345
@@ -15395,14 +15409,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_Name
-      value: PortalBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
