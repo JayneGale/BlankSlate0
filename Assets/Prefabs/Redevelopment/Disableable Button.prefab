@@ -193,6 +193,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4522116962409367620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501467317597876168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304e5766317ace148a185c10237cf9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat1: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
+  mat2: {fileID: 2100000, guid: 80d032a654cbb8249855fc64a8c805af, type: 2}
+  doorIOpen: {fileID: 0}
+  verbose: 0
 --- !u!1001 &279277153727633609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,11 +281,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
-        type: 3}
-      propertyPath: BooleanName
-      value: isOpening
-      objectReference: {fileID: 0}
     - target: {fileID: 8360144263724686428, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
         type: 3}
       propertyPath: m_Range
@@ -290,7 +301,18 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.35294116
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: BooleanName
+      value: isOpening
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7998255693082571858, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ce23623c3df87f4a8e2ccfbbfa2ba11, type: 3}
 --- !u!1 &6501467317597876168 stripped
 GameObject:

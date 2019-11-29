@@ -234,6 +234,24 @@ Transform:
   m_Father: {fileID: 7165053845601187063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8204790362430700844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948886130606716885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304e5766317ace148a185c10237cf9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat1: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
+  mat2: {fileID: 2100000, guid: 80d032a654cbb8249855fc64a8c805af, type: 2}
+  doorIOpen: {fileID: 6894506363128021421}
+  boolName: isOpening
+  direction: 1
+  verbose: 0
 --- !u!1 &5171165429781346946
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +508,24 @@ MonoBehaviour:
   BooleanName: isOpening
   Value: 1
   verbose: 1
+--- !u!114 &5257080113768498336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011411849901145044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304e5766317ace148a185c10237cf9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat1: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
+  mat2: {fileID: 2100000, guid: 80d032a654cbb8249855fc64a8c805af, type: 2}
+  doorIOpen: {fileID: 6894506363128021421}
+  boolName: isOpening
+  direction: 1
+  verbose: 0
 --- !u!1 &8424702250803026353
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,11 +674,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9138306563240670982}
     m_Modifications:
-    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Disableable Desk Button
-      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -713,6 +744,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7914006
       objectReference: {fileID: 0}
+    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disableable Desk Button
+      objectReference: {fileID: 0}
     - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: Targets.Array.size
@@ -748,11 +784,18 @@ PrefabInstance:
       propertyPath: BooleanName
       value: isOpening
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
 --- !u!4 &9047100786823300974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6494892867342734512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7011411849901145044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
     type: 3}
   m_PrefabInstance: {fileID: 6494892867342734512}
   m_PrefabAsset: {fileID: 0}
@@ -763,11 +806,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7165053845601187063}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a71e550e24465234eb56284b913f0b3c,
-        type: 3}
-      propertyPath: m_Name
-      value: PosterFrame (1)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a71e550e24465234eb56284b913f0b3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -838,6 +876,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25709552
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a71e550e24465234eb56284b913f0b3c,
+        type: 3}
+      propertyPath: m_Name
+      value: PosterFrame (1)
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: a71e550e24465234eb56284b913f0b3c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -858,11 +901,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7165053845601187063}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a71e550e24465234eb56284b913f0b3c,
-        type: 3}
-      propertyPath: m_Name
-      value: PosterFrame
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a71e550e24465234eb56284b913f0b3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -933,6 +971,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25709552
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a71e550e24465234eb56284b913f0b3c,
+        type: 3}
+      propertyPath: m_Name
+      value: PosterFrame
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: a71e550e24465234eb56284b913f0b3c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -953,11 +996,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 492980695293790398}
     m_Modifications:
-    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Disableable Desk Button (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1028,14 +1066,24 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: -1.7914019
       objectReference: {fileID: 0}
+    - target: {fileID: 3100152133041284870, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disableable Desk Button (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: Targets.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
         type: 3}
       propertyPath: Targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 7011411849901145044}
+    - target: {fileID: 798346999819871635, guid: 718897a26b0ec7348a40fa20fd6172f2,
+        type: 3}
+      propertyPath: Targets.Array.data[2]
       value: 
       objectReference: {fileID: 6894506363128021421}
     - target: {fileID: 2263285428999620286, guid: 718897a26b0ec7348a40fa20fd6172f2,
@@ -1058,7 +1106,8 @@ PrefabInstance:
       propertyPath: BooleanName
       value: isOpening
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 885414058943622199, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 718897a26b0ec7348a40fa20fd6172f2, type: 3}
 --- !u!4 &6371945180202486639 stripped
 Transform:
