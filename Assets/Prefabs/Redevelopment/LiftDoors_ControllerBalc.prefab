@@ -234,6 +234,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1991334896879715803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5382970806549722079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304e5766317ace148a185c10237cf9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat1: {fileID: 2100000, guid: c70a073785680394f9365427782fd1e6, type: 2}
+  mat2: {fileID: 2100000, guid: 80d032a654cbb8249855fc64a8c805af, type: 2}
+  doorIOpen: {fileID: 8383340215968287142}
+  boolName: isOpening
+  direction: 1
+  verbose: 0
 --- !u!1 &6850855260512031162
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +885,12 @@ PrefabInstance:
 --- !u!4 &6229723735547531109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2859711673616045022, guid: 718897a26b0ec7348a40fa20fd6172f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8204380010024099003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5382970806549722079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4282913672876846948, guid: 718897a26b0ec7348a40fa20fd6172f2,
     type: 3}
   m_PrefabInstance: {fileID: 8204380010024099003}
   m_PrefabAsset: {fileID: 0}
