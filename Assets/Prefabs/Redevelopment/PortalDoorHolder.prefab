@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8346921021670465856}
   - component: {fileID: 8346921021670465862}
   - component: {fileID: 8346921021670465863}
+  - component: {fileID: 235305986559047701}
   m_Layer: 0
   m_Name: PortalDoorEndings
   m_TagString: Untagged
@@ -148,6 +149,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &235305986559047701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346921021670465857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6660aea575c2e4e8e3173bcfc6d04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BooleanName: isOpening
+  Value: 0
+  verbose: 0
 --- !u!82 &8346921023018198448
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1475,6 +1491,7 @@ GameObject:
   - component: {fileID: 8346921023080268551}
   - component: {fileID: 8346921022083522577}
   - component: {fileID: 8346921023070924987}
+  - component: {fileID: 7640943275101226580}
   m_Layer: 0
   m_Name: PortalDoorMin
   m_TagString: Untagged
@@ -1626,6 +1643,21 @@ CapsuleCollider:
   m_Height: 14.35
   m_Direction: 0
   m_Center: {x: -5.75, y: 0, z: 0}
+--- !u!114 &7640943275101226580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346921023070924999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6660aea575c2e4e8e3173bcfc6d04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BooleanName: isOpening
+  Value: 0
+  verbose: 0
 --- !u!1 &8346921023070925001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,15 +2569,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53febb8e2f28f0845b60fe69be25a940, type: 3}
---- !u!4 &8346921021770063231 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940,
-    type: 3}
-  m_PrefabInstance: {fileID: 8346921021770450943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8346921021770547551 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 53febb8e2f28f0845b60fe69be25a940,
+    type: 3}
+  m_PrefabInstance: {fileID: 8346921021770450943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8346921021770063231 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 53febb8e2f28f0845b60fe69be25a940,
     type: 3}
   m_PrefabInstance: {fileID: 8346921021770450943}
   m_PrefabAsset: {fileID: 0}
