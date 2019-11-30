@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LiftAnimation : MonoBehaviour
 {
+    public GameObject playerInsideLiftTrigger;
     public bool verbose = true;
     public bool playerInLift;
     private GameObject player;
@@ -19,7 +20,8 @@ public class LiftAnimation : MonoBehaviour
 
     private void StartAscent()
     {
-        if (verbose) print("..lift ascending");
+        playerInLift = playerInsideLiftTrigger.GetComponent<PlayerInLift>().playerInLiftTrigger;
+        if (verbose) print("..lift ascending and playerInLift is " + playerInLift);
         if (playerInLift)
         {
             player.transform.SetParent(liftCar, false);
@@ -28,7 +30,8 @@ public class LiftAnimation : MonoBehaviour
     }
     private void StartDescent()
     {
-        if (verbose) print("..lift descending");
+        playerInLift = playerInsideLiftTrigger.GetComponent<PlayerInLift>().playerInLiftTrigger;
+        if (verbose) print("..lift descending and playerInLift is " + playerInLift);
         if (playerInLift)
         {
             player.transform.SetParent(liftCar, false);
@@ -39,14 +42,14 @@ public class LiftAnimation : MonoBehaviour
 
     public void ArrivedAtTop()
     {
-        if (verbose) print("Lift arrived at top");
-        player.transform.SetParent(null);
+        if (verbose) print("Lift arrived at top and playerInLift is " + playerInLift);
+        if(playerInLift) player.transform.SetParent(null, false);
     }
 
     public void ArrivedAtBottom()
     {
-        if (verbose) print("Lift arrived at bottom");
-        player.transform.SetParent(null);
+        if (verbose) print("Lift arrived at bottom and playerInLift is " + playerInLift);
+        if(playerInLift) player.transform.SetParent(null, false);
     }
 
     void PlayClip(string clipName)

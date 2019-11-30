@@ -9,7 +9,7 @@ public class MinPivotOnDoor : MonoBehaviour, IActivatable
     public GameObject dupPortalButtonOutside;
     public float rotateRoomDegrees;
 
-    public bool verbose = true;
+    public bool verbose = false;
 
     EndGameSelect canvas;
     Animator anim;

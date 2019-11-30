@@ -6,7 +6,7 @@ public class ParentPlayerToLift : MonoBehaviour, IActivatable
 {
     public Transform liftCar;
     GameObject player;
-    public bool yesParent;
+    public bool yesParent = false;
     public bool verbose;
 
     void Start()
@@ -16,7 +16,7 @@ public class ParentPlayerToLift : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if(yesParent) player.transform.SetParent(liftCar, false);
+        //if(yesParent) player.transform.SetParent(liftCar, false);
         //if(!yesParent) player.transform.SetParent(null, false);
         //player.transform.parent = liftCar;
         //player.transform.rotation = Quaternion.identity;
