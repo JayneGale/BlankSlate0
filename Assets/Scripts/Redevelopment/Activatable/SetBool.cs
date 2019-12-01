@@ -5,14 +5,14 @@ using UnityEngine;
 public class SetBool : MonoBehaviour, IActivatable
 {
     public bool value;//this action sets boolean true or false
-    public GameObject liftSet; 
+    public GameObject PlayerInsideLiftTrigger; 
     bool playerInLift;   
     public bool verbose;
 
     public void Activate()
     {
-        playerInLift = liftSet.GetComponent<LiftAnimation>().playerInLift;
+        playerInLift = PlayerInsideLiftTrigger.GetComponent<PlayerInLift>().playerInLiftTrigger;
         playerInLift = value;
-        if (verbose) print("PlayerInLift = " + playerInLift + liftSet);
+        if (verbose) print("PlayerInLift = " + playerInLift);
     }
 }
