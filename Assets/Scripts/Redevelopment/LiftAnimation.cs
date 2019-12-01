@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class LiftAnimation : MonoBehaviour
 {
-    //public GameObject playerInsideLiftTrigger;
     public bool verbose = true;
-    //public bool playerInLift;
     private GameObject player;
     //private Transform liftCar;
     private Animator anim;
@@ -16,7 +14,6 @@ public class LiftAnimation : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         //liftCar = gameObject.transform.Find("Lift Car");
-        //if (verbose) print("Lift car found is " + liftCar);
     }
 
     private void StartAscent()
