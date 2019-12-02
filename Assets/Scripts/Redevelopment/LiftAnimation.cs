@@ -5,30 +5,27 @@ using UnityEngine;
 public class LiftAnimation : MonoBehaviour
 {
     public bool verbose = true;
+    public string liftSound;
     private GameObject player;
-    //private Transform liftCar;
     private Animator anim;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        //liftCar = gameObject.transform.Find("Lift Car");
     }
 
     private void StartAscent()
     {
         if (verbose) print("..lift ascending " );
-        //if (playerInLift)
-        //{
-        //    player.transform.SetParent(liftCar, false);
-        //}
         anim.SetBool("LiftUp", true);
+        AudioManager.instance.Play(liftSound);
     }
     private void StartDescent()
     {
         if (verbose) print("..lift descending ");
         anim.SetBool("LiftUp", false);
+        AudioManager.instance.Play(liftSound);
     }
 
     public void ArrivedAtTop()
@@ -38,9 +35,7 @@ public class LiftAnimation : MonoBehaviour
 
     public void ArrivedAtBottom()
     {
-        //playerInLift = playerInsideLiftTrigger.GetComponent<PlayerInLift>().playerInLiftTrigger;
         if (verbose) print("Lift arrived at bottom and playerInLift is " );
-        //if (playerInLift) player.transform.SetParent(null);
     }
 
     void PlayClip(string clipName)
