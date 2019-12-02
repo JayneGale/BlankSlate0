@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInLift : MonoBehaviour
 {
     //put this script on the capsule collider that is attached to each liftcar
-    public Transform liftCar; 
+    //public Transform liftCar; 
     public bool playerInLiftTrigger = false;
     public bool verbose = true;
     //Quaternion startPlayerRotation;
@@ -16,9 +16,8 @@ public class PlayerInLift : MonoBehaviour
         {
             playerInLiftTrigger = true;
             if (verbose) print("PlayerInLift.cs player is inside lift " + playerInLiftTrigger);
-            //startPlayerRotation = other.transform.rotation;//store the player's original rotation
-            other.transform.SetParent(liftCar, true);
-            //other.transform.rotation = startPlayerRotation;//set player's rotation back to their original rotation
+            other.transform.SetParent(gameObject.transform, true);
+            //other.attachedRigidbody.rotation *= Quaternion.Euler(0, -90, 0);
         }
     }
 
