@@ -523,8 +523,8 @@ GameObject:
   - component: {fileID: 4767802387975982212}
   - component: {fileID: 4767802387975982232}
   - component: {fileID: 4767802387975982215}
-  - component: {fileID: 4767802387975982214}
   - component: {fileID: 4767802387975982213}
+  - component: {fileID: 5559520987185995450}
   m_Layer: 0
   m_Name: PortalZone
   m_TagString: Portal
@@ -540,8 +540,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4767802387975982211}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 17.1, y: 8.49, z: 0}
-  m_LocalScale: {x: 5.800002, y: 6.8577857, z: 6.330004}
+  m_LocalPosition: {x: 16.965, y: 8.49, z: 0}
+  m_LocalScale: {x: 6.3841496, y: 6.514219, z: 6.9675303}
   m_Children: []
   m_Father: {fileID: 4767802388434449479}
   m_RootOrder: 0
@@ -591,20 +591,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4767802387975982214
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4767802387975982211}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.0766158
-  m_Direction: 1
-  m_Center: {x: -1.20390646e-17, y: -0.0021543868, z: 0}
 --- !u!114 &4767802387975982213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +611,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   verbose: 0
+--- !u!136 &5559520987185995450
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4767802387975982211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.50000006
+  m_Height: 2.0000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4767802388434449478
 GameObject:
   m_ObjectHideFlags: 0
