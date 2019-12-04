@@ -8,8 +8,13 @@ public class MinPivotOnDoor : MonoBehaviour, IActivatable
     public GameObject portalButtonOutside;
     public GameObject dupPortalButtonOutside;
     public float rotateRoomDegrees;
+    public GameObject playerInsideArrivalsLiftTrigger;
+    public GameObject playerInsideDeparturesLiftTrigger;
+
 
     public bool verbose = false;
+    float liftCarDeparturesInitialYRotation;
+    float liftCarArrivalsInitialYRotation;
 
     EndGameSelect canvas;
     Animator anim;
@@ -20,6 +25,8 @@ public class MinPivotOnDoor : MonoBehaviour, IActivatable
     {
         canvas = GameObject.Find("Canvas_Readables").GetComponent<EndGameSelect>();
         anim = GetComponent<Animator>();
+        liftCarArrivalsInitialYRotation = playerInsideArrivalsLiftTrigger.transform.localEulerAngles.y;
+        liftCarDeparturesInitialYRotation = playerInsideDeparturesLiftTrigger.transform.localEulerAngles.y;
     }
 
     //for Min ending, have to do (and reverse) these actions 
@@ -34,11 +41,17 @@ public class MinPivotOnDoor : MonoBehaviour, IActivatable
                 portalButtonOutside.SetActive(true); //turn on the portal button outside (and turn off the portal button outside dup)            
                 dupPortalButtonOutside.SetActive(false);
                 if (verbose) print("Turning off portal button outside " + dupPortalButtonOutside);
+                playerInsideArrivalsLiftTrigger.transform.localRotation = Quaternion.Euler(0, liftCarArrivalsInitialYRotation, 0);
+                playerInsideDeparturesLiftTrigger.transform.localRotation = Quaternion.Euler(0, liftCarDeparturesInitialYRotation, 0);
+
             }
             else if (rotateRoomDegrees == 180f)
             {
                 portalButtonOutside.SetActive(false);  //turn off the portal button outside (and turn on the portal button outside dup)
                 dupPortalButtonOutside.SetActive(true);
+                playerInsideArrivalsLiftTrigger.transform.localRotation = Quaternion.Euler(0, liftCarArrivalsInitialYRotation - rotateRoomDegrees, 0);
+                playerInsideDeparturesLiftTrigger.transform.localRotation = Quaternion.Euler(0, liftCarDeparturesInitialYRotation - rotateRoomDegrees, 0);
+
                 if (verbose) print("Turning on portal button outside " + dupPortalButtonOutside);
             }
             else print("ERROR: rotateRoomDegrees is not 0 or 180 " + rotateRoomDegrees);
