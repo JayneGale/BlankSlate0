@@ -58,14 +58,20 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
 
         if (verbose) print("coloursICanAccept.Length is " + coloursICanAccept.Length);
 
-        for (int i = 0; i < objsCarried.CarriedItems.Count; i++)
+        var found = false;
+        for (int c = 0; c < coloursICanAccept.Length; c++)
         {
-            if (objsCarried.HasItem(itemRecAccepts, objsCarried.CarriedItems[i].colour))
+            var activeColour = coloursICanAccept[c];
+            if (objsCarried.HasItem(itemRecAccepts, activeColour))
             {
-                colourIAccept = objsCarried.CarriedItems[i].colour;
+                colourIAccept = activeColour;
+                found = true;
                 break; //this should only be triggered when there is onlyOneCrystal is true, hence break after finding first one
             }
-            else colourIAccept = Takeable.Colour.ERROR;
+        }
+        if (!found)
+        {
+            colourIAccept = Takeable.Colour.ERROR;
         }
         //toolSprite = GetComponent<DockingCrystalMaterials>().SetSprite(colourIAccept);
         toolImage.enabled = true;
