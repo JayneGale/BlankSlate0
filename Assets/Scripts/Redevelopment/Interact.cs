@@ -46,6 +46,7 @@ public class Interact : MonoBehaviour
         toolPanel = GameObject.Find("PlayerToolPanel");
         pointerPanelImage = GameObject.Find("PointerPanel").GetComponent<Image>();
         toolImage = toolPanel.GetComponent<Image>();
+        mouseClickArmed = true;
     }
 
     void Update()

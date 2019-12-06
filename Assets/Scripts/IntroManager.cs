@@ -25,6 +25,14 @@ public class IntroManager : MonoBehaviour
         //}
         
     }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+    }
+
 
     public void LoadNewScene()
     {

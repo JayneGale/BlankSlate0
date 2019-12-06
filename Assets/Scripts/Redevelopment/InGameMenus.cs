@@ -27,7 +27,7 @@ public class InGameMenus : MonoBehaviour
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(quitKeyCode))
         {
