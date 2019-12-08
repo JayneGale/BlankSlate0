@@ -73,7 +73,6 @@ public class MultiCrystalReceptacle : MonoBehaviour, IActivatable
         {
             colourIAccept = Takeable.Colour.ERROR;
         }
-        //toolSprite = GetComponent<DockingCrystalMaterials>().SetSprite(colourIAccept);
         toolImage.enabled = true;
 
         if (verbose) print("MultiRec script List of objects this multiReceptacle accepts " + string.Join(", ", coloursICanAccept));

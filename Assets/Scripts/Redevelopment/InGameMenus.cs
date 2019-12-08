@@ -43,7 +43,7 @@ public class InGameMenus : MonoBehaviour
     public void ResumeGame()
     {
         endMenu.SetActive(false);//endGame can stay on, its empty?
-        pauseMenu.SetActive(false);//do I need this or endGame menu?
+        pauseMenu.SetActive(false);
         player.GetComponent<CursorLockBehaviour>().LockCursor();
         player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
         player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
@@ -52,6 +52,7 @@ public class InGameMenus : MonoBehaviour
     public void ResumeGameSetBack()
     {
         endMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         this.GetComponent<EndGameSelect>().SelectEnding();
         foreach (var target in Targets)
         {
@@ -61,14 +62,8 @@ public class InGameMenus : MonoBehaviour
                 activatable.Activate();
             }
         }
-        //if (loc == PlayerInZone.PlayerPos.Room180Doorway) moveDist = 11.62f;
-        //else moveDist = 21.5f;
-        //player.transform.position = new Vector3(player.transform.position.x + moveDist, player.transform.position.y, player.transform.position.z);
-        //Vector3 moveDir = 0.2f*(portalCentre.transform.position - player.transform.position).normalized;
         moveDist = 0.2f * (portalCentre.transform.position.x - player.transform.position.x);
         if (verbose) print("moveDist = " + moveDist);
-        //if (verbose) print("moveDir = " + moveDir);
-        //player.transform.position += moveDir;
         player.transform.position = new Vector3 (player.transform.position.x + moveDist, player.transform.position.y, player.transform.position.z);
         if (verbose) print("player position = " + player.transform.position);
 
