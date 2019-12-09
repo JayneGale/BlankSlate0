@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 561518890}
   - component: {fileID: 65187173}
   m_Layer: 5
-  m_Name: Main Menu Panel
+  m_Name: Main Menu Panel Floating Crystals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -14.3, y: 15.1}
+  m_SizeDelta: {x: 31.92, y: 28.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &65187171
 MonoBehaviour:
@@ -850,7 +850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 212, y: 250.9}
+  m_AnchoredPosition: {x: 187, y: 245.8}
   m_SizeDelta: {x: 86, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298571926
@@ -1002,7 +1002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111.53, y: -143.3}
+  m_AnchoredPosition: {x: -111.53, y: -143.30002}
   m_SizeDelta: {x: 223.05, y: 58.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483875658
@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 554148506}
   - component: {fileID: 554148505}
   m_Layer: 5
-  m_Name: Dev Image
+  m_Name: Controls Image Yellow panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1325,10 +1325,10 @@ RectTransform:
   m_Father: {fileID: 1650928721}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18625, y: 0.07300001}
-  m_AnchorMax: {x: 0.8101238, y: 0.95413876}
-  m_AnchoredPosition: {x: -68.80002, y: 19.400024}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 626.72, y: 428.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554148505
 MonoBehaviour:
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 671436173}
   - component: {fileID: 671436174}
   m_Layer: 5
-  m_Name: Credits Menu Panel Image
+  m_Name: Credits Menu Panel Orange door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,8 +1596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.0000038146973}
+  m_AnchoredPosition: {x: 14.4, y: 11}
+  m_SizeDelta: {x: 31.41, y: 24.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &674770780
 GameObject:
@@ -1658,7 +1658,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'PLUGINS and FONTS
 
-    Hedera Ivy - github.com/radiatoryang/hedera
+    Ivy github.com/radiatoryang/hedera
 
     GalaxyBox 2.0
 
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 76
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1731,15 +1731,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.08230591, y: 2.2314453, z: 0.19213867, w: 4.3713584}
+  m_margin: {x: 0.08230591, y: 2.2314453, z: -21.511843, w: 4.3713584}
   m_textInfo:
     textComponent: {fileID: 674770782}
-    characterCount: 111
+    characterCount: 102
     spriteCount: 0
-    spaceCount: 15
-    wordCount: 20
+    spaceCount: 13
+    wordCount: 18
     linkCount: 0
-    lineCount: 5
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1800,7 +1800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -69.04999, y: 30.401672}
+  m_AnchoredPosition: {x: -69.04999, y: 30.401611}
   m_SizeDelta: {x: -465.73, y: -292.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737110805
@@ -1986,7 +1986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 213.29999, y: 98.40001}
+  m_AnchoredPosition: {x: 188.29999, y: 93.30002}
   m_SizeDelta: {x: 86, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777882418
@@ -2116,7 +2116,7 @@ GameObject:
   - component: {fileID: 796314960}
   - component: {fileID: 796314959}
   m_Layer: 5
-  m_Name: Header Image
+  m_Name: Header Panel orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9027895, b: 0.6933962, a: 1}
+  m_Color: {r: 1, g: 0.783805, b: 0.3254717, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2272,14 +2272,14 @@ RectTransform:
   m_GameObject: {fileID: 896182265}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2.4733171}
-  m_LocalScale: {x: 1.8710326, y: 2.4733167, z: 2.4733167}
+  m_LocalScale: {x: 1.8710327, y: 2.4733167, z: 2.4733167}
   m_Children: []
   m_Father: {fileID: 2108013316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.514313, y: 21.986502}
+  m_AnchoredPosition: {x: -10.5142975, y: 38.75567}
   m_SizeDelta: {x: 291.26, y: 149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896182267
@@ -2302,7 +2302,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "DEVELOPERS: \nEscape Velocity Studios\n- Jayne Gale\n- Brian McClintock"
+  m_text: "DEVELOPERS: \nEscape Velocity Studios\n- Jayne Gale\n- Brian McClintock\n\nSpecial
+    thanks to Woodrow Cizadlo, Jacob Grossman & Matt Payne, Yoobee Colleges"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd1f9243d987de143988ead23efe26dd, type: 2}
   m_sharedMaterial: {fileID: -4775092310492096817, guid: dd1f9243d987de143988ead23efe26dd,
@@ -2331,10 +2332,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
+  m_fontSize: 16
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 16
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -2348,7 +2349,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 70
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2372,12 +2373,12 @@ MonoBehaviour:
   m_margin: {x: 0.08230591, y: 2.2314453, z: 0.19213867, w: 4.3713584}
   m_textInfo:
     textComponent: {fileID: 896182267}
-    characterCount: 68
+    characterCount: 149
     spriteCount: 0
-    spaceCount: 10
-    wordCount: 10
+    spaceCount: 23
+    wordCount: 21
     linkCount: 0
-    lineCount: 4
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2415,7 +2416,7 @@ GameObject:
   - component: {fileID: 913397577}
   - component: {fileID: 913397576}
   m_Layer: 5
-  m_Name: Developers
+  m_Name: Controls text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2430,14 +2431,14 @@ RectTransform:
   m_GameObject: {fileID: 913397574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2.4733171}
-  m_LocalScale: {x: 1.8710326, y: 2.4733167, z: 2.4733167}
+  m_LocalScale: {x: 1.8710327, y: 2.4733167, z: 2.4733167}
   m_Children: []
   m_Father: {fileID: 554148504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.208, y: 21.986502}
+  m_AnchoredPosition: {x: 15.208024, y: 16.025785}
   m_SizeDelta: {x: 318.76, y: 149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913397576
@@ -2460,8 +2461,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "WASD or arrow keys to move \nMouse to look around \nLeft mouse to interact\nScroll
-    to select an item \nEsc for Pause Menu"
+  m_text: "Move: WASD or arrow keys \nLook around: mouse  \nInteract: Left mouse\nSelect
+    item: Mouse scroll\nPause Menu: Esc\nSkip Intro: Esc"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e673a85d7294b94a8bf57c3f00b9ae7, type: 2}
   m_sharedMaterial: {fileID: 21271246555474014, guid: 9e673a85d7294b94a8bf57c3f00b9ae7,
@@ -2528,15 +2529,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.08230591, y: 18.11691, z: 0.19213867, w: 4.3713584}
+  m_margin: {x: 0.08230591, y: 5.5699224, z: 11.957103, w: -13.394567}
   m_textInfo:
     textComponent: {fileID: 913397576}
-    characterCount: 117
+    characterCount: 125
     spriteCount: 0
-    spaceCount: 25
-    wordCount: 23
+    spaceCount: 23
+    wordCount: 21
     linkCount: 0
-    lineCount: 5
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2733,7 +2734,7 @@ GameObject:
   - component: {fileID: 929121366}
   - component: {fileID: 929121365}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Pale Purple backdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2759,7 +2760,7 @@ RectTransform:
   m_AnchorMin: {x: 0.18625, y: 0.07300001}
   m_AnchorMax: {x: 0.8101238, y: 0.95413876}
   m_AnchoredPosition: {x: 3, y: 0}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_SizeDelta: {x: 57.1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929121365
 MonoBehaviour:
@@ -3551,7 +3552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20375, y: 0.7807227}
   m_AnchorMax: {x: 0.7926235, y: 0.95413876}
-  m_AnchoredPosition: {x: -2.4201965, y: 8.793396}
+  m_AnchoredPosition: {x: -2.4201965, y: 8.793457}
   m_SizeDelta: {x: 59.601658, y: -0.30403233}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1217131623
@@ -3602,7 +3603,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 52.75
+  m_fontSize: 57.2
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3700,16 +3701,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231344286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.1855363}
-  m_LocalScale: {x: 1.1855364, y: 1.1855364, z: 1.1855364}
+  m_LocalPosition: {x: 0, y: 0, z: 1.1855364}
+  m_LocalScale: {x: 1.1855365, y: 1.1855365, z: 1.1855365}
   m_Children: []
   m_Father: {fileID: 1489645394}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20375, y: 0.7807227}
   m_AnchorMax: {x: 0.7926235, y: 0.95413876}
-  m_AnchoredPosition: {x: -2.4201965, y: 8.793457}
-  m_SizeDelta: {x: 59.601658, y: -0.30403233}
+  m_AnchoredPosition: {x: -2.5180206, y: 20}
+  m_SizeDelta: {x: 91.36548, y: 8.996291}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1231344288
 MonoBehaviour:
@@ -3759,7 +3760,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 52.75
+  m_fontSize: 57.15
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4055,11 +4056,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'TEXTURES and IMAGES
 
-    freepik.com freepik, pikisuperstar
+    freepik.com: freepik, pikisuperstar
 
     wildtextures.com
 
-    thenounproject.com icon by kiddo
+    thenounproject.com: icon by kiddo
 
     Cyan Inc fanart by Jayne Gale'
   m_isRightToLeft: 0
@@ -4131,7 +4132,7 @@ MonoBehaviour:
   m_margin: {x: 0.08230591, y: 2.2314453, z: 0.19213867, w: 4.3713584}
   m_textInfo:
     textComponent: {fileID: 1322457741}
-    characterCount: 134
+    characterCount: 136
     spriteCount: 0
     spaceCount: 16
     wordCount: 20
@@ -4828,7 +4829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 212, y: 174.40001}
+  m_AnchoredPosition: {x: 187, y: 169.30002}
   m_SizeDelta: {x: 86, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483707023
@@ -4969,7 +4970,7 @@ GameObject:
   - component: {fileID: 1489645396}
   - component: {fileID: 1489645395}
   m_Layer: 5
-  m_Name: Header Image
+  m_Name: Header Image paruple panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4990,10 +4991,10 @@ RectTransform:
   m_Father: {fileID: 1650928721}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18625, y: 0.07300001}
-  m_AnchorMax: {x: 0.8101238, y: 0.95413876}
-  m_AnchoredPosition: {x: 3, y: 0}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 572.78, y: 386.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489645395
 MonoBehaviour:
@@ -5046,7 +5047,7 @@ GameObject:
   - component: {fileID: 1495821114}
   - component: {fileID: 1495821113}
   m_Layer: 5
-  m_Name: Credits Menu Panel Image
+  m_Name: Controls Menu Panel tiles sea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5068,8 +5069,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.0000038146973}
+  m_AnchoredPosition: {x: 15.300003, y: -8.299988}
+  m_SizeDelta: {x: 34.2, y: 21.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1495821113
 MonoBehaviour:
@@ -5186,7 +5187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 212, y: 326.1}
+  m_AnchoredPosition: {x: 187, y: 321}
   m_SizeDelta: {x: 86, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503071193
@@ -5350,8 +5351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18625, y: 0.07300001}
   m_AnchorMax: {x: 0.8101238, y: 0.95413876}
-  m_AnchoredPosition: {x: -68.80002, y: 19.4}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_AnchoredPosition: {x: -68.800026, y: 12.51}
+  m_SizeDelta: {x: 127.72, y: 34.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592612053
 MonoBehaviour:
@@ -5685,8 +5686,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18625, y: 0.07300001}
   m_AnchorMax: {x: 0.8101238, y: 0.95413876}
-  m_AnchoredPosition: {x: -68.80002, y: 19.39999}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_AnchoredPosition: {x: -68.80002, y: 11.76}
+  m_SizeDelta: {x: 127.72, y: 37.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947431358
 MonoBehaviour:
@@ -5916,7 +5917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.169537, y: 26.8}
+  m_AnchoredPosition: {x: -39.169563, y: 26.800001}
   m_SizeDelta: {x: 367.77, y: 149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966924107
@@ -6079,8 +6080,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18625, y: 0.07300001}
   m_AnchorMax: {x: 0.8101238, y: 0.95413876}
-  m_AnchoredPosition: {x: -68.80002, y: 19.39999}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_AnchoredPosition: {x: -68.800026, y: 12.359985}
+  m_SizeDelta: {x: 127.72, y: 34.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969703224
 MonoBehaviour:
@@ -6153,9 +6154,9 @@ RectTransform:
   m_Father: {fileID: 1650928721}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -170.5, y: 128.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 244.2, y: 132.8}
   m_SizeDelta: {x: 86, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991502665
@@ -6431,7 +6432,7 @@ GameObject:
   - component: {fileID: 2108013318}
   - component: {fileID: 2108013317}
   m_Layer: 5
-  m_Name: Dev Image
+  m_Name: Dev Image purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6454,8 +6455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18625, y: 0.07300001}
   m_AnchorMax: {x: 0.8101238, y: 0.95413876}
-  m_AnchoredPosition: {x: -68.80002, y: 19.39999}
-  m_SizeDelta: {x: 127.72, y: 0}
+  m_AnchoredPosition: {x: -68.80002, y: 12.62}
+  m_SizeDelta: {x: 127.72, y: 33.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108013317
 MonoBehaviour:
@@ -6550,7 +6551,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 52.75
+  m_fontSize: 57.2
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6630,8 +6631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20375, y: 0.7807227}
   m_AnchorMax: {x: 0.7926235, y: 0.95413876}
-  m_AnchoredPosition: {x: -1.8635254, y: -0.0869751}
-  m_SizeDelta: {x: 59.601658, y: -0.30403233}
+  m_AnchoredPosition: {x: -1.9915771, y: -0.08691406}
+  m_SizeDelta: {x: 101.1879, y: -0.30403233}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &9203171063534218819
 GameObject:
