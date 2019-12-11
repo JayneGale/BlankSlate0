@@ -82,6 +82,16 @@ public class InGameMenus : MonoBehaviour
         player.GetComponent<Interact>().PlayerInteractEnabled(true);
     }
 
+    public void PlayAgainSkipIntro()
+    {
+        SceneManager.LoadScene(2);
+        player.GetComponent<CursorLockBehaviour>().LockCursor();
+        player.GetComponent<FirstPersonController>().SetMouseLookEnabled(true);
+        player.GetComponent<FirstPersonController>().SetMoveEnabled(true);
+        player.GetComponent<Interact>().PlayerInteractEnabled(true);
+    }
+
+
     public void ReallyQuit()
     {
         Application.Quit();
@@ -92,5 +102,6 @@ public class InGameMenus : MonoBehaviour
         player.GetComponent<CursorLockBehaviour>().UnlockCursor();
 
     }
+
 
 }

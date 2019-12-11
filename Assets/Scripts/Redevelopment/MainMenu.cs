@@ -20,6 +20,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(thisSceneBuildIndex + 1);
     }
 
+    public void SkipIntro()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        SceneManager.LoadScene(thisSceneBuildIndex + 2);
+    }
+
+
     public void ReallyQuit()
     {
         Application.Quit();
